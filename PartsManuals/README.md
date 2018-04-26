@@ -11,7 +11,7 @@ Link: [http://www.ti.com.cn/solution/cn/ecg_electrocardiogram](http://www.ti.com
 + ADS1298
 + MSP430FG439(Recommender), MSP430F149(easy to buy) 
 
-#Manual List
+# Manual List
 
 ## ADS1298 Analog front-end chip
 ADS-1298-Analog Front-End for Biopotential Measurement Chip.pdf
