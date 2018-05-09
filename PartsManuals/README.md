@@ -15,7 +15,7 @@ Link: [http://www.ti.com.cn/solution/cn/ecg_electrocardiogram](http://www.ti.com
 # Manual List
 
 ## AFE4400 Integrated Analog Pulse Oximeters
-datasheet: AFE4400.pdf
+datasheet: [AFE4400.pdf](https://github.com/celelion/ECGMonitor/blob/master/PartsManuals/AFE4400.pdf)
 
 web:[TI Link](http://www.ti.com.cn/product/cn/afe4400)
 
@@ -23,16 +23,18 @@ buy:[DigiKey Link](https://www.digikey.com.cn/product-detail/zh/texas-instrument
 
 example:[TI](http://www.ti.com.cn/tool/cn/TIDA-00311)
 
-PDF:tidu542
+PDF:[tidu542](https://github.com/celelion/ECGMonitor/blob/master/PartsManuals/tidu542.pdf)
 
 ## ADS1293 Analog front-end chip
-datasheet: ads1293.pdf
+datasheet: [ads1293.pdf](https://github.com/celelion/ECGMonitor/blob/master/PartsManuals/ads1293.pdf)
 
 web:[TI Link](http://www.ti.com.cn/product/cn/ADS1293/technicaldocuments)
 
 buylink:[digikey](https://www.digikey.com.cn/product-detail/zh/texas-instruments/ADS1293CISQE-NOPB/296-35511-1-ND/3768438)
 
-example:[TI Link](http://www.ti.com.cn/tool/cn/TIDA-00096) & tidu195a.pdf
+example:[TI Link](http://www.ti.com.cn/tool/cn/TIDA-00096)
+
+PDF:[tidu195a.pdf](https://github.com/celelion/ECGMonitor/blob/master/PartsManuals/tidu195a.pdf)
 
 ## ADS1298 Analog front-end chip
 ADS-1298-Analog Front-End for Biopotential Measurement Chip.pdf
