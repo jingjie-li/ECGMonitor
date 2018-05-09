@@ -13,8 +13,20 @@ Link: [http://www.ti.com.cn/solution/cn/ecg_electrocardiogram](http://www.ti.com
 + MSP430FG439(Recommender), MSP430F149(easy to buy) 
 
 # Manual List
+
+## AFE4400 Integrated Analog Pulse Oximeters
+datasheet: AFE4400.pdf
+
+web:[TI Link](http://www.ti.com.cn/product/cn/afe4400)
+
+buy:[DigiKey Link](https://www.digikey.com.cn/product-detail/zh/texas-instruments/AFE4400RHAR/296-38860-1-ND/5142978)
+
+example:[TI](http://www.ti.com.cn/tool/cn/TIDA-00311)
+
+PDF:tidu542
+
 ## ADS1293 Analog front-end chip
-ads1293.pdf
+datasheet: ads1293.pdf
 
 web:[TI Link](http://www.ti.com.cn/product/cn/ADS1293/technicaldocuments)
 
