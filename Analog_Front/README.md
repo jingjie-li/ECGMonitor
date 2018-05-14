@@ -2,4 +2,4 @@
 Project
 
 # Analog front Stuff
-assigned to Li,Jingjie
+assigned to Li,Jinming
