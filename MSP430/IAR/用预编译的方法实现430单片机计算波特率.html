@@ -1,0 +1,59 @@
+<tbody>
+<tr bgcolor="#f8f8f8">
+<td><span style="font-size: 18pt; color: rgb(0, 0, 0); font-family: 仿宋_GB2312;"><strong>用预编译的方法实现430单片机计算波特率</strong></span><br>liu1234 发表于 2009-9-30 2:05:00 </td></tr>
+<tr bgcolor="#ffffff">
+<td height="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><span id="ob_logd62696"><div class="digg_list" style="float: right; display: inline; margin: 0pt 10px 5px 0pt; width: 45px; height: 55px; background: url(&quot;/Images/digg.gif&quot;) no-repeat scroll left top transparent; text-align: center;">	<div class="digg_number" style="width: 45px; padding: 10px 0pt 11px; font-size: 18px; font-weight: 600; color: rgb(51, 51, 51); font-family: tahoma,Arial,Helvetica,sans-serif; line-height: 1;">1</div>	<div class="digg_submit" style="padding: 3px 0pt 0pt 6px; line-height: 1; letter-spacing: 6px;"><a href="javascript:void(null)" onclick="diggit(62696);" style="font-size: 12px; line-height: 1;">推荐</a></div></div></span> <p>//这是一段求430波特率的计算程序<br>//U_UxBR1,U_UxBR0,U_UxMCTL可以直接传送给相关寄存器<br>//你只要设置以下两项UART_CLK,UART_BAUD<br>//U_UxMCTL求取的思想:<br>//某位为0引起的(整数N分频)的累积误差,小于,为1引起的(整数N + 1分频)的累积误差,则取0,否则取1<br>//由于预编译系统对小数比较大小,处理不便,因此把小数部分*256,换为整数处理<br>//程序中的256到小数系统中就是1<br>//为了与程序中其它的其它变量不重名,本预编译中所以常量都以"U_"开头并大写.<br>//刘玉宏编写<br>#define UART_CLK&nbsp;&nbsp;&nbsp; 1048576<br>#define UART_BAUD&nbsp;&nbsp; 76800</p>
+
+<p>#define U_UxBR1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (UART_CLK/UART_BAUD)/256&nbsp; //波特率分频整数部分的高8位<br>#define U_UxBR0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (UART_CLK/UART_BAUD)%256&nbsp; //波特率分频整数部分的低8位</p>
+<p>//波特率分频小数部分*256<br>#define U_DECIMAL_FRACTION&nbsp;&nbsp;&nbsp; (((256*UART_CLK)/UART_BAUD) - 256*(UART_CLK/UART_BAUD))</p>
+<p>#define U_ERROR_SUM0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //累计误差<br>//-------------------------------<br>#if (U_ERROR_SUM0 - U_DECIMAL_FRACTION) &gt; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //求某位为0时的累积误差绝对值<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM0 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM0 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if (U_ERROR_SUM0 + 256 - U_DECIMAL_FRACTION) &gt; 0 //求某位为1时的累积误差绝对值<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM0 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM0 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //据累积误差小者,取0或1<br>&nbsp;&nbsp;&nbsp; #define U_C0&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM1 U_ERROR_SUM0 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C0&nbsp;&nbsp;&nbsp;&nbsp; 1<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM1 U_ERROR_SUM0 + 256 - U_DECIMAL_FRACTION<br>#endif</p>
+
+<p>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1<br>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM1 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM1 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM1 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM1 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM1 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM1 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C1&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM2 U_ERROR_SUM1 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C1&nbsp;&nbsp;&nbsp;&nbsp; 2<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM2 U_ERROR_SUM1 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1<br>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM2 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM2 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM2 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if (U_ERROR_SUM2 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM2 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM2 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C2&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM3 U_ERROR_SUM2 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C2&nbsp;&nbsp;&nbsp;&nbsp; 4<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM3 U_ERROR_SUM2 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM3 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM3 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM3 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM3 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM3 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM3 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C3&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM4 U_ERROR_SUM3 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C3&nbsp;&nbsp;&nbsp;&nbsp; 8<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM4 U_ERROR_SUM3 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM4 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM4 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM4 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM4 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM4 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM4 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C4&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM5 U_ERROR_SUM4 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C4&nbsp;&nbsp;&nbsp;&nbsp; 16<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM5 U_ERROR_SUM4 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM5 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM5 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM5 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM5 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM5 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM5 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C5&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM6 U_ERROR_SUM5 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C5&nbsp;&nbsp;&nbsp;&nbsp; 32<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM6 U_ERROR_SUM5 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM6 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM6 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM6 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM6 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM6 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM6 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C6&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM7 U_ERROR_SUM6 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C6&nbsp;&nbsp;&nbsp;&nbsp; 64<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM7 U_ERROR_SUM6 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>//-------------------------------<br>#if (U_ERROR_SUM7 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 (U_ERROR_SUM7 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_0 -(U_ERROR_SUM7 - U_DECIMAL_FRACTION)<br>#endif</p>
+<p>#if (U_ERROR_SUM7 + 256 - U_DECIMAL_FRACTION) &gt; 0<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 (U_ERROR_SUM7 + 256 - U_DECIMAL_FRACTION)<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_ER_BIT_IS_1 -(U_ERROR_SUM7 + 256 - U_DECIMAL_FRACTION)<br>#endif</p>
+
+<p>#if U_ER_BIT_IS_0 &lt;= U_ER_BIT_IS_1<br>&nbsp;&nbsp;&nbsp; #define U_C7&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM8 U_ERROR_SUM7 - U_DECIMAL_FRACTION<br>#else<br>&nbsp;&nbsp;&nbsp; #define U_C7&nbsp;&nbsp;&nbsp;&nbsp; 128<br>&nbsp;&nbsp;&nbsp; #define U_ERROR_SUM8 U_ERROR_SUM7 + 256 - U_DECIMAL_FRACTION<br>#endif<br>#undef U_ER_BIT_IS_0<br>#undef U_ER_BIT_IS_1</p>
+
+<p>//-------------------------------<br>#define U_UxMCTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U_C7 + U_C6 + U_C5 + U_C4 + U_C3 + U_C2 + U_C1 + U_C0<br>//-------------------------------<br>//本次预编译到此结束,你可以使用U_UxBR1;U_UxBR0;U_UxMCTL;给相关寄存器赋值.<br>//-------------------------------</p>
+<p>unsigned int b1=U_UxBR1;<br>unsigned int b0=U_UxBR0;<br>unsigned int m= U_UxMCTL;</p>
+<p>main()<br>{<br>&nbsp; while(1);<br>}<br></p></td></tr></tbody></table><br>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<div align="right">&nbsp;</div></td></tr></tbody></table></td></tr></tbody>
+<p>原文网址：<a href="http://blog.21ic.com/user1/1453/archives/2009/62696.html" target="_blank">http://blog.21ic.com/user1/1453/archives/2009/62696.html</a></p>

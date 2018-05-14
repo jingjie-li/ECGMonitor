@@ -1,0 +1,232 @@
+<a href="http://www.838dz.com/calculator/1805.html" target="_blank">MSP430单片机的UART寄存器计算器</a>
+<FORM name=ParamForm>
+      <TABLE width=475 border=0>
+        <TR>
+          <TD width=199>异步时钟:</TD>
+          <TD width=260 colSpan=2><INPUT size=17 value=32.768 
+            name=F> KHz</TD></TR>
+        <TR>
+
+          <TD width=199>波特率：</TD>
+          <TD width=260 colSpan=2><INPUT size=17 value=2.4 
+            name=Baud></TD></TR>
+        <TR>
+          <TD width=199>数字（包括启动,校验,停止位）</TD>
+          <TD width=260 colSpan=2><INPUT size=3 value=10 
+            name=Bits>&nbsp; (&lt;13)</TD></TR>
+
+        <TR>
+          <TD width=465 colSpan=3>
+            <P align=center>
+			<INPUT onclick=Compute(document.ParamForm) type=button value="寄存器值计算"></P></TD></TR>
+        <TR>
+          <TD width=199>UxMCTL (Modulation 
+Register)</TD>
+          <TD width=260 colSpan=2><INPUT size=17 name=UxMCTL> 
+            </TD></TR>
+        <TR>
+
+          <TD width=199>UxBR0 (Baud Rate LSW)</TD>
+          <TD width=260 colSpan=2><INPUT size=17 name=UxBR0> 
+            </TD></TR>
+        <TR>
+          <TD width=199>UxBR1 (Baud Rate MSW)</TD>
+          <TD width=260 colSpan=2><INPUT size=17 name=UxBR1> 
+            </TD></TR>
+        <TR>
+          <TD width=465 colSpan=3>
+
+            <P align=center><B>误码百分比</B></P></TD></TR>
+        <TR>
+          <TD width=199>　</TD>
+          <TD width=127><B>TX</B></TD>
+          <TD width=127><B>RX</B></TD></TR>
+        <TR>
+          <TD width=199>Bit 0</TD>
+
+          <TD width=127><INPUT size=17 name=B0> </TD>
+          <TD width=127><INPUT size=17 name=BR0> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 1</TD>
+          <TD width=127><INPUT size=17 name=B1> </TD>
+          <TD width=127><INPUT size=17 name=BR1> 
+</TD></TR>
+
+        <TR>
+          <TD width=199>Bit 2</TD>
+          <TD width=127><INPUT size=17 name=B2></TD>
+          <TD width=127><INPUT size=17 name=BR2> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 3</TD>
+          <TD width=127><INPUT size=17 name=B3> </TD>
+
+          <TD width=127><INPUT size=17 name=BR3> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 4</TD>
+          <TD width=127><INPUT size=17 name=B4> </TD>
+          <TD width=127><INPUT size=17 name=BR4> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 5</TD>
+
+          <TD width=127><INPUT size=17 name=B5> </TD>
+          <TD width=127><INPUT size=17 name=BR5> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 6</TD>
+          <TD width=127><INPUT size=17 name=B6> </TD>
+          <TD width=127><INPUT size=17 name=BR6> 
+</TD></TR>
+
+        <TR>
+          <TD width=199>Bit 7</TD>
+          <TD width=127><INPUT size=17 name=B7> </TD>
+          <TD width=127><INPUT size=17 name=BR7> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 8</TD>
+          <TD width=127><INPUT size=17 name=B8> </TD>
+
+          <TD width=127><INPUT size=17 name=BR8> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 9</TD>
+          <TD width=127><INPUT size=17 name=B9> </TD>
+          <TD width=127><INPUT size=17 name=BR9> 
+</TD></TR>
+        <TR>
+          <TD width=199>Bit 10</TD>
+
+          <TD width=127><INPUT size=17 name=B10> </TD>
+          <TD width=127><INPUT size=17 name=BR10> 
+        </TD></TR>
+        <TR>
+          <TD width=199>Bit 11</TD>
+          <TD width=127><INPUT size=17 name=B11> </TD>
+          <TD width=127><INPUT size=17 name=BR11> 
+        </TD></TR>
+
+        <TR>
+          <TD width=199>Bit 12</TD>
+          <TD width=127><INPUT size=17 name=B12> </TD>
+          <TD width=127><INPUT size=17 name=BR12> 
+        </TD></TR></TBODY></TABLE></FORM>
+
+原文网址：<a href="http://www.838dz.com/calculator/1805.html" target="_blank">http://www.838dz.com/calculator/1805.html</a>
+
+<SCRIPT language=JavaScript>
+function Compute(form) {
+	with(Math) {
+		var Baud= Number(form.Baud.value);
+		var F= Number(form.F.value);
+		var nbits= Number(form.Bits.value);
+		var radix= 16;
+		var N;
+		var UxMCTL;
+		var UxBR1;
+		var UxBR0;
+		
+		var B0;
+		var B1;
+		var B2;
+		var B3;
+		var B4;
+		var B5;
+		var B6;
+		var B7;
+		var B8;
+		var B9;
+		var i;
+		var er1;
+		var er0;
+		var msum;
+		var txer= new Array(13);
+		var rxer= new Array(13);
+		var s=1;
+		
+		N= floor(F/Baud);
+		UxBR1= N>>8;   //floor(UxBR0/65536); // UxBR1= UxBR0>>8;
+		UxBR0= N & 0xFF;
+		
+		UxMCTL= 0x00;
+
+		for(i=0;i<13;i++) {
+			txer[i]= 0;
+			rxer[i]= 0;
+		}
+		
+		msum= 0;
+		for(i=0;i<8;i++) {
+			er0= (Baud/F*((i+1)*N+msum) -(i+1))*100;
+			er1= (Baud/F*((i+1)*N+msum+1) -(i+1))*100;
+			if(abs(er1)<abs(er0)) {
+				msum++;
+				UxMCTL|= s;
+				txer[i]= er1;
+			} else {
+				txer[i]= er0;
+			}
+			s<<=1;
+		}
+		s= 1;
+		for(i=8;i<nbits;i++) { // recycle modulation bits from bit 0
+			if(UxMCTL & s) {
+				er0= (Baud/F*((i+1)*N+msum+1) -(i+1))*100;
+				msum++;
+			} else {
+				er0= (Baud/F*((i+1)*N+msum) -(i+1))*100;
+			}
+			
+			txer[i]= er0;
+			s<<=1;
+		}
+		msum= 0;
+		for(i=0;i<nbits;i++) {
+			er0= (Baud/F*(2*((UxMCTL&1)+floor(N/2))+i*N+msum)-1-i)*100;
+			rxer[i]= er0;
+			s<<=1;
+			if(s>=0x100) s=1; // rotate back to bit 0.
+			if(UxMCTL & s) {
+				msum++;
+			} 
+		}
+		
+
+		form.UxMCTL.value= "0x" + UxMCTL.toString(16);
+		form.UxBR0.value= "0x" + UxBR0.toString(radix);
+		form.UxBR1.value= "0x" + UxBR1.toString(radix);
+		
+		form.B0.value= txer[0].toPrecision(3);
+		form.B1.value= txer[1].toPrecision(3);
+		form.B2.value= txer[2].toPrecision(3);
+		form.B3.value= txer[3].toPrecision(3);
+		form.B4.value= txer[4].toPrecision(3);
+		form.B5.value= txer[5].toPrecision(3);
+		form.B6.value= txer[6].toPrecision(3);
+		form.B7.value= txer[7].toPrecision(3);
+		form.B8.value= txer[8].toPrecision(3);
+		form.B9.value= txer[9].toPrecision(3);
+		form.B10.value= txer[10].toPrecision(3);
+		form.B11.value= txer[11].toPrecision(3);
+		form.B12.value= txer[12].toPrecision(3);
+		
+		form.BR0.value= rxer[0].toPrecision(3);
+		form.BR1.value= rxer[1].toPrecision(3);
+		form.BR2.value= rxer[2].toPrecision(3);
+		form.BR3.value= rxer[3].toPrecision(3);
+		form.BR4.value= rxer[4].toPrecision(3);
+		form.BR5.value= rxer[5].toPrecision(3);
+		form.BR6.value= rxer[6].toPrecision(3);
+		form.BR7.value= rxer[7].toPrecision(3);
+		form.BR8.value= rxer[8].toPrecision(3);
+		form.BR9.value= rxer[9].toPrecision(3);
+		form.BR10.value= rxer[10].toPrecision(3);
+		form.BR11.value= rxer[11].toPrecision(3);
+		form.BR12.value= rxer[12].toPrecision(3);
+	}
+}
+
+</SCRIPT>

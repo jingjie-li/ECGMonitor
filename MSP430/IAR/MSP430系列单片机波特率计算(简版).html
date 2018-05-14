@@ -1,0 +1,76 @@
+<a href="http://www.838dz.com/calculator/1805.html" target="_blank">MSP430单片机的UART寄存器计算器</a>
+	<form name=ParamForm>
+      <table border="0" width="475">
+        <tr>
+          <td width="199">使用时钟:</td>
+          <td colspan="2" width="260"><input size="17" value="32.768" name="F"> KHz</td></tr>
+        <tr>
+
+          <td width="199">波特率：</td>
+          <td colspan="2" width="260"><input size="17" value="2.4" name="Baud"> KHz</td></tr>
+        
+          <td colspan="3" width="465">
+            <p align="center">
+			<input onclick="Compute(document.ParamForm)" value="寄存器值计算" type="button"></p></td></tr>
+        <tr>
+          <td width="199">UxMCTL (Modulation 
+Register)</td>
+          <td colspan="2" width="260"><input size="17" name="UxMCTL"> 
+            </td></tr>
+        <tr>
+
+          <td width="199">UxBR0 (Baud Rate LSW)</td>
+          <td colspan="2" width="260"><input size="17" name="UxBR0"> 
+            </td></tr>
+        <tr>
+          <td width="199">UxBR1 (Baud Rate MSW)</td>
+          <td colspan="2" width="260"><input size="17" name="UxBR1"> 
+            </td></tr>
+        <tr></table>
+
+原网址：<a href="http://www.838dz.com/calculator/1805.html" target="_blank">http://www.838dz.com/calculator/1805.html</a>
+完整版含每一位的错误率等
+<SCRIPT language=JavaScript>
+
+
+    function Compute(form) {
+        with (Math) {
+            var Baud = Number(form.Baud.value);
+            var F = Number(form.F.value);
+            var radix = 16;
+            var N;
+            var UxMCTL;
+            var UxBR1;
+            var UxBR0;
+
+            var i;
+            var er1;
+            var er0;
+            var msum;
+            var s = 1;
+
+            N = floor(F / Baud);
+            UxBR1 = N >> 8;   //floor(UxBR0/65536); // UxBR1= UxBR0>>8;
+            UxBR0 = N & 0xFF;
+
+            UxMCTL = 0x00;
+
+            msum = 0;
+            for (i = 0; i < 8; i++) {
+                er0 = (Baud / F * ((i + 1) * N + msum) - (i + 1)) * 100;
+                er1 = (Baud / F * ((i + 1) * N + msum + 1) - (i + 1)) * 100;
+                if (abs(er1) < abs(er0)) {
+                    msum++;
+                    UxMCTL |= s;
+                }
+                s <<= 1;
+            }
+
+            form.UxMCTL.value = "0x" + UxMCTL.toString(16);
+            form.UxBR0.value = "0x" + UxBR0.toString(radix);
+            form.UxBR1.value = "0x" + UxBR1.toString(radix);
+        }
+    }
+
+
+</SCRIPT>
