@@ -2,10 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\blue.ewp</path>
-  </project>
-  <project>
-    <path>$WS_DIR$\..\blue2\blue2.ewp</path>
+    <path>$WS_DIR$\ADS1293.ewp</path>
   </project>
   <batchBuild/>
 </workspace>
