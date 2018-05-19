@@ -15,5 +15,5 @@ Tao, Haoyi | ADS-TEST-Compount-Stuffs | 282 |~ | ~ | 985
 Tao, Haoyi | Taxi 1 | 13.1|~|~|13.1
 Li, Jingjie | Taxi 2 | 9.3 |~|~|9.3
 Li,Jinming | USB-TTL-Convertor| 50|2|1|50
-
+Li,Jinming | Express fee of blueteeth | 5|1|1|0
 
