@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.ti.ccstudio.project.ui.internal.properties.DynamicPropertiesPageManager">
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.wizards.project.ProjectSettingsPage">
+		<item value="MSP430" key="CCS.DEVICE_FAMILY"/>
+		<item value="CCS.TEMPLATES" key="CCS.EXPANDED_AREA"/>
+		<item value="" key="CCS.CODEGEN_TOOL_VERSION"/>
+		<item value="" key="CCS.DEVICE_ENDIANNESS"/>
+		<item value="MSP430F5529" key="CCS.DEVICE"/>
+		<item value="null" key="CCS.LINKER_COMMAND_FILE"/>
+		<item value="null" key="CCS.RUNTIME_SUPPORT_LIB"/>
+		<item value="executable" key="CCS.OUTPUT_TYPE"/>
+		<item value="" key="CCS.OUTPUT_FORMAT"/>
+		<item value="" key="CCS.CONNECTION"/>
+	</section>
+</section>

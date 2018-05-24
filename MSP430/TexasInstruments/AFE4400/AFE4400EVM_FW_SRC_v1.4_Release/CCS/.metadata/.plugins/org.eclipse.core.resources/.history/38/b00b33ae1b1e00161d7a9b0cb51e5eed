@@ -1,0 +1,28 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430f5529.cmd \
+../msp430USB.cmd 
+
+C_SRCS += \
+C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4490EVM_FW_SRC_v1.4_Release/AFE44x0_main.c 
+
+OBJS += \
+./AFE44x0_main.obj 
+
+C_DEPS += \
+./AFE44x0_main.pp 
+
+C_DEPS__QUOTED += \
+"AFE44x0_main.pp" 
+
+OBJS__QUOTED += \
+"AFE44x0_main.obj" 
+
+C_SRCS__QUOTED += \
+"C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4490EVM_FW_SRC_v1.4_Release/AFE44x0_main.c" 
+
+
