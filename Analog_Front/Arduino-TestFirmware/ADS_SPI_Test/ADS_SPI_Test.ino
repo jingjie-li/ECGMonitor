@@ -1,24 +1,3 @@
-# ECGMonitor
-Project
-
-# Analog front Stuff
-assigned to Li,Jinming
-
-
-# Arduino Test Code
-## 主要用法
-主要通过键入 
-
-+ N(按5导联模式设置控制字寄存器)
-+ W(通过串口向SPI某地址写入某控制字)
-+ R(从SPI某地址读出某控制字，送串口显示)
-+ D 必须在S后用，不断的取回ECG数据，送串口发出
-+ S 开始记录
-+ T 停止记录
-
-等功能，实现各种功能模块
-
-``` arduino
 #include <SPI.h>
 byte LowByte = 0;
 byte SecondByte = 0;
@@ -27,19 +6,23 @@ int SPIval16[2]={22,22};
 int highInt=0;
 int midInt=0;
 int lowInt=0;
-int readstuff=0;
-int receivedVal=0;
+unsigned int readstuff=0;
+unsigned int receivedVal=0;
 
-int receivedUpper=0;
-int receivedMiddle=0;
-int receivedLower=0;
+unsigned int receivedUpper=0;
+unsigned int receivedMiddle=0;
+unsigned int receivedLower=0;
 
-int CH1EcgData=0;
-int CH2EcgData=0;
-int CH3EcgData=0;
+unsigned int CH1EcgData=0;
+unsigned int CH2EcgData=0;
+unsigned int CH3EcgData=0;
 
 byte OutputType = 0;
 byte OutputTypeS = 0;
+
+const byte READ = 0b10000000;   //  read command
+const byte WRITE = 0b00000000;   //  write command
+
 void setup() {
   // put your setup code here, to run once:
   SerialUSB.begin(115200);
@@ -55,10 +38,10 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   if(OutputType=='Q'||OutputType==0){
-    SerialUSB.println("We do what? (W-WriteSPI,R-ReadSPI,D-StartGetData,N-NormalConfig,S-StartConversition,T-StopConversition)\n");
+    SerialUSB.println("We do what? (W-WriteSPI,R-ReadSPI,D-StartGetData,N-NormalConfig,S-StartConversition,T-StopConversition,Z-null)\n");
     while (SerialUSB.available() == 0) {}
     OutputType = SerialUSB.read();
-  } 
+  }
   switch(OutputType) {
     case 'W': {
       SerialUSB.println("#Write State!,you can trpe Q to quit");
@@ -103,48 +86,70 @@ void loop() {
         SerialUSB.print(" ");
         SerialUSB.print(SPIval16[1],HEX);
         SerialUSB.print("\n");
-        SPI.transfer(4,SPIval16[0],SPI_CONTINUE);
-        SPI.transfer(4,SPIval16[1]);
+        //SPI.transfer(4,SPIval16[0],SPI_CONTINUE);
+        //SPI.transfer(4,SPIval16[1]);
+        writeRegister(4,SPIval16[0],SPIval16[1]);
+        
       }
       break;
     }
     case 'N': {
+      writeRegister(4,0x01,0x11);
+      writeRegister(4,0x02,0x19);
+      writeRegister(4,0x03,0x2E);
+      writeRegister(4,0x0A,0x07);
+      writeRegister(4,0x0C,0x04);
       
-      SPI.transfer(4,0x01,SPI_CONTINUE);
-      SPI.transfer(4,0x11);
-      SPI.transfer(4,0x02,SPI_CONTINUE);
-      SPI.transfer(4,0x19);
-      SPI.transfer(4,0x03,SPI_CONTINUE);
-      SPI.transfer(4,0x2E);
-      SPI.transfer(4,0x0A,SPI_CONTINUE);
-      SPI.transfer(4,0x07);
-      SPI.transfer(4,0x0C,SPI_CONTINUE);
-      SPI.transfer(4,0x04);
-      
-      SPI.transfer(4,0x0D,SPI_CONTINUE);
-      SPI.transfer(4,0x01);
-      SPI.transfer(4,0x0E,SPI_CONTINUE);
-      SPI.transfer(4,0x02);
-      SPI.transfer(4,0x0F,SPI_CONTINUE);
-      SPI.transfer(4,0x03);
+      //SPI.transfer(4,0x01,SPI_CONTINUE);
+      //SPI.transfer(4,0x11);
+      //SPI.transfer(4,0x02,SPI_CONTINUE);
+      //SPI.transfer(4,0x19);
+      //SPI.transfer(4,0x03,SPI_CONTINUE);
+      //SPI.transfer(4,0x2E);
+      //SPI.transfer(4,0x0A,SPI_CONTINUE);
+      //SPI.transfer(4,0x07);
+      //SPI.transfer(4,0x0C,SPI_CONTINUE);
+      //SPI.transfer(4,0x04);
 
-      SPI.transfer(4,0x10,SPI_CONTINUE);
-      SPI.transfer(4,0x01);
+      writeRegister(4,0x0D,0x01);
+      writeRegister(4,0x0E,0x02);
+      writeRegister(4,0x0F,0x03);
       
-      SPI.transfer(4,0x12,SPI_CONTINUE);
-      SPI.transfer(4,0x04);
-      SPI.transfer(4,0x21,SPI_CONTINUE);
-      SPI.transfer(4,0x02);
-      SPI.transfer(4,0x22,SPI_CONTINUE);
-      SPI.transfer(4,0x02);
-      SPI.transfer(4,0x23,SPI_CONTINUE);
-      SPI.transfer(4,0x02);
-      SPI.transfer(4,0x24,SPI_CONTINUE);
-      SPI.transfer(4,0x02);
-      SPI.transfer(4,0x27,SPI_CONTINUE);
-      SPI.transfer(4,0x08);
-      SPI.transfer(4,0x2F,SPI_CONTINUE);
-      SPI.transfer(4,0x70);
+      //SPI.transfer(4,0x0D,SPI_CONTINUE);
+      //SPI.transfer(4,0x01);
+      //SPI.transfer(4,0x0E,SPI_CONTINUE);
+      //SPI.transfer(4,0x02);
+      //SPI.transfer(4,0x0F,SPI_CONTINUE);
+      //SPI.transfer(4,0x03);
+      
+      writeRegister(4,0x10,0x01);
+
+      //SPI.transfer(4,0x10,SPI_CONTINUE);
+      //SPI.transfer(4,0x01);
+
+      writeRegister(4,0x12,0x04);
+      writeRegister(4,0x21,0x02);
+      writeRegister(4,0x22,0x02);
+      writeRegister(4,0x23,0x02);
+      writeRegister(4,0x24,0x02);
+      writeRegister(4,0x27,0x08);
+      writeRegister(4,0x2F,0x70);
+      
+      
+      //SPI.transfer(4,0x12,SPI_CONTINUE);
+      //SPI.transfer(4,0x04);
+      //SPI.transfer(4,0x21,SPI_CONTINUE);
+      //SPI.transfer(4,0x02);
+      //SPI.transfer(4,0x22,SPI_CONTINUE);
+      //SPI.transfer(4,0x02);
+      //SPI.transfer(4,0x23,SPI_CONTINUE);
+      //SPI.transfer(4,0x02);
+      //SPI.transfer(4,0x24,SPI_CONTINUE);
+      //SPI.transfer(4,0x02);
+      //SPI.transfer(4,0x27,SPI_CONTINUE);
+      //SPI.transfer(4,0x08);
+      //SPI.transfer(4,0x2F,SPI_CONTINUE);
+      //SPI.transfer(4,0x70);
 
       SerialUSB.println("#ADS Initilized!");
       OutputType = 0;
@@ -153,16 +158,18 @@ void loop() {
     
     case 'S': {//start conversion
       SerialUSB.println("#Start Conversion!");
-      SPI.transfer(4,0x00,SPI_CONTINUE);
-      SPI.transfer(4,0x01);
+      writeRegister(4,0x00,0x01);
+      //SPI.transfer(4,0x00,SPI_CONTINUE);
+      //SPI.transfer(4,0x01);
       OutputType='Q';
       break;
     }
     
     case 'T': {//stop conversion
       SerialUSB.println("#Stop Conversion!");
-      SPI.transfer(4,0x00,SPI_CONTINUE);
-      SPI.transfer(4,0x00);
+      writeRegister(4,0x00,0x00);
+      //SPI.transfer(4,0x00,SPI_CONTINUE);
+      //SPI.transfer(4,0x00);
       OutputType='Q';
       break;
     }
@@ -190,8 +197,11 @@ void loop() {
         SerialUSB.print("0x");
         SerialUSB.print(SPIval16[0],HEX);
         SerialUSB.print("   ");
-        SPI.transfer(4,SPIval16[0],SPI_CONTINUE);
-        receivedVal = SPI.transfer(4,0x00);
+        //SPI.transfer(4,SPIval16[0],SPI_CONTINUE);
+        //receivedVal = SPI.transfer(4,0x00);
+        
+        receivedVal=readRegister(4,SPIval16[0]);
+        
         SerialUSB.print("we got:");
         SerialUSB.print(receivedVal,HEX);
         SerialUSB.print("\n");
@@ -252,4 +262,19 @@ void loop() {
   
   //SPI.transfer(val16);
 }
-```
+
+void writeRegister(byte cs, byte thisRegister, byte thisValue) {
+  byte addrToSend = thisRegister | WRITE;
+  SPI.transfer(cs,addrToSend,SPI_CONTINUE);
+  SPI.transfer(cs,thisValue);
+}
+
+unsigned int readRegister(byte cs, byte thisRegister) {
+  unsigned int result = 0;   // result to return
+  byte addrToRead = thisRegister | READ;
+  SPI.transfer(cs,addrToRead,SPI_CONTINUE);
+  result=SPI.transfer(cs,0x00);
+  return (result);
+}
+
+
