@@ -13002,6 +13002,30 @@ plastic packages.
 <wire x1="551.18" y1="76.2" x2="563.88" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$61" class="0">
+<segment>
+<pinref part="J5" gate="G$1" pin="4"/>
+<wire x1="584.2" y1="213.36" x2="596.9" y2="213.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$62" class="0">
+<segment>
+<pinref part="J5" gate="G$1" pin="3"/>
+<wire x1="584.2" y1="210.82" x2="596.9" y2="210.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$63" class="0">
+<segment>
+<pinref part="J5" gate="G$1" pin="2"/>
+<wire x1="584.2" y1="208.28" x2="596.9" y2="208.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$64" class="0">
+<segment>
+<pinref part="J5" gate="G$1" pin="1"/>
+<wire x1="584.2" y1="205.74" x2="596.9" y2="205.74" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>

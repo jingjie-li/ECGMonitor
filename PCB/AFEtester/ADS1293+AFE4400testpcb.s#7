@@ -12439,11 +12439,6 @@ plastic packages.
 <junction x="350.52" y="43.18"/>
 <label x="363.22" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
-<segment>
-<pinref part="J5" gate="G$1" pin="2"/>
-<wire x1="584.2" y1="208.28" x2="586.74" y2="208.28" width="0.1524" layer="91"/>
-<label x="586.74" y="208.28" size="1.778" layer="95" xref="yes"/>
-</segment>
 </net>
 <net name="TX_CTRL_SUP" class="0">
 <segment>
@@ -12458,11 +12453,6 @@ plastic packages.
 <wire x1="568.96" y1="66.04" x2="579.12" y2="66.04" width="0.1524" layer="91"/>
 <junction x="568.96" y="66.04"/>
 <label x="579.12" y="66.04" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="584.2" y1="205.74" x2="586.74" y2="205.74" width="0.1524" layer="91"/>
-<label x="586.74" y="205.74" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -12599,11 +12589,6 @@ plastic packages.
 <wire x1="375.92" y1="73.66" x2="365.76" y2="73.66" width="0.1524" layer="91"/>
 <label x="365.76" y="73.66" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<pinref part="J5" gate="G$1" pin="3"/>
-<wire x1="584.2" y1="210.82" x2="586.74" y2="210.82" width="0.1524" layer="91"/>
-<label x="586.74" y="210.82" size="1.778" layer="95" xref="yes"/>
-</segment>
 </net>
 <net name="RX_ANA_SUP" class="0">
 <segment>
@@ -12636,11 +12621,6 @@ plastic packages.
 <wire x1="360.68" y1="104.14" x2="355.6" y2="104.14" width="0.1524" layer="91"/>
 <junction x="355.6" y="104.14"/>
 <label x="363.22" y="121.92" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="J5" gate="G$1" pin="4"/>
-<wire x1="584.2" y1="213.36" x2="586.74" y2="213.36" width="0.1524" layer="91"/>
-<label x="586.74" y="213.36" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$31" class="0">

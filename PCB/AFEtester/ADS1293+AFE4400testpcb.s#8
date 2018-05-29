@@ -12440,9 +12440,9 @@ plastic packages.
 <label x="363.22" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="584.2" y1="205.74" x2="586.74" y2="205.74" width="0.1524" layer="91"/>
-<label x="586.74" y="205.74" size="1.778" layer="95" xref="yes"/>
+<pinref part="J5" gate="G$1" pin="2"/>
+<wire x1="584.2" y1="208.28" x2="586.74" y2="208.28" width="0.1524" layer="91"/>
+<label x="586.74" y="208.28" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="TX_CTRL_SUP" class="0">
@@ -12460,9 +12460,9 @@ plastic packages.
 <label x="579.12" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="2"/>
-<wire x1="584.2" y1="208.28" x2="586.74" y2="208.28" width="0.1524" layer="91"/>
-<label x="586.74" y="208.28" size="1.778" layer="95" xref="yes"/>
+<pinref part="J5" gate="G$1" pin="1"/>
+<wire x1="584.2" y1="205.74" x2="586.74" y2="205.74" width="0.1524" layer="91"/>
+<label x="586.74" y="205.74" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$22" class="0">

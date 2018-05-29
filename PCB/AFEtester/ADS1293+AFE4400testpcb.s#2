@@ -12459,6 +12459,11 @@ plastic packages.
 <junction x="568.96" y="66.04"/>
 <label x="579.12" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="J5" gate="G$1" pin="4"/>
+<wire x1="584.2" y1="213.36" x2="596.9" y2="213.36" width="0.1524" layer="91"/>
+<label x="596.9" y="213.36" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$22" class="0">
 <segment>
@@ -13015,13 +13020,6 @@ plastic packages.
 <segment>
 <pinref part="R42" gate="G$1" pin="2"/>
 <wire x1="551.18" y1="76.2" x2="563.88" y2="76.2" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$61" class="0">
-<segment>
-<pinref part="J5" gate="G$1" pin="4"/>
-<wire x1="584.2" y1="213.36" x2="596.9" y2="213.36" width="0.1524" layer="91"/>
-<label x="596.9" y="213.36" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
