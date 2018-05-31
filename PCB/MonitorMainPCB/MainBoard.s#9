@@ -12002,6 +12002,8 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="R54" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="+3V12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="J7" library="SparkFun-Connectors" deviceset="CONN_06" device="SILK_FEMALE_PTH"/>
+<part name="C43" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
+<part name="SUPPLY43" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12243,6 +12245,8 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="R54" gate="G$1" x="769.62" y="157.48"/>
 <instance part="+3V12" gate="G$1" x="762" y="172.72"/>
 <instance part="J7" gate="G$1" x="878.84" y="63.5"/>
+<instance part="C43" gate="G$1" x="911.86" y="63.5"/>
+<instance part="SUPPLY43" gate="GND" x="911.86" y="53.34"/>
 </instances>
 <busses>
 </busses>
@@ -12620,6 +12624,16 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="770.636" y1="190.5" x2="774.7" y2="190.5" width="0.1524" layer="91"/>
 <junction x="774.7" y="190.5"/>
 </segment>
+<segment>
+<pinref part="J7" gate="G$1" pin="4"/>
+<wire x1="883.92" y1="66.04" x2="889" y2="66.04" width="0.1524" layer="91"/>
+<label x="889" y="66.04" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="C43" gate="G$1" pin="-"/>
+<pinref part="SUPPLY43" gate="GND" pin="GND"/>
+<wire x1="911.86" y1="58.42" x2="911.86" y2="55.88" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -12687,6 +12701,15 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="C34" gate="G$1" pin="1"/>
 <wire x1="810.26" y1="68.58" x2="835.66" y2="68.58" width="0.1524" layer="91"/>
 <junction x="810.26" y="68.58"/>
+</segment>
+<segment>
+<pinref part="J7" gate="G$1" pin="5"/>
+<wire x1="883.92" y1="68.58" x2="911.86" y2="68.58" width="0.1524" layer="91"/>
+<label x="919.48" y="68.58" size="1.778" layer="95" xref="yes"/>
+<pinref part="C43" gate="G$1" pin="+"/>
+<wire x1="911.86" y1="68.58" x2="919.48" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="911.86" y1="66.04" x2="911.86" y2="68.58" width="0.1524" layer="91"/>
+<junction x="911.86" y="68.58"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -14132,6 +14155,11 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="797.56" y1="142.24" x2="795.02" y2="142.24" width="0.1524" layer="91"/>
 <label x="795.02" y="142.24" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="J7" gate="G$1" pin="2"/>
+<wire x1="883.92" y1="60.96" x2="889" y2="60.96" width="0.1524" layer="91"/>
+<label x="889" y="60.96" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="URXD0" class="0">
 <segment>
@@ -14143,6 +14171,11 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="U4" gate="A" pin="P3.5/URXD0"/>
 <wire x1="797.56" y1="139.7" x2="795.02" y2="139.7" width="0.1524" layer="91"/>
 <label x="795.02" y="139.7" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J7" gate="G$1" pin="3"/>
+<wire x1="883.92" y1="63.5" x2="889" y2="63.5" width="0.1524" layer="91"/>
+<label x="889" y="63.5" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$65" class="0">
@@ -14293,42 +14326,14 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="777.24" y1="157.48" x2="774.7" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$83" class="0">
+<net name="EN_BT" class="0">
 <segment>
 <pinref part="J7" gate="G$1" pin="6"/>
 <wire x1="883.92" y1="71.12" x2="889" y2="71.12" width="0.1524" layer="91"/>
 <label x="889" y="71.12" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$84" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="5"/>
-<wire x1="883.92" y1="68.58" x2="889" y2="68.58" width="0.1524" layer="91"/>
-<label x="889" y="68.58" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$85" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="4"/>
-<wire x1="883.92" y1="66.04" x2="889" y2="66.04" width="0.1524" layer="91"/>
-<label x="889" y="66.04" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$86" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="3"/>
-<wire x1="883.92" y1="63.5" x2="889" y2="63.5" width="0.1524" layer="91"/>
-<label x="889" y="63.5" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$87" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="2"/>
-<wire x1="883.92" y1="60.96" x2="889" y2="60.96" width="0.1524" layer="91"/>
-<label x="889" y="60.96" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$88" class="0">
+<net name="STATE" class="0">
 <segment>
 <pinref part="J7" gate="G$1" pin="1"/>
 <wire x1="883.92" y1="58.42" x2="889" y2="58.42" width="0.1524" layer="91"/>

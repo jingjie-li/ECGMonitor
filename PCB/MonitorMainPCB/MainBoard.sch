@@ -6252,6 +6252,22 @@ Commonly used for small ceramic capacitors. Like our 0.1uF (http://www.sparkfun.
 <wire x1="-0.5" y1="0" x2="-3.5" y2="0" width="0.2032" layer="21"/>
 <wire x1="0.5" y1="0" x2="3.5" y2="0" width="0.2032" layer="21"/>
 </package>
+<package name="1210">
+<description>&lt;p&gt;&lt;b&gt;Generic 3225 (1210) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-1.5365" y1="1.1865" x2="1.5365" y2="1.1865" width="0.127" layer="51"/>
+<wire x1="1.5365" y1="1.1865" x2="1.5365" y2="-1.1865" width="0.127" layer="51"/>
+<wire x1="1.5365" y1="-1.1865" x2="-1.5365" y2="-1.1865" width="0.127" layer="51"/>
+<wire x1="-1.5365" y1="-1.1865" x2="-1.5365" y2="1.1865" width="0.127" layer="51"/>
+<smd name="1" x="-1.755" y="0" dx="1.27" dy="2.06" layer="1"/>
+<smd name="2" x="1.755" y="0" dx="1.27" dy="2.06" layer="1"/>
+<text x="0" y="1.397" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.397" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="-2.59" y1="1.45" x2="2.59" y2="1.45" width="0.0508" layer="39"/>
+<wire x1="2.59" y1="1.45" x2="2.59" y2="-1.45" width="0.0508" layer="39"/>
+<wire x1="2.59" y1="-1.45" x2="-2.59" y2="-1.45" width="0.0508" layer="39"/>
+<wire x1="-2.59" y1="-1.45" x2="-2.59" y2="1.45" width="0.0508" layer="39"/>
+</package>
 </packages>
 <symbols>
 <symbol name="CAP">
@@ -6668,6 +6684,63 @@ CAP-09321</description>
 <technology name="">
 <attribute name="PROD_ID" value="CAP-10142"/>
 <attribute name="VALUE" value="33pF"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="10UF" prefix="C">
+<description>&lt;h3&gt;10.0µF ceramic capacitors&lt;/h3&gt;
+&lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="CAP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0603-6.3V-20%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-11015"/>
+<attribute name="VALUE" value="10uF"/>
+</technology>
+</technologies>
+</device>
+<device name="-1206-6.3V-20%" package="1206">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-10057"/>
+<attribute name="VALUE" value="10uF"/>
+</technology>
+</technologies>
+</device>
+<device name="-0805-10V-10%" package="0805">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-11330"/>
+<attribute name="VALUE" value="10uF"/>
+</technology>
+</technologies>
+</device>
+<device name="-1210-50V-20%" package="1210">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-09824"/>
+<attribute name="VALUE" value="10uF"/>
 </technology>
 </technologies>
 </device>
@@ -9095,75 +9168,6 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lp3878-adj.pdf"&gt; Datashe
 <attribute name="MANUFACTURER_PART_NUMBER" value="LP3878MR-ADJ/NOPB" constant="no"/>
 <attribute name="RS_PART_NUMBER" value="1218984" constant="no"/>
 <attribute name="RS_PRICE/STOCK" value="http://uk.rs-online.com/web/p/products/1218984" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="SparkFun-Retired">
-<description>&lt;h3&gt;SparkFun Electronics' Retired foot prints&lt;/h3&gt;
-In this library you'll find all manner of retired footprints for resistors, capacitors, board names, ICs, etc., that are &lt;b&gt; no longer used&lt;/b&gt; in our catalog.
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="EIA3216">
-<wire x1="-1" y1="-1.2" x2="-2.5" y2="-1.2" width="0.2032" layer="21"/>
-<wire x1="-2.5" y1="-1.2" x2="-2.5" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="-2.5" y1="1.2" x2="-1" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="1" y1="-1.2" x2="2.1" y2="-1.2" width="0.2032" layer="21"/>
-<wire x1="2.1" y1="-1.2" x2="2.5" y2="-0.8" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="-0.8" x2="2.5" y2="0.8" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="0.8" x2="2.1" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="2.1" y1="1.2" x2="1" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="0.381" y1="1.016" x2="0.381" y2="-1.016" width="0.127" layer="21"/>
-<smd name="C" x="-1.4" y="0" dx="1.6" dy="1.4" layer="1" rot="R90"/>
-<smd name="A" x="1.4" y="0" dx="1.6" dy="1.4" layer="1" rot="R90"/>
-<text x="-2.54" y="1.381" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.408" y="1.332" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="CAP_POL">
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202" cap="flat"/>
-<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341" cap="flat"/>
-<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
-<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
-<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
-<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="10UF-TANT" prefix="C" uservalue="yes">
-<description>10uF Tantalum SMT&lt;br&gt;
-CAP-00811- 16V 10% (EIA-3216)</description>
-<gates>
-<gate name="G$1" symbol="CAP_POL" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="EIA3216">
-<connects>
-<connect gate="G$1" pin="+" pad="A"/>
-<connect gate="G$1" pin="-" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-00811"/>
-<attribute name="VALUE" value="10uF" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -17549,15 +17553,11 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="R18" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="C15" library="SparkFun-Capacitors" deviceset="10NF" device="-0603-50V-10%" value="10nF"/>
 <part name="C16" library="SparkFun-Capacitors" deviceset="1.0NF/1000PF" device="-0603-50V-10%" value="1nF"/>
-<part name="C17" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="D1" library="SparkFun-LED" deviceset="LED-GREEN" device="1206" value="GREEN"/>
 <part name="R19" library="SparkFun-Resistors" deviceset="4.7KOHM" device="-0603-1/10W-1%" value="4.7k"/>
-<part name="C18" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="L1" library="SparkFun-Coils" deviceset="INDUCTOR" device="-0805-3.3UH" value="3.3µH/±20%/450mA"/>
 <part name="L2" library="SparkFun-Coils" deviceset="INDUCTOR" device="-0805-3.3UH" value="3.3µH/±20%/450mA"/>
-<part name="C19" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
-<part name="C20" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R20" library="SparkFun-Resistors" deviceset="0OHM" device="-0603-1/10W-5%" value="0"/>
@@ -17566,7 +17566,6 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C13" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="C14" library="SparkFun-Capacitors" deviceset="10NF" device="-0603-50V-10%" value="10nF"/>
 <part name="R22" library="SparkFun-Resistors" deviceset="75KOHM" device="-0603-1/10W-1%" value="75k"/>
 <part name="R23" library="SparkFun-Resistors" deviceset="47KOHM" device="-0603-1/10W-1%" value="47k"/>
@@ -17575,12 +17574,9 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="R25" library="SparkFun-Resistors" deviceset="0OHM" device="-0603-1/10W-5%" value="0"/>
 <part name="R26" library="SparkFun-Resistors" deviceset="0OHM" device="-0603-1/10W-5%" value="0"/>
 <part name="3V3-POWER-TESTPOINT2" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
-<part name="C22" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="L3" library="SparkFun-Coils" deviceset="INDUCTOR" device="-0805-3.3UH" value="3.3µH/±20%/450mA"/>
 <part name="L4" library="SparkFun-Coils" deviceset="INDUCTOR" device="-0805-3.3UH" value="3.3µH/±20%/450mA"/>
-<part name="C23" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
-<part name="C24" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R27" library="SparkFun-Resistors" deviceset="0OHM" device="-0603-1/10W-5%" value="0"/>
@@ -17681,9 +17677,17 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="R54" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="+3V12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="J7" library="SparkFun-Connectors" deviceset="CONN_06" device="SILK_FEMALE_PTH"/>
-<part name="C43" library="SparkFun-Retired" deviceset="10UF-TANT" device="" value="10uF"/>
 <part name="SUPPLY43" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="U$6" library="xjtulogo" deviceset="XJTULOGO" device=""/>
+<part name="C13" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C17" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C18" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C22" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C19" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C20" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C23" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C24" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="C43" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -17791,15 +17795,11 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="R18" gate="G$1" x="393.7" y="231.14" rot="R90"/>
 <instance part="C15" gate="G$1" x="378.46" y="228.6"/>
 <instance part="C16" gate="G$1" x="386.08" y="241.3"/>
-<instance part="C17" gate="G$1" x="332.74" y="231.14"/>
 <instance part="D1" gate="G$1" x="325.12" y="238.76"/>
 <instance part="R19" gate="G$1" x="325.12" y="228.6" rot="R90"/>
-<instance part="C18" gate="G$1" x="408.94" y="243.84"/>
 <instance part="SUPPLY11" gate="GND" x="408.94" y="231.14"/>
 <instance part="L1" gate="G$1" x="421.64" y="248.92" rot="R90"/>
 <instance part="L2" gate="G$1" x="421.64" y="231.14" rot="R90"/>
-<instance part="C19" gate="G$1" x="431.8" y="243.84"/>
-<instance part="C20" gate="G$1" x="431.8" y="226.06"/>
 <instance part="SUPPLY12" gate="GND" x="431.8" y="233.68"/>
 <instance part="SUPPLY13" gate="GND" x="431.8" y="215.9"/>
 <instance part="R20" gate="G$1" x="452.12" y="248.92"/>
@@ -17808,7 +17808,6 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="P+5" gate="1" x="332.74" y="210.82"/>
 <instance part="GND7" gate="1" x="332.74" y="152.4"/>
 <instance part="SUPPLY14" gate="GND" x="393.7" y="152.4"/>
-<instance part="C13" gate="G$1" x="332.74" y="172.72"/>
 <instance part="C14" gate="G$1" x="337.82" y="170.18"/>
 <instance part="R22" gate="G$1" x="393.7" y="185.42" rot="R90"/>
 <instance part="R23" gate="G$1" x="393.7" y="167.64" rot="R90"/>
@@ -17817,12 +17816,9 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="R25" gate="G$1" x="332.74" y="248.92" rot="R90"/>
 <instance part="R26" gate="G$1" x="332.74" y="200.66" rot="R90"/>
 <instance part="3V3-POWER-TESTPOINT2" gate="G$1" x="414.02" y="182.88" rot="R90"/>
-<instance part="C22" gate="G$1" x="424.18" y="185.42"/>
 <instance part="SUPPLY15" gate="GND" x="424.18" y="152.4"/>
 <instance part="L3" gate="G$1" x="457.2" y="208.28" rot="R90"/>
 <instance part="L4" gate="G$1" x="457.2" y="193.04" rot="R90"/>
-<instance part="C23" gate="G$1" x="467.36" y="205.74"/>
-<instance part="C24" gate="G$1" x="467.36" y="190.5"/>
 <instance part="SUPPLY16" gate="GND" x="467.36" y="182.88"/>
 <instance part="SUPPLY17" gate="GND" x="467.36" y="198.12"/>
 <instance part="R27" gate="G$1" x="477.52" y="208.28"/>
@@ -17925,9 +17921,17 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="R54" gate="G$1" x="769.62" y="157.48"/>
 <instance part="+3V12" gate="G$1" x="762" y="172.72"/>
 <instance part="J7" gate="G$1" x="878.84" y="63.5"/>
-<instance part="C43" gate="G$1" x="911.86" y="63.5"/>
 <instance part="SUPPLY43" gate="GND" x="911.86" y="53.34"/>
 <instance part="U$6" gate="G$1" x="828.04" y="99.06"/>
+<instance part="C13" gate="G$1" x="332.74" y="228.6"/>
+<instance part="C17" gate="G$1" x="332.74" y="170.18"/>
+<instance part="C18" gate="G$1" x="408.94" y="241.3"/>
+<instance part="C22" gate="G$1" x="424.18" y="182.88"/>
+<instance part="C19" gate="G$1" x="431.8" y="241.3"/>
+<instance part="C20" gate="G$1" x="431.8" y="223.52"/>
+<instance part="C23" gate="G$1" x="467.36" y="203.2"/>
+<instance part="C24" gate="G$1" x="467.36" y="187.96"/>
+<instance part="C43" gate="G$1" x="911.86" y="60.96"/>
 </instances>
 <busses>
 </busses>
@@ -18046,7 +18050,6 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="340.36" y1="223.52" x2="340.36" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="360.68" y1="223.52" x2="340.36" y2="223.52" width="0.1524" layer="91"/>
 <junction x="340.36" y="223.52"/>
-<pinref part="C17" gate="G$1" pin="-"/>
 <wire x1="332.74" y1="226.06" x2="332.74" y2="223.52" width="0.1524" layer="91"/>
 <wire x1="332.74" y1="223.52" x2="340.36" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="R16" gate="G$1" pin="1"/>
@@ -18062,25 +18065,25 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="IC2" gate="G$1" pin="NC_1"/>
 <wire x1="378.46" y1="241.3" x2="360.68" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="360.68" y1="241.3" x2="360.68" y2="223.52" width="0.1524" layer="91"/>
+<pinref part="C13" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="C18" gate="G$1" pin="-"/>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
 <wire x1="408.94" y1="238.76" x2="408.94" y2="233.68" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="C20" gate="G$1" pin="-"/>
 <pinref part="SUPPLY13" gate="GND" pin="GND"/>
 <wire x1="431.8" y1="220.98" x2="431.8" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="C20" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="C19" gate="G$1" pin="-"/>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
 <wire x1="431.8" y1="238.76" x2="431.8" y2="236.22" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
-<pinref part="C13" gate="G$1" pin="-"/>
 <wire x1="332.74" y1="167.64" x2="332.74" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="EP"/>
 <wire x1="332.74" y1="157.48" x2="332.74" y2="154.94" width="0.1524" layer="91"/>
@@ -18097,6 +18100,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="337.82" y1="157.48" x2="332.74" y2="157.48" width="0.1524" layer="91"/>
 <junction x="337.82" y="157.48"/>
 <junction x="332.74" y="157.48"/>
+<pinref part="C17" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="R23" gate="G$1" pin="1"/>
@@ -18108,17 +18112,9 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <junction x="393.7" y="157.48"/>
 </segment>
 <segment>
-<pinref part="C22" gate="G$1" pin="-"/>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
 <wire x1="424.18" y1="180.34" x2="424.18" y2="154.94" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="C24" gate="G$1" pin="-"/>
-<pinref part="SUPPLY16" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="C23" gate="G$1" pin="-"/>
-<pinref part="SUPPLY17" gate="GND" pin="GND"/>
+<pinref part="C22" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U3" gate="A" pin="RX_ANA_GND_2"/>
@@ -18311,9 +18307,17 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <label x="889" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="C43" gate="G$1" pin="-"/>
 <pinref part="SUPPLY43" gate="GND" pin="GND"/>
 <wire x1="911.86" y1="58.42" x2="911.86" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="C43" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="SUPPLY17" gate="GND" pin="GND"/>
+<pinref part="C23" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="SUPPLY16" gate="GND" pin="GND"/>
+<pinref part="C24" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -18387,10 +18391,10 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="J7" gate="G$1" pin="5"/>
 <wire x1="883.92" y1="68.58" x2="911.86" y2="68.58" width="0.1524" layer="91"/>
 <label x="919.48" y="68.58" size="1.778" layer="95" xref="yes"/>
-<pinref part="C43" gate="G$1" pin="+"/>
 <wire x1="911.86" y1="68.58" x2="919.48" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="911.86" y1="66.04" x2="911.86" y2="68.58" width="0.1524" layer="91"/>
 <junction x="911.86" y="68.58"/>
+<pinref part="C43" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -18913,7 +18917,6 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="C18" gate="G$1" pin="+"/>
 <wire x1="408.94" y1="248.92" x2="408.94" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="408.94" y1="248.92" x2="414.02" y2="248.92" width="0.1524" layer="91"/>
@@ -18926,6 +18929,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="403.86" y1="246.38" x2="403.86" y2="248.92" width="0.1524" layer="91"/>
 <wire x1="403.86" y1="248.92" x2="408.94" y2="248.92" width="0.1524" layer="91"/>
 <junction x="408.94" y="248.92"/>
+<pinref part="C18" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -18977,23 +18981,23 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <net name="N$23" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="2"/>
-<pinref part="C19" gate="G$1" pin="+"/>
 <wire x1="426.72" y1="248.92" x2="431.8" y2="248.92" width="0.1524" layer="91"/>
 <wire x1="431.8" y1="248.92" x2="431.8" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="431.8" y1="248.92" x2="447.04" y2="248.92" width="0.1524" layer="91"/>
 <junction x="431.8" y="248.92"/>
 <pinref part="R20" gate="G$1" pin="1"/>
+<pinref part="C19" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="L2" gate="G$1" pin="2"/>
-<pinref part="C20" gate="G$1" pin="+"/>
 <wire x1="426.72" y1="231.14" x2="431.8" y2="231.14" width="0.1524" layer="91"/>
 <wire x1="431.8" y1="231.14" x2="431.8" y2="228.6" width="0.1524" layer="91"/>
 <wire x1="431.8" y1="231.14" x2="447.04" y2="231.14" width="0.1524" layer="91"/>
 <junction x="431.8" y="231.14"/>
 <pinref part="R21" gate="G$1" pin="1"/>
+<pinref part="C20" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="LED_DRV_SUP" class="0">
@@ -19104,17 +19108,16 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <wire x1="337.82" y1="251.46" x2="378.46" y2="251.46" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="!SHUTDOWN"/>
 <wire x1="378.46" y1="251.46" x2="378.46" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C17" gate="G$1" pin="+"/>
 <wire x1="332.74" y1="236.22" x2="332.74" y2="233.68" width="0.1524" layer="91"/>
 <junction x="332.74" y="236.22"/>
 <pinref part="R25" gate="G$1" pin="1"/>
+<pinref part="C13" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
 <pinref part="U2" gate="A" pin="IN"/>
 <wire x1="332.74" y1="193.04" x2="342.9" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="C13" gate="G$1" pin="+"/>
 <wire x1="332.74" y1="193.04" x2="332.74" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="EN"/>
 <wire x1="332.74" y1="185.42" x2="332.74" y2="175.26" width="0.1524" layer="91"/>
@@ -19123,13 +19126,13 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="R26" gate="G$1" pin="1"/>
 <wire x1="332.74" y1="195.58" x2="332.74" y2="193.04" width="0.1524" layer="91"/>
 <junction x="332.74" y="193.04"/>
+<pinref part="C17" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="RX_SUP" class="0">
 <segment>
 <pinref part="3V3-POWER-TESTPOINT2" gate="G$1" pin="1"/>
 <wire x1="414.02" y1="190.5" x2="414.02" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="C22" gate="G$1" pin="+"/>
 <wire x1="414.02" y1="193.04" x2="424.18" y2="193.04" width="0.1524" layer="91"/>
 <wire x1="424.18" y1="193.04" x2="424.18" y2="187.96" width="0.1524" layer="91"/>
 <wire x1="424.18" y1="193.04" x2="424.18" y2="203.2" width="0.1524" layer="91"/>
@@ -19143,14 +19146,15 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="L4" gate="G$1" pin="1"/>
 <wire x1="444.5" y1="193.04" x2="452.12" y2="193.04" width="0.1524" layer="91"/>
 <junction x="444.5" y="193.04"/>
+<pinref part="C22" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$28" class="0">
 <segment>
 <pinref part="L3" gate="G$1" pin="2"/>
-<wire x1="462.28" y1="208.28" x2="467.36" y2="208.28" width="0.1524" layer="91"/>
-<pinref part="C23" gate="G$1" pin="+"/>
 <pinref part="R27" gate="G$1" pin="1"/>
+<wire x1="462.28" y1="208.28" x2="467.36" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="C23" gate="G$1" pin="1"/>
 <wire x1="467.36" y1="208.28" x2="472.44" y2="208.28" width="0.1524" layer="91"/>
 <junction x="467.36" y="208.28"/>
 </segment>
@@ -19158,9 +19162,9 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <net name="N$30" class="0">
 <segment>
 <pinref part="L4" gate="G$1" pin="2"/>
-<wire x1="462.28" y1="193.04" x2="467.36" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="C24" gate="G$1" pin="+"/>
 <pinref part="R28" gate="G$1" pin="1"/>
+<wire x1="462.28" y1="193.04" x2="467.36" y2="193.04" width="0.1524" layer="91"/>
+<pinref part="C24" gate="G$1" pin="1"/>
 <wire x1="467.36" y1="193.04" x2="472.44" y2="193.04" width="0.1524" layer="91"/>
 <junction x="467.36" y="193.04"/>
 </segment>
