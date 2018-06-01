@@ -260,7 +260,7 @@
 <text x="52.6286" y="81.7586" size="1.6764" layer="25" font="vector" ratio="18">MCU MODULE</text>
 <text x="47.2946" y="88.8706" size="1.27" layer="25" font="vector" ratio="18">RESET BOTTOMS</text>
 <text x="26.6192" y="19.9644" size="1.016" layer="25" font="vector" ratio="20">U1</text>
-<text x="49.7332" y="60.3504" size="1.016" layer="21" font="vector" ratio="20">U4</text>
+<text x="49.7332" y="60.3504" size="1.016" layer="21" font="vector" ratio="20">U5</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">

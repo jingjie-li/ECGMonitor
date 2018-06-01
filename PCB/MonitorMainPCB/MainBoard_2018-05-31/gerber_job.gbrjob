@@ -1,0 +1,13 @@
+G04 Gerber job file.*
+%TF.FileFunction,JobInfo*%
+%TF.GenerationSoftware,Autodesk,EAGLE,8.6.0*%
+%TF.CreationDate,2018-05-31T17:21:58Z*%
+%TF.Part,Single*%
+%MOMM*%
+%TJ.B_Owner,Jingjie Li <jingjie.li@stu.xjtu.edu.cn>*%
+%TJ.B_ID,MainBoard*%
+%TJ.B_LayerNum,2*%
+%TJ.B_Thickness,1.570000*%
+%TJ.B_Size_X,94.108856*%
+%TJ.B_Size_Y,99.969350*%
+M02*

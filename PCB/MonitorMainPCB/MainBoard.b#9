@@ -10901,9 +10901,9 @@ design rules under a new name.</description>
 <element name="U$6" library="xjtulogo" package="XJTULOGO" value="XJTULOGO" x="79.5782" y="76.7842" locked="yes"/>
 <element name="U$7" library="xjtulogo" package="MICELOGO" value="" x="57.658" y="43.688" locked="yes"/>
 <element name="C13" library="SparkFun-Capacitors" package="1206" value="10uF" x="48.514" y="10.16" smashed="yes" rot="R270">
-<attribute name="NAME" x="46.609" y="9.906" size="0.8128" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
+<attribute name="NAME" x="49.911" y="10.16" size="0.8128" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="48.514" y="10.16" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="50.419" y="10.16" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
+<attribute name="VALUE" x="47.371" y="9.398" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
 <element name="C17" library="SparkFun-Capacitors" package="1206" value="10uF" x="52.578" y="19.558" smashed="yes">
 <attribute name="NAME" x="52.578" y="17.653" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
