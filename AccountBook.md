@@ -17,4 +17,4 @@ Li, Jingjie | Taxi 2 | 9.3 |~|~|9.3
 Li,Jinming | USB-TTL-Convertor| 50|2|1|50
 Li,Jinming | Express fee of blueteeth | 5|1|1|0
 Li,Jingjie | ADS-AFE Joint Test PCB | 123|5|1|123
-
+Tao, Haoyi | PCB | 55 |~ | ~ | 100
