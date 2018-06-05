@@ -3,7 +3,7 @@
 <eagle version="8.6.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -223,7 +223,7 @@
 <text x="56.47055" y="36.64585" size="1" layer="21" font="vector" ratio="18">LED_DRV_SUP</text>
 <text x="56.44515" y="34.15665" size="1" layer="21" font="vector" ratio="18">RX_DIG_SUP</text>
 <text x="56.44515" y="32.12465" size="1" layer="21" font="vector" ratio="18">RX_ANA_SUP</text>
-<text x="57.8612" y="16.9164" size="1.016" layer="21" font="vector" ratio="20">U3</text>
+<text x="57.8612" y="16.9164" size="1.016" layer="25" font="vector" ratio="20">U5</text>
 <text x="26.543" y="18.6436" size="1.016" layer="25" font="vector" ratio="20">LM1117</text>
 <text x="31.0642" y="71.8312" size="1.016" layer="25" font="vector" ratio="20">AFE4400</text>
 <text x="29.7688" y="91.7702" size="1.016" layer="25" font="vector" ratio="20">8MHz</text>
@@ -260,7 +260,6 @@
 <text x="52.6286" y="81.7586" size="1.6764" layer="25" font="vector" ratio="18">MCU MODULE</text>
 <text x="47.2946" y="88.8706" size="1.27" layer="25" font="vector" ratio="18">RESET BOTTOMS</text>
 <text x="26.6192" y="19.9644" size="1.016" layer="25" font="vector" ratio="20">U1</text>
-<text x="49.7332" y="60.3504" size="1.016" layer="21" font="vector" ratio="20">U5</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">

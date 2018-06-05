@@ -10931,12 +10931,12 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="82.296" y="10.033" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C23" library="SparkFun-Capacitors" package="1206" value="10uF" x="76.962" y="23.876" smashed="yes">
-<attribute name="NAME" x="76.962" y="25.019" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="76.708" y="25.273" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="76.962" y="23.876" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="76.962" y="22.733" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C24" library="SparkFun-Capacitors" package="1206" value="10uF" x="77.978" y="29.21" smashed="yes">
-<attribute name="NAME" x="78.232" y="30.353" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="77.978" y="30.607" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="77.978" y="29.21" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="77.978" y="28.067" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
