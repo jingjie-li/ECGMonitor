@@ -3,7 +3,7 @@
 <eagle version="8.6.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -223,7 +223,7 @@
 <text x="56.47055" y="36.64585" size="1" layer="21" font="vector" ratio="18">LED_DRV_SUP</text>
 <text x="56.44515" y="34.15665" size="1" layer="21" font="vector" ratio="18">RX_DIG_SUP</text>
 <text x="56.44515" y="32.12465" size="1" layer="21" font="vector" ratio="18">RX_ANA_SUP</text>
-<text x="57.8612" y="16.9164" size="1.016" layer="25" font="vector" ratio="20">U1</text>
+<text x="57.8612" y="16.9164" size="1.016" layer="21" font="vector" ratio="20">U3</text>
 <text x="26.543" y="18.6436" size="1.016" layer="25" font="vector" ratio="20">LM1117</text>
 <text x="31.0642" y="71.8312" size="1.016" layer="25" font="vector" ratio="20">AFE4400</text>
 <text x="29.7688" y="91.7702" size="1.016" layer="25" font="vector" ratio="20">8MHz</text>
@@ -259,6 +259,7 @@
 <text x="59.0296" y="43.7388" size="1.27" layer="25" font="vector" ratio="20">HUMSTER TEAM, XJTU-BME</text>
 <text x="52.6286" y="81.7586" size="1.6764" layer="25" font="vector" ratio="18">MCU MODULE</text>
 <text x="47.2946" y="88.8706" size="1.27" layer="25" font="vector" ratio="18">RESET BOTTOMS</text>
+<text x="26.6192" y="19.9644" size="1.016" layer="25" font="vector" ratio="20">U1</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">
@@ -10921,22 +10922,22 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="66.675" y="26.416" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
 <element name="C19" library="SparkFun-Capacitors" package="1206" value="10uF" x="82.042" y="15.24" smashed="yes">
-<attribute name="NAME" x="82.296" y="16.637" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="82.042" y="16.383" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="82.042" y="15.24" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="82.042" y="14.097" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C20" library="SparkFun-Capacitors" package="1206" value="10uF" x="82.296" y="11.176" smashed="yes">
-<attribute name="NAME" x="82.296" y="12.573" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="82.296" y="12.319" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="82.296" y="11.176" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="82.296" y="10.033" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C23" library="SparkFun-Capacitors" package="1206" value="10uF" x="76.962" y="23.876" smashed="yes">
-<attribute name="NAME" x="76.962" y="25.273" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="76.962" y="25.019" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="76.962" y="23.876" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="76.962" y="22.733" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C24" library="SparkFun-Capacitors" package="1206" value="10uF" x="77.978" y="29.21" smashed="yes">
-<attribute name="NAME" x="78.486" y="30.607" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="78.232" y="30.353" size="0.8128" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-10057" x="77.978" y="29.21" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="77.978" y="28.067" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
