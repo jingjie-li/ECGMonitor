@@ -89,7 +89,7 @@ int main( void )
         UartWriteChar(q);
         break;
       case 'M':
-        for(uint32_t k = 0;k<10000;k++)
+        for(uint32_t k = 0;k<1000000;k++)
         {
             TI_ADS1293_SPIStreamReadReg(read_buf, count);           
             UartWriteint(read_buf[0]);

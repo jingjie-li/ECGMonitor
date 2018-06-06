@@ -123,8 +123,8 @@ char SpiMasterInit(long baud,char dataBits,char mode,char clkMode)
     if(fen<2)return (0);            //分频系数必须大于2
     else
     {
-        UxBR0 = fen / 256;
-        UxBR1 = fen % 256;
+        UxBR1 = fen / 256;
+        UxBR0 = fen % 256;
     }
     
     //------------------------设置数据位-------------------------    
