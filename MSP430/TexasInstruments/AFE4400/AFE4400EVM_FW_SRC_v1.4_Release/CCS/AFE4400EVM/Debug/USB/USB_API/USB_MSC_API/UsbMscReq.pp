@@ -1,9 +1,0 @@
-# FIXED
-
-USB/USB_API/USB_MSC_API/UsbMscReq.obj: C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_API/USB_MSC_API/UsbMscReq.c
-USB/USB_API/USB_MSC_API/UsbMscReq.obj: C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_config/descriptors.h
-USB/USB_API/USB_MSC_API/UsbMscReq.obj: C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_API/USB_Common/types.h
-
-C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_API/USB_MSC_API/UsbMscReq.c: 
-C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_config/descriptors.h: 
-C:/Users/a0273681/Documents/Aroul/Projects/Others/F5529/MSP430F5529__Projects/AFE4400-AFE4490EVM_FW_SRC/AFE4400EVM_FW_SRC_v1.4_Release/USB/USB_API/USB_Common/types.h: 
