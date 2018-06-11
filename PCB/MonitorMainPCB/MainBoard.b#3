@@ -283,7 +283,6 @@
 <text x="85.852" y="66.9036" size="1" layer="21" font="vector" ratio="18">ALM</text>
 <text x="85.852" y="65.5066" size="1" layer="21" font="vector" ratio="18">MCU</text>
 <text x="48.3108" y="43.5102" size="1.016" layer="25" font="vector" ratio="20">12MHz</text>
-<text x="59.4868" y="51.3842" size="1.016" layer="25" font="vector" ratio="20" rot="R90">P6</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">
@@ -9714,7 +9713,7 @@ design rules under a new name.</description>
 </element>
 <element name="U$5" library="ch340g" package="SOIC16" value="CH340G" x="54.483" y="55.4482" locked="yes" smashed="yes" rot="R270"/>
 <element name="C34" library="SparkFun-Capacitors" package="0603" value="0.1uF" x="60.4012" y="59.7916" smashed="yes" rot="R135">
-<attribute name="NAME" x="59.571184375" y="59.342584375" size="0.8128" layer="25" font="vector" ratio="20" rot="R135" align="bottom-center"/>
+<attribute name="NAME" x="58.809184375" y="60.231584375" size="0.8128" layer="25" font="vector" ratio="20" rot="R135" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-00810" x="60.4012" y="59.7916" size="1.778" layer="27" rot="R135" display="off"/>
 <attribute name="VALUE" x="60.9400125" y="60.3304125" size="0.6096" layer="27" font="vector" ratio="20" rot="R135" align="top-center"/>
 </element>
