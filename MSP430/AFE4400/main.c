@@ -22,8 +22,9 @@
  * 修改描述：   
 **----------------------------------------------------------------*/
 
-#include "msp430x16x.h"   //430寄存器头文件
+#include "msp430x14x.h"   //430寄存器头文件
 #include "Uart.h"         //串口通讯程序库头文件
+#include "Spi.h"
 
 char str[] = "UartWriteChar"; //ROM中一个字符串
 
