@@ -38,10 +38,8 @@
 #include "TI_AFE4400.h" 
 #include "TI_AFE4400_setting.h"
 //***********************************************************************************
-//#define ADS1293_READ_BIT                              (0x80)
-//#define ADS1293_WRITE_BIT                             (0x7F)
+
 #define TI_ADS1293_CONFIG_REG                         (0x00) 
-//#define TI_ADS1293_DATA_LOOP_REG                      (0x50)
                  /* Main Configuration */
 //------------------------------------------------------------------------------
 //  void TI_ADS1293_SPIWriteReg(uint8_t_t addr, uint8_t_t value)
@@ -56,7 +54,7 @@ void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value)
 
   CS = CS_ENABLED;                                                             // /CS enable 
   
-  inst = ADS1293_WRITE_BIT & addr;                                             // register address
+  inst = AFE4400_WRITE_BIT & addr;                                             // register address
   SpiWriteData(inst);                                                          // Send register address
   
   SpiWriteData(value);                                                         // Send data value  
@@ -78,7 +76,7 @@ uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
   
   CS = CS_ENABLED;                                                             // /CS enable
  
-  inst = ADS1293_READ_BIT | addr;                                              // register address
+  inst = AFE4400_READ_BIT | addr;                                              // register address
   
 //  WAIT_1_3US(2);                                                               // Wait 
   SpiWriteData(inst);                                                          // Send lower register address  
@@ -100,17 +98,24 @@ uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
 //  buffer are incremented sequentially (within the ADS1293 and CC254x
 //  respectively) until "count" writes have been performed. 
 //------------------------------------------------------------------------------
-void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, uint8_t *buffer, uint8_t count)
+void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, unsigned long value, uint8_t count)
 {
   uint8_t inst, i;
 
   CS = CS_ENABLED;                                                             // /CS enable
   
-  inst = ADS1293_WRITE_BIT & addr;                                             // register address
+  inst = AFE4400_WRITE_BIT & addr;                                             // register address
+
+  uint8_t write_buf[3];
+  write_buf[0] = value & 0xFF;
+  write_buf[1] = (value>>8) & 0xFF;
+  write_buf[2] = (value>>16) & 0xFF;
   SpiWriteData(inst);                                                          // Send register address
-   
+  
   for(i= 0; i < count; i++)
-    SpiWriteData(*(buffer+i));                                                 // Send data value  
+  {
+    SpiWriteData(write_buf[i]);
+  }// Send data value  
 
   CS = CS_DISABLED;                                                            // /CS disable
   
@@ -124,20 +129,31 @@ void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 //  "addr".  Values read are deposited sequentially starting at address
 //  "buffer", until "count" registers have been read.
 //------------------------------------------------------------------------------
-void TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
+unsigned long TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t count)
 {
+  unsigned long value = 0;
   uint8_t i, inst;
+  uint8_t write_buf[3];
   
   CS = CS_ENABLED;                                                             // /CS enable
  
-  inst = ADS1293_READ_BIT | addr;                                              // register address
+  inst = AFE4400_READ_BIT | addr;                                              // register address
   
   SpiWriteData(inst);                                                          // Send register address  
   
   for(i=0; i < count; i++)
-    *(buffer+i) = SpiWriteData(0xFF);                                             // Read data 
+  {
+    write_buf[i] = SpiWriteData(0xFF);                                             // Read data 
+  }
+  value = value | write_buf[2];
+  value = value<<8;
+  value = value | write_buf[1];
+  value = value<<8;
+  value = value | write_buf[0];
   
   CS = CS_DISABLED;                                                            // /CS disable
+  
+  return value;
 
 }
 
@@ -151,7 +167,7 @@ void TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 //  enabled in CH_CNFG. Data read are deposited sequentially starting at address "buffer" 
 //  until "count" bytes have been read.
 //------------------------------------------------------------------------------
-void TI_AFE4400_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
+void TI_AFE4400_SPIStreamReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 {
   uint8_t i, inst;
 //  static uint32 tst_count = 0;
@@ -159,7 +175,7 @@ void TI_AFE4400_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
   
   CS = CS_ENABLED;                                                             // /CS enable
  
-  inst = ADS1293_READ_BIT | TI_ADS1293_DATA_LOOP_REG;                          // read from data loop register
+  inst = AFE4400_READ_BIT | addr;                          // read from data loop register
   
   SpiWriteData(inst);                                                          // Send register address
   
@@ -188,81 +204,73 @@ void TI_AFE4400_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
 void TI_AFE4400_WriteRegSettings(void)
 {
 
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_CONFIG_REG, 
-                          TI_ADS1293_CONFIG_REG_VALUE);           
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_CH1_CN_REG, 
-                          TI_ADS1293_FLEX_CH1_CN_REG_VALUE);    
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_CH2_CN_REG, 
-                          TI_ADS1293_FLEX_CH2_CN_REG_VALUE);  
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_CH3_CN_REG, 
-                          TI_ADS1293_FLEX_CH3_CN_REG_VALUE);   
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_PACE_CN_REG, 
-  //                        TI_ADS1293_FLEX_PACE_CN_REG_VALUE);           
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_VBAT_CN_REG, 
-  //                        TI_ADS1293_FLEX_VBAT_CN_REG_VALUE);             
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CN_REG, 
-   //                       TI_ADS1293_LOD_CN_REG_VALUE);              
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_EN_REG, 
-  //                        TI_ADS1293_LOD_EN_REG_VALUE);                
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CURRENT_REG, 
-  //                        TI_ADS1293_LOD_CURRENT_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_AC_CN_REG, 
-   //                       TI_ADS1293_LOD_AC_CN_REG_VALUE);              
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_CMDET_EN_REG, 
-                          TI_ADS1293_CMDET_EN_REG_VALUE);             
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_CMDET_CN_REG, 
-  //                        TI_ADS1293_CMDET_CN_REG_VALUE);       
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_RLD_CN_REG, 
-                          TI_ADS1293_RLD_CN_REG_VALUE);          
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN1_REG, 
-                          TI_ADS1293_WILSON_EN1_REG_VALUE);              
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN2_REG, 
-                          TI_ADS1293_WILSON_EN2_REG_VALUE);               
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN3_REG, 
-                          TI_ADS1293_WILSON_EN3_REG_VALUE);                
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_CN_REG, 
-                          TI_ADS1293_WILSON_CN_REG_VALUE);            
- 
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_REF_CN_REG, 
-  //                        TI_ADS1293_REF_CN_REG_VALUE);             
-  
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_OSC_CN_REG, 
-                          TI_ADS1293_OSC_CN_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_RES_REG, 
-  //                        TI_ADS1293_AFE_RES_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_SHDN_CN_REG, 
-   //                       TI_ADS1293_AFE_SHDN_CN_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_FAULT_CN_REG, 
-  //                        TI_ADS1293_AFE_FAULT_CN_REG_VALUE);           
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_DITHER_EN_REG, 
-  //                        TI_ADS1293_AFE_DITHER_EN_REG_VALUE);          
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_PACE_CN_REG, 
-  //                        TI_ADS1293_AFE_PACE_CN_REG_VALUE);     
-  
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_R2_RATE_REG, 
-                          TI_ADS1293_R2_RATE_REG_VALUE);         
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_R3_RATE1_REG, 
-                          TI_ADS1293_R3_RATE1_REG_VALUE);         
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_R3_RATE2_REG, 
-                          TI_ADS1293_R3_RATE2_REG_VALUE);           
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_R3_RATE3_REG, 
-                          TI_ADS1293_R3_RATE3_REG_VALUE);           
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_P_DRATE_REG, 
-  //                        TI_ADS1293_P_DRATE_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_DIS_EFILTER_REG, 
-  //                        TI_ADS1293_DIS_EFILTER_REG_VALUE);           
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_DRDYB_SRC_REG, 
-                          TI_ADS1293_DRDYB_SRC_REG_VALUE);             
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_SYNCOUTB_SRC_REG, 
-  //                        TI_ADS1293_SYNCOUTB_SRC_REG_VALUE);           
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_MASK_DRDYB_REG, 
-  //                        TI_ADS1293_MASK_DRDYB_REG_VALUE);             
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_MASK_ERR_REG, 
-  //                        TI_ADS1293_MASK_ERR_REG_VALUE);              
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_ALARM_FILTER_REG, 
-  //                        TI_ADS1293_ALARM_FILTER_REG_VALUE);            
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 
-                          TI_ADS1293_CH_CNFG_REG_VALUE);          
+  TI_AFE4400_SPIAutoIncWriteReg(LED2STC, 
+                          TI_AFE4400_LED2STC_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(LED2ENDC, 
+                          TI_AFE4400_LED2ENDC_REG_VALUE, 3);    
+  TI_AFE4400_SPIAutoIncWriteReg(LED2LEDSTC, 
+                          TI_AFE4400_LED2LEDSTC_REG_VALUE, 3);  
+  TI_AFE4400_SPIAutoIncWriteReg(LED2LEDENDC, 
+                          TI_AFE4400_LED2LEDENDC_REG_VALUE, 3);   
+  TI_AFE4400_SPIAutoIncWriteReg(ALED2STC, 
+                          TI_AFE4400_ALED2STC_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(ALED2ENDC, 
+                          TI_AFE4400_ALED2ENDC_REG_VALUE, 3);             
+  TI_AFE4400_SPIAutoIncWriteReg(LED1STC, 
+                          TI_AFE4400_LED1STC_REG_VALUE, 3);              
+  TI_AFE4400_SPIAutoIncWriteReg(LED1ENDC, 
+                          TI_AFE4400_LED1ENDC_REG_VALUE, 3);                
+  TI_AFE4400_SPIAutoIncWriteReg(LED1LEDSTC, 
+                          TI_AFE4400_LED1LEDSTC_REG_VALUE, 3);            
+  TI_AFE4400_SPIAutoIncWriteReg(LED1LEDENDC, 
+                          TI_AFE4400_LED1LEDENDC_REG_VALUE, 3);              
+  TI_AFE4400_SPIAutoIncWriteReg(ALED1STC, 
+                          TI_AFE4400_ALED1STC_REG_VALUE, 3);             
+  TI_AFE4400_SPIAutoIncWriteReg(ALED1ENDC, 
+                          TI_AFE4400_ALED1ENDC_REG_VALUE, 3);       
+  TI_AFE4400_SPIAutoIncWriteReg(LED2CONVST, 
+                          TI_AFE4400_LED2CONVST_REG_VALUE, 3);          
+  TI_AFE4400_SPIAutoIncWriteReg(LED2CONVEND, 
+                          TI_AFE4400_LED2CONVEND_REG_VALUE, 3);              
+  TI_AFE4400_SPIAutoIncWriteReg(ALED2CONVST, 
+                          TI_AFE4400_ALED2CONVST_REG_VALUE, 3);               
+  TI_AFE4400_SPIAutoIncWriteReg(ALED2CONVEND, 
+                          TI_AFE4400_ALED2CONVEND_REG_VALUE, 3);                
+  TI_AFE4400_SPIAutoIncWriteReg(LED1CONVST, 
+                          TI_AFE4400_LED1CONVST_REG_VALUE, 3);            
+  TI_AFE4400_SPIAutoIncWriteReg(LED1CONVEND, 
+                          TI_AFE4400_LED1CONVEND_REG_VALUE, 3);             
+  TI_AFE4400_SPIAutoIncWriteReg(ALED1CONVST, 
+                          TI_AFE4400_ALED1CONVST_REG_VALUE, 3);            
+  TI_AFE4400_SPIAutoIncWriteReg(ALED1CONVEND, 
+                          TI_AFE4400_ALED1CONVEND_REG_VALUE, 3);   
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT0, 
+                          TI_AFE4400_ADCRSTSTCT0_REG_VALUE, 3);            
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT0, 
+                          TI_AFE4400_ADCRSTENDCT0_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT1, 
+                          TI_AFE4400_ADCRSTSTCT1_REG_VALUE, 3);          
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT1, 
+                          TI_AFE4400_ADCRSTENDCT1_REG_VALUE, 3);     
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT2, 
+                          TI_AFE4400_ADCRSTSTCT2_REG_VALUE, 3);         
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT2, 
+                          TI_AFE4400_ADCRSTENDCT2_REG_VALUE, 3);         
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT3, 
+                          TI_AFE4400_ADCRSTSTCT3_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT3, 
+                          TI_AFE4400_ADCRSTENDCT3_REG_VALUE, 3);     
+  TI_AFE4400_SPIAutoIncWriteReg(PRPCOUNT, 
+                          TI_AFE4400_PRPCOUNT_REG_VALUE, 3);            
+  TI_AFE4400_SPIAutoIncWriteReg(CONTROL1, 
+                          TI_AFE4400_CONTROL1_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(TIA_AMB_GAIN, 
+                          TI_AFE4400_TIA_AMB_GAIN_REG_VALUE, 3);             
+  TI_AFE4400_SPIAutoIncWriteReg(LEDCNTRL, 
+                          TI_AFE4400_LEDCNTRL_REG_VALUE, 3);           
+  TI_AFE4400_SPIAutoIncWriteReg(CONTROL2, 
+                          TI_AFE4400_CONTROL2_REG_VALUE, 3);             
+         
   
 }
 //******************************************************************************

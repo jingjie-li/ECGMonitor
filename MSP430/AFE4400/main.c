@@ -21,12 +21,18 @@
  * 修改标识：   
  * 修改描述：   
 **----------------------------------------------------------------*/
-
+#include <stdint.h>
 #include "msp430x14x.h"   //430寄存器头文件
 #include "Uart.h"         //串口通讯程序库头文件
 #include "Spi.h"
+#include "MSP430_AFE_SPI.h"
+#include "TI_AFE4400.h"
+#include "TI_AFE4400_setting.h"
 
 char str[] = "UartWriteChar"; //ROM中一个字符串
+char str1[] = "start conversation!"; //ROM中一个字符串
+char str2[] = "stop conversation!"; //ROM中一个字符串
+char q = 'Q';
 
 /****************************************************************************
 * 名    称：ClkInit
@@ -44,7 +50,24 @@ void ClkInit()
         for(i=0;i<0xff;i++);
         IFG1&=~OFIFG;               //清除振荡错误标志
     }
-    BCSCTL2 |= SELM_2+SELS+DIVS_3;  //MCLK为8MHz，SMCLK为1MHz
+    BCSCTL2 |= SELM_2+SELS+DIVS_0;  //MCLK为8MHz，SMCLK为1MHz
+}
+
+/*******************************************
+函数名称：Delays
+功    能：延时一会
+参    数：无
+返回值  ：无
+********************************************/
+void Delays(uint32_t k)
+{
+    uint8_t i=100;
+    uint32_t j;
+    while(i--)
+    {
+            j=k;
+            while(j--);
+    }
 }
 
 /****************************************************************************
@@ -53,28 +76,66 @@ void ClkInit()
 * 入口参数：无
 * 出口参数：无
 ****************************************************************************/
-void main()
+int main( void )
 {
-    // Stop watchdog timer to prevent time out reset
-    WDTCTL = WDTPW + WDTHOLD;
-    
-    char chr;               //串口测试中，收到的字节
-    
-    //串口初始化之前必须调用此函数，SMCLK设为1M，9600以下波特率可以不调用
-    ClkInit();
-    
-    UartInit(38400,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
-    _EINT();
-    UartWriteStr(str);
-    UartWriteChar(0x0d);    //发送"换行"(\r)"
-    UartWriteChar(0x0a);    //发送"回车"(\n)"   
-    
-    UartWriteStr("下面测试串口收发函数\r\n");
-    
-    while(1)                    //串口测试
-    {
-        chr=UartReadChar();     //收1字节
-        UartWriteChar(chr);     //将收到的数据返回
-    }
+  // Stop watchdog timer to prevent time out reset
+  WDTCTL = WDTPW + WDTHOLD;
+  
+  ClkInit();
+  
+  uint8_t count=3;
+  uint8_t read_buf[3];
+  unsigned long val;
+ // int i = 0;
+
+//  count = CH_DATA_SIZE;                                                        // bytes to read: ADC_DOUT2 - ADCDOUT0
+
+  
+  char chr;               //串口测试中，收到的字节
+  // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
+  SpiMasterInit(4000000,8,3,1);
+  UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
+  _EINT(); 
+  
+  P1DIR = 0xff;
+  P1SEL = 0x00;  
+  Delays(10000);
+  TI_AFE4400_WriteRegSettings();  
+  while(1)                    //串口测试
+  {
+      chr = UartReadChar();
+      switch(chr)
+      {
+      case 'S':
+        UartWriteStr(str1);
+        TI_AFE4400_SPIAutoIncWriteReg(0x00, 0x000001ul, 3);
+        UartWriteChar(q);
+        break;
+      case 'T':
+        UartWriteStr(str2);
+        TI_AFE4400_SPIAutoIncWriteReg(0x00, 0x000000ul, 3);
+        UartWriteChar(q);
+        break;
+      case 'M':
+        for(uint32_t k = 0;k<1000000;k++)
+        {
+            val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
+            read_buf[0] = val & 0xFF;
+            read_buf[1] = (val>>8) & 0xFF;
+            read_buf[2] = (val>>16) & 0xFF;
+            UartWriteint(read_buf[0]);
+            UartWriteint(read_buf[1]);
+            UartWriteint(read_buf[2]);
+            UartWriteChar(0x0d);    //发送"换行"(\r)"
+            UartWriteChar(0x0a);    //发送"回车"(\n)"  
+            Delays(10);
+        }
+            break;
+
+
+      }
+      
+  }
+
 }
 

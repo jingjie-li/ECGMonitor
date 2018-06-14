@@ -324,6 +324,8 @@
 #define ADCRSTENDCT3    0x1C
 #define ADCRSTENDCT3_VAL (ADCRSTSTCT3_VAL+ADCRESET_DELAY)       // for 100HZ - 30005
 
+#define AFE4400_READ_BIT                              (0x80)
+#define AFE4400_WRITE_BIT                             (0x7F)
 /****************************************************************/
 /* Global functions*/
 /****************************************************************/

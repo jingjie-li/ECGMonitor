@@ -20,7 +20,7 @@
  * 修改标识：   
  * 修改描述：   
 **----------------------------------------------------------------*/
-
+#include <stdint.h>
 #include <msp430x14x.h>
 #include "Uart.h"
 
@@ -129,7 +129,7 @@ char UartInit(long baud,char parity,char dataBits,char stopBits)
     else
     {
       UxTCTL |= SSEL1;              //SMCLK，保证速度
-      brclk = 1000000;              //波特率发生器时钟频率=SMCLK(1MHz)
+      brclk = 8000000;              //波特率发生器时钟频率=SMCLK(1MHz)
     }
     
     //------------------------设置波特率-------------------------   
@@ -195,11 +195,17 @@ void UartLpm()
 ****************************************************************************/
 void UartWriteChar(char c)
 { 
-    while (TxFlagu==0); //UartLpm();  // 等待上一字节发完，并休眠
+    while (TxFlagu==0) UartLpm();  // 等待上一字节发完，并休眠
     TxFlagu=0;                     //
     UxTXBUF=c;
 }
 
+void UartWriteint(uint8_t c)
+{ 
+  while (TxFlagu==0) UartLpm();  // 等待上一字节发完，并休眠
+    TxFlagu=0;                     //
+    UxTXBUF=c;
+}
 /****************************************************************************
 * 名    称：UartReadChar
 * 功    能：从串口读取1字节数据
@@ -214,6 +220,12 @@ char UartReadChar()
     return(UxRXBUF);
 }
 
+uint8_t UartReadint()
+{ 
+    while (RxFlagu==0) UartLpm(); // 收到一字节?
+    RxFlagu=0;
+    return(UxRXBUF);
+}
 /****************************************************************************
 * 名    称：UartWriteStr
 * 功    能：向串口写一个字符串
@@ -229,6 +241,13 @@ void UartWriteStr(char *s)
     }
 }
 
+void UartWritearray(uint8_t *s)
+{
+    while(*s)
+    {
+        UartWriteint(*s++);
+    }
+}
 /****************************************************************************
 * 名    称：UartRx
 * 功    能：串口接收中断，每接收到1字节会发生一次中断

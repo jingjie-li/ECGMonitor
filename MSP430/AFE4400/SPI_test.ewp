@@ -1869,10 +1869,13 @@
     </settings>
   </configuration>
   <file>
-    <name>$PROJ_DIR$\AFE4400.c</name>
+    <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\main.c</name>
+    <name>$PROJ_DIR$\MSP430_AFE_SPI.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\Spi.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\Uart.c</name>

@@ -50,7 +50,7 @@
 #define TI_AFE4400_LED1CONVEND_REG_VALUE                (5999ul)                /* Clock Source and Output Clock Control */
 #define TI_AFE4400_ALED1CONVST_REG_VALUE                (6004ul)                /* Analog Front-End Frequency and Resolution */
 #define TI_AFE4400_ALED1CONVEND_REG_VALUE               (7999ul)                /* Analog Front-End Shutdown Control */
-#define TI_AFE4400_ADCRSTSTXT0_REG_VALUE                (0ul)                   /* Analog Front-End Fault Detection Control */
+#define TI_AFE4400_ADCRSTSTCT0_REG_VALUE                (0ul)                   /* Analog Front-End Fault Detection Control */
 #define TI_AFE4400_ADCRSTENDCT0_REG_VALUE               (3ul)                   /* Enable Dithering in Signma-Delta */
 #define TI_AFE4400_ADCRSTSTCT1_REG_VALUE                (2000ul)                /* Analog Pace Channel Output Routing Control */
 #define TI_AFE4400_ADCRSTENDCT1_REG_VALUE               (2003ul)                /* R2 Decimation Rate */
@@ -59,10 +59,10 @@
 #define TI_AFE4400_ADCRSTSTCT3_REG_VALUE                (6000ul)                /* R3 Decimation Rate for Channel 3 */
 #define TI_AFE4400_ADCRSTENDCT3_REG_VALUE               (6003ul)                /* 2x Pace Data Rate for all channels */
 #define TI_AFE4400_PRPCOUNT_REG_VALUE                   (7999ul)                /*  */
-#define TI_AFE4400_CONTROL1_REG_VALUE                   (0x100)                 /* ECG Filters Disabled */
-#define TI_AFE4400_TIA_AMB_GAIN_REG_VALUE               (0x004141)              /* Data Ready Pin Source */
-#define TI_AFE4400_LEDCNTRL_REG_VALUE                   (0x8F8F)                /* Sync Out Pin Source */
-#define TI_AFE4400_CONTROL2_REG_VALUE                   (0x100)                 /* Optional Mask Control for DRDYB Output */
+#define TI_AFE4400_CONTROL1_REG_VALUE                   (0x100ul)                 /* ECG Filters Disabled */
+#define TI_AFE4400_TIA_AMB_GAIN_REG_VALUE               (0x004141ul)              /* Data Ready Pin Source */
+#define TI_AFE4400_LEDCNTRL_REG_VALUE                   (0x8F8Ful)                /* Sync Out Pin Source */
+#define TI_AFE4400_CONTROL2_REG_VALUE                   (0x100ul)                 /* Optional Mask Control for DRDYB Output */
 
 
 #endif                                                        // HEADER_FILE_TI_AFE4400_REGISTER_SETTINGS_H
