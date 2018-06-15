@@ -17688,6 +17688,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="C23" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
 <part name="C24" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
 <part name="C43" library="SparkFun-Capacitors" deviceset="10UF" device="-1206-6.3V-20%" value="10uF"/>
+<part name="USB-PWR" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17875,7 +17876,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="SUPPLY33" gate="GND" x="594.36" y="220.98"/>
 <instance part="U4" gate="A" x="828.04" y="180.34"/>
 <instance part="U$5" gate="G$1" x="792.48" y="58.42"/>
-<instance part="P+6" gate="1" x="810.26" y="76.2"/>
+<instance part="P+6" gate="1" x="833.12" y="76.2"/>
 <instance part="C34" gate="G$1" x="835.66" y="63.5"/>
 <instance part="SUPPLY34" gate="GND" x="835.66" y="58.42"/>
 <instance part="C35" gate="G$1" x="756.92" y="55.88"/>
@@ -17932,6 +17933,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="C23" gate="G$1" x="467.36" y="203.2"/>
 <instance part="C24" gate="G$1" x="467.36" y="187.96"/>
 <instance part="C43" gate="G$1" x="911.86" y="60.96"/>
+<instance part="USB-PWR" gate="G$1" x="828.04" y="55.88" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -18380,12 +18382,13 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>
-<wire x1="810.26" y1="73.66" x2="810.26" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="U$5" gate="G$1" pin="VCC"/>
-<wire x1="810.26" y1="68.58" x2="805.18" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="833.12" y1="73.66" x2="833.12" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="C34" gate="G$1" pin="1"/>
-<wire x1="810.26" y1="68.58" x2="835.66" y2="68.58" width="0.1524" layer="91"/>
-<junction x="810.26" y="68.58"/>
+<wire x1="833.12" y1="68.58" x2="835.66" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="USB-PWR" gate="G$1" pin="1"/>
+<wire x1="828.04" y1="63.5" x2="828.04" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="828.04" y1="68.58" x2="833.12" y2="68.58" width="0.1524" layer="91"/>
+<junction x="833.12" y="68.58"/>
 </segment>
 <segment>
 <pinref part="J7" gate="G$1" pin="5"/>
@@ -20028,6 +20031,14 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <pinref part="J7" gate="G$1" pin="1"/>
 <wire x1="883.92" y1="58.42" x2="889" y2="58.42" width="0.1524" layer="91"/>
 <label x="889" y="58.42" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$84" class="0">
+<segment>
+<pinref part="USB-PWR" gate="G$1" pin="2"/>
+<wire x1="825.5" y1="63.5" x2="825.5" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="VCC"/>
+<wire x1="825.5" y1="68.58" x2="805.18" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
