@@ -24,7 +24,7 @@
     <Windows>
       
       
-    <Wnd2>
+    <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-16145-24345</Identity>
@@ -36,7 +36,7 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-19115-24903</Identity>
@@ -46,20 +46,20 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>98</YPos><SelStart>3965</SelStart><SelEnd>3965</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.c</Filename><XPos>0</XPos><YPos>215</YPos><SelStart>7612</SelStart><SelEnd>7612</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>265</SelStart><SelEnd>265</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\AFE4400.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2223</SelStart><SelEnd>2223</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\AFE4400.h</Filename><XPos>0</XPos><YPos>145</YPos><SelStart>520</SelStart><SelEnd>520</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename><XPos>0</XPos><YPos>162</YPos><SelStart>6665</SelStart><SelEnd>6665</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>475</SelStart><SelEnd>475</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400.h</Filename><XPos>0</XPos><YPos>316</YPos><SelStart>17877</SelStart><SelEnd>17877</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400_setting.h</Filename><XPos>0</XPos><YPos>44</YPos><SelStart>5252</SelStart><SelEnd>5252</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Spi.c</Filename><XPos>0</XPos><YPos>148</YPos><SelStart>3492</SelStart><SelEnd>3492</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>113</YPos><SelStart>4429</SelStart><SelEnd>4429</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.c</Filename><XPos>0</XPos><YPos>215</YPos><SelStart>7612</SelStart><SelEnd>7612</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>265</SelStart><SelEnd>265</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\AFE4400.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2223</SelStart><SelEnd>2223</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\AFE4400.h</Filename><XPos>0</XPos><YPos>145</YPos><SelStart>520</SelStart><SelEnd>520</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename><XPos>0</XPos><YPos>202</YPos><SelStart>9408</SelStart><SelEnd>9408</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>475</SelStart><SelEnd>475</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400.h</Filename><XPos>0</XPos><YPos>316</YPos><SelStart>17877</SelStart><SelEnd>17877</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400_setting.h</Filename><XPos>0</XPos><YPos>48</YPos><SelStart>5252</SelStart><SelEnd>5252</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Spi.c</Filename><XPos>0</XPos><YPos>139</YPos><SelStart>3492</SelStart><SelEnd>3492</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-075907d8><key>iaridepm.enu1</key></Toolbar-075907d8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>382</Bottom><Right>185</Right><x>-2</x><y>-2</y><xscreen>187</xscreen><yscreen>186</yscreen><sizeHorzCX>146094</sizeHorzCX><sizeHorzCY>291994</sizeHorzCY><sizeVertCX>146094</sizeVertCX><sizeVertCY>602826</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>210</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>212</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>332810</sizeHorzCY><sizeVertCX>146094</sizeVertCX><sizeVertCY>291994</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-06882288><key>iaridepm.enu1</key></Toolbar-06882288></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>407</Bottom><Right>185</Right><x>-2</x><y>-2</y><xscreen>187</xscreen><yscreen>186</yscreen><sizeHorzCX>146094</sizeHorzCX><sizeHorzCY>291994</sizeHorzCY><sizeVertCX>146094</sizeVertCX><sizeVertCY>642072</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>185</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>187</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>293564</sizeHorzCY><sizeVertCX>146094</sizeVertCX><sizeVertCY>291994</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

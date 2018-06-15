@@ -93,7 +93,7 @@ int main( void )
   
   char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
-  SpiMasterInit(4000000,8,3,1);
+  SpiMasterInit(4000000,8,3,0);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
   _EINT(); 
   
@@ -153,7 +153,15 @@ int main( void )
             Delays(10);
         }
         break;
-        
+        case 'E':
+        for(uint32_t k = 0;k<1000;k++)
+        {
+            TI_AFE4400_WriteRegSettings();
+            UartWriteChar(0x0d);    //发送"换行"(\r)"
+            UartWriteChar(0x0a);    //发送"回车"(\n)"
+            Delays(10);
+        }
+        break;
 
 
       }
