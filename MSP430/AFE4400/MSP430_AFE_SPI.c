@@ -101,15 +101,19 @@ uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
 void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, unsigned long value, uint8_t count)
 {
   uint8_t inst, i;
+  unsigned long a;
 
   CS = CS_ENABLED;                                                             // /CS enable
   
   inst = AFE4400_WRITE_BIT & addr;                                             // register address
 
   uint8_t write_buf[3];
-  write_buf[0] = value & 0xFF;
-  write_buf[1] = (value>>8) & 0xFF;
-  write_buf[2] = (value>>16) & 0xFF;
+  a = value & 0xFF;
+  write_buf[2] = (unsigned int) a;
+  a = (value>>8) & 0xFF;
+  write_buf[1] = (unsigned int) a;
+  a = (value>>16) & 0xFF;
+  write_buf[0] = (unsigned int) a;
   SpiWriteData(inst);                                                          // Send register address
   
   for(i= 0; i < count; i++)
@@ -145,11 +149,11 @@ unsigned long TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t count)
   {
     write_buf[i] = SpiWriteData(0xFF);                                             // Read data 
   }
-  value = value | write_buf[2];
+  value = value | write_buf[0];
   value = value<<8;
   value = value | write_buf[1];
   value = value<<8;
-  value = value | write_buf[0];
+  value = value | write_buf[2];
   
   CS = CS_DISABLED;                                                            // /CS disable
   

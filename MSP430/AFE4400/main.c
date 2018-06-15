@@ -130,7 +130,30 @@ int main( void )
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
             Delays(10);
         }
-            break;
+        break;
+      case 'B':
+        for(uint8_t k = 1;k<48;k++)
+        {
+            val = TI_AFE4400_SPIAutoIncReadReg(k, count);
+            read_buf[0] = val & 0xFF;
+            read_buf[1] = (val>>8) & 0xFF;
+            read_buf[2] = (val>>16) & 0xFF;
+            UartWriteint(read_buf[0]);
+            UartWriteint(read_buf[1]);
+            UartWriteint(read_buf[2]);
+            UartWriteChar(0x0d);    //发送"换行"(\r)"
+            UartWriteChar(0x0a);    //发送"回车"(\n)"  
+            Delays(10);
+        }
+        break;
+        case 'A':
+        for(uint32_t k = 0;k<1000000;k++)
+        {
+            TI_AFE4400_SPIAutoIncWriteReg(0x00, 0x010203, 3);//enable read 
+            Delays(10);
+        }
+        break;
+        
 
 
       }
