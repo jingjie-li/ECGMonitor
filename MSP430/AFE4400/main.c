@@ -108,12 +108,12 @@ int main( void )
       {
       case 'S':
         UartWriteStr(str1);
-        TI_AFE4400_SPIAutoIncWriteReg(0x00, 0x000001ul, 3);
+        TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read 0x000001ul
         UartWriteChar(q);
         break;
       case 'T':
         UartWriteStr(str2);
-        TI_AFE4400_SPIAutoIncWriteReg(0x00, 0x000000ul, 3);
+        TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3);//enable read
         UartWriteChar(q);
         break;
       case 'M':
