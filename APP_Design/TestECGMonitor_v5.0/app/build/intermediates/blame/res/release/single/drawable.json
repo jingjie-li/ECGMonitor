@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\res\\merged\\release\\drawable\\buttonshape.xml",
+        "source": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\drawable\\buttonshape.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ecg_bg3.jpg",
+        "source": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\drawable\\ecg_bg3.jpg"
+    },
+    {
+        "merged": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ecg_bg3_bak.jpg",
+        "source": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\drawable\\ecg_bg3_bak.jpg"
+    },
+    {
+        "merged": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ecg_bg.png",
+        "source": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\drawable\\ecg_bg.png"
+    }
+]
