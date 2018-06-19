@@ -1,0 +1,2438 @@
+[
+    {
+        "outputFile": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 51,
+                    "endOffset": 102
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 107,
+                    "endColumn": 69,
+                    "endOffset": 172
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 177,
+                    "endLine": 6,
+                    "endColumn": 11,
+                    "endOffset": 305
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 310,
+                    "endColumn": 67,
+                    "endOffset": 373
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 378,
+                    "endLine": 10,
+                    "endColumn": 11,
+                    "endOffset": 502
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 507,
+                    "endLine": 13,
+                    "endColumn": 11,
+                    "endOffset": 628
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 633,
+                    "endColumn": 66,
+                    "endOffset": 695
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 700,
+                    "endLine": 17,
+                    "endColumn": 11,
+                    "endOffset": 818
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 823,
+                    "endLine": 20,
+                    "endColumn": 11,
+                    "endOffset": 943
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 948,
+                    "endColumn": 66,
+                    "endOffset": 1010
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1015,
+                    "endColumn": 64,
+                    "endOffset": 1075
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1080,
+                    "endColumn": 64,
+                    "endOffset": 1140
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1145,
+                    "endLine": 27,
+                    "endColumn": 11,
+                    "endOffset": 1280
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1285,
+                    "endColumn": 65,
+                    "endOffset": 1346
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1351,
+                    "endColumn": 65,
+                    "endOffset": 1412
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1417,
+                    "endColumn": 66,
+                    "endOffset": 1479
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1484,
+                    "endLine": 35,
+                    "endColumn": 11,
+                    "endOffset": 1689
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 1694,
+                    "endColumn": 68,
+                    "endOffset": 1758
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 1763,
+                    "endColumn": 65,
+                    "endOffset": 1824
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 1829,
+                    "endLine": 40,
+                    "endColumn": 11,
+                    "endOffset": 1949
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 1954,
+                    "endLine": 43,
+                    "endColumn": 11,
+                    "endOffset": 2075
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2080,
+                    "endColumn": 66,
+                    "endOffset": 2142
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 2147,
+                    "endLine": 47,
+                    "endColumn": 11,
+                    "endOffset": 2268
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 2273,
+                    "endLine": 50,
+                    "endColumn": 11,
+                    "endOffset": 2395
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 2400,
+                    "endLine": 53,
+                    "endColumn": 11,
+                    "endOffset": 2520
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 2525,
+                    "endLine": 56,
+                    "endColumn": 11,
+                    "endOffset": 2647
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 2652,
+                    "endColumn": 64,
+                    "endOffset": 2712
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 2717,
+                    "endLine": 60,
+                    "endColumn": 11,
+                    "endOffset": 2838
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 2843,
+                    "endLine": 63,
+                    "endColumn": 11,
+                    "endOffset": 2961
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 2966,
+                    "endColumn": 64,
+                    "endOffset": 3026
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 3031,
+                    "endLine": 69,
+                    "endColumn": 11,
+                    "endOffset": 3234
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 3239,
+                    "endColumn": 66,
+                    "endOffset": 3301
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 3306,
+                    "endLine": 74,
+                    "endColumn": 11,
+                    "endOffset": 3440
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 75,
+                    "startColumn": 4,
+                    "startOffset": 3445,
+                    "endColumn": 64,
+                    "endOffset": 3505
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 3510,
+                    "endColumn": 64,
+                    "endOffset": 3570
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 3575,
+                    "endColumn": 61,
+                    "endOffset": 3632
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 3637,
+                    "endColumn": 61,
+                    "endOffset": 3694
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 3699,
+                    "endColumn": 61,
+                    "endOffset": 3756
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 3761,
+                    "endColumn": 58,
+                    "endOffset": 3815
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 81,
+                    "startColumn": 4,
+                    "startOffset": 3820,
+                    "endColumn": 59,
+                    "endOffset": 3875
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 3880,
+                    "endColumn": 60,
+                    "endOffset": 3936
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 83,
+                    "startColumn": 4,
+                    "startOffset": 3941,
+                    "endColumn": 60,
+                    "endOffset": 3997
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 4002,
+                    "endColumn": 58,
+                    "endOffset": 4056
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 85,
+                    "startColumn": 4,
+                    "startOffset": 4061,
+                    "endLine": 90,
+                    "endColumn": 11,
+                    "endOffset": 4265
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support.constraint\\constraint-layout\\1.0.2\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 91,
+                    "startColumn": 4,
+                    "startOffset": 4270,
+                    "endColumn": 43,
+                    "endOffset": 4309
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 92,
+                    "startColumn": 4,
+                    "startOffset": 4314,
+                    "endColumn": 46,
+                    "endOffset": 4356
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 93,
+                    "startColumn": 4,
+                    "startOffset": 4361,
+                    "endColumn": 38,
+                    "endOffset": 4395
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 94,
+                    "startColumn": 4,
+                    "startOffset": 4400,
+                    "endColumn": 44,
+                    "endOffset": 4440
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "startOffset": 4445,
+                    "endColumn": 39,
+                    "endOffset": 4480
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 96,
+                    "startColumn": 4,
+                    "startOffset": 4485,
+                    "endColumn": 39,
+                    "endOffset": 4520
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 97,
+                    "startColumn": 4,
+                    "startOffset": 4525,
+                    "endColumn": 40,
+                    "endOffset": 4561
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 4566,
+                    "endColumn": 39,
+                    "endOffset": 4601
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 99,
+                    "startColumn": 4,
+                    "startOffset": 4606,
+                    "endColumn": 48,
+                    "endOffset": 4650
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 100,
+                    "startColumn": 4,
+                    "startOffset": 4655,
+                    "endColumn": 38,
+                    "endOffset": 4689
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 101,
+                    "startColumn": 4,
+                    "startOffset": 4694,
+                    "endColumn": 44,
+                    "endOffset": 4734
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "startOffset": 4739,
+                    "endColumn": 39,
+                    "endOffset": 4774
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 103,
+                    "startColumn": 4,
+                    "startOffset": 4779,
+                    "endColumn": 43,
+                    "endOffset": 4818
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 104,
+                    "startColumn": 4,
+                    "startOffset": 4823,
+                    "endColumn": 43,
+                    "endOffset": 4862
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 105,
+                    "startColumn": 4,
+                    "startOffset": 4867,
+                    "endColumn": 60,
+                    "endOffset": 4923
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 106,
+                    "startColumn": 4,
+                    "startOffset": 4928,
+                    "endColumn": 61,
+                    "endOffset": 4985
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 107,
+                    "startColumn": 4,
+                    "startOffset": 4990,
+                    "endColumn": 61,
+                    "endOffset": 5047
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 108,
+                    "startColumn": 4,
+                    "startOffset": 5052,
+                    "endColumn": 63,
+                    "endOffset": 5111
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 109,
+                    "startColumn": 4,
+                    "startOffset": 5116,
+                    "endColumn": 44,
+                    "endOffset": 5156
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 110,
+                    "startColumn": 4,
+                    "startOffset": 5161,
+                    "endColumn": 43,
+                    "endOffset": 5200
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 111,
+                    "startColumn": 4,
+                    "startOffset": 5205,
+                    "endColumn": 39,
+                    "endOffset": 5240
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 112,
+                    "startColumn": 4,
+                    "startOffset": 5245,
+                    "endColumn": 48,
+                    "endOffset": 5289
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 113,
+                    "startColumn": 4,
+                    "startOffset": 5294,
+                    "endColumn": 42,
+                    "endOffset": 5332
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 114,
+                    "startColumn": 4,
+                    "startOffset": 5337,
+                    "endColumn": 41,
+                    "endOffset": 5374
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 5379,
+                    "endColumn": 38,
+                    "endOffset": 5413
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 116,
+                    "startColumn": 4,
+                    "startOffset": 5418,
+                    "endColumn": 42,
+                    "endOffset": 5456
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 117,
+                    "startColumn": 4,
+                    "startOffset": 5461,
+                    "endColumn": 42,
+                    "endOffset": 5499
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 5504,
+                    "endColumn": 47,
+                    "endOffset": 5547
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 119,
+                    "startColumn": 4,
+                    "startOffset": 5552,
+                    "endColumn": 42,
+                    "endOffset": 5590
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 120,
+                    "startColumn": 4,
+                    "startOffset": 5595,
+                    "endColumn": 43,
+                    "endOffset": 5634
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 121,
+                    "startColumn": 4,
+                    "startOffset": 5639,
+                    "endColumn": 43,
+                    "endOffset": 5678
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 5683,
+                    "endColumn": 45,
+                    "endOffset": 5724
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 123,
+                    "startColumn": 4,
+                    "startOffset": 5729,
+                    "endColumn": 48,
+                    "endOffset": 5773
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 5778,
+                    "endColumn": 44,
+                    "endOffset": 5818
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 5823,
+                    "endColumn": 44,
+                    "endOffset": 5863
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 5868,
+                    "endColumn": 41,
+                    "endOffset": 5905
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 127,
+                    "startColumn": 4,
+                    "startOffset": 5910,
+                    "endColumn": 44,
+                    "endOffset": 5950
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "startOffset": 5955,
+                    "endColumn": 46,
+                    "endOffset": 5997
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 6002,
+                    "endColumn": 47,
+                    "endOffset": 6045
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 6050,
+                    "endColumn": 47,
+                    "endOffset": 6093
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 6098,
+                    "endColumn": 47,
+                    "endOffset": 6141
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 6146,
+                    "endColumn": 44,
+                    "endOffset": 6186
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 133,
+                    "startColumn": 4,
+                    "startOffset": 6191,
+                    "endColumn": 42,
+                    "endOffset": 6229
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 134,
+                    "startColumn": 4,
+                    "startOffset": 6234,
+                    "endColumn": 45,
+                    "endOffset": 6275
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 135,
+                    "startColumn": 4,
+                    "startOffset": 6280,
+                    "endColumn": 41,
+                    "endOffset": 6317
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 136,
+                    "startColumn": 4,
+                    "startOffset": 6322,
+                    "endColumn": 44,
+                    "endOffset": 6362
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 137,
+                    "startColumn": 4,
+                    "startOffset": 6367,
+                    "endColumn": 43,
+                    "endOffset": 6406
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "startOffset": 6411,
+                    "endColumn": 45,
+                    "endOffset": 6452
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 6457,
+                    "endColumn": 45,
+                    "endOffset": 6498
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 6503,
+                    "endColumn": 41,
+                    "endOffset": 6540
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 6545,
+                    "endColumn": 43,
+                    "endOffset": 6584
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 142,
+                    "startColumn": 4,
+                    "startOffset": 6589,
+                    "endColumn": 44,
+                    "endOffset": 6629
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 6634,
+                    "endColumn": 38,
+                    "endOffset": 6668
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 144,
+                    "startColumn": 4,
+                    "startOffset": 6673,
+                    "endColumn": 43,
+                    "endOffset": 6712
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 6717,
+                    "endColumn": 44,
+                    "endOffset": 6757
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 6762,
+                    "endColumn": 38,
+                    "endOffset": 6796
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 147,
+                    "startColumn": 4,
+                    "startOffset": 6801,
+                    "endColumn": 41,
+                    "endOffset": 6838
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 148,
+                    "startColumn": 4,
+                    "startOffset": 6843,
+                    "endColumn": 41,
+                    "endOffset": 6880
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 149,
+                    "startColumn": 4,
+                    "startOffset": 6885,
+                    "endColumn": 39,
+                    "endOffset": 6920
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 6925,
+                    "endColumn": 45,
+                    "endOffset": 6966
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 151,
+                    "startColumn": 4,
+                    "startOffset": 6971,
+                    "endColumn": 42,
+                    "endOffset": 7009
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 152,
+                    "startColumn": 4,
+                    "startOffset": 7014,
+                    "endColumn": 41,
+                    "endOffset": 7051
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 153,
+                    "startColumn": 4,
+                    "startOffset": 7056,
+                    "endColumn": 43,
+                    "endOffset": 7095
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 7100,
+                    "endColumn": 40,
+                    "endOffset": 7136
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 155,
+                    "startColumn": 4,
+                    "startOffset": 7141,
+                    "endColumn": 39,
+                    "endOffset": 7176
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 156,
+                    "startColumn": 4,
+                    "startOffset": 7181,
+                    "endColumn": 39,
+                    "endOffset": 7216
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 157,
+                    "startColumn": 4,
+                    "startOffset": 7221,
+                    "endColumn": 42,
+                    "endOffset": 7259
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 158,
+                    "startColumn": 4,
+                    "startOffset": 7264,
+                    "endColumn": 47,
+                    "endOffset": 7307
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 159,
+                    "startColumn": 4,
+                    "startOffset": 7312,
+                    "endColumn": 43,
+                    "endOffset": 7351
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 160,
+                    "startColumn": 4,
+                    "startOffset": 7356,
+                    "endColumn": 46,
+                    "endOffset": 7398
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 161,
+                    "startColumn": 4,
+                    "startOffset": 7403,
+                    "endColumn": 43,
+                    "endOffset": 7442
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 162,
+                    "startColumn": 4,
+                    "startOffset": 7447,
+                    "endColumn": 44,
+                    "endOffset": 7487
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 163,
+                    "startColumn": 4,
+                    "startOffset": 7492,
+                    "endColumn": 43,
+                    "endOffset": 7531
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 164,
+                    "startColumn": 4,
+                    "startOffset": 7536,
+                    "endColumn": 54,
+                    "endOffset": 7586
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 165,
+                    "startColumn": 4,
+                    "startOffset": 7591,
+                    "endColumn": 43,
+                    "endOffset": 7630
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 166,
+                    "startColumn": 4,
+                    "startOffset": 7635,
+                    "endColumn": 44,
+                    "endOffset": 7675
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 167,
+                    "startColumn": 4,
+                    "startOffset": 7680,
+                    "endColumn": 43,
+                    "endOffset": 7719
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 168,
+                    "startColumn": 4,
+                    "startOffset": 7724,
+                    "endColumn": 45,
+                    "endOffset": 7765
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 169,
+                    "startColumn": 4,
+                    "startOffset": 7770,
+                    "endColumn": 47,
+                    "endOffset": 7813
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 170,
+                    "startColumn": 4,
+                    "startOffset": 7818,
+                    "endColumn": 46,
+                    "endOffset": 7860
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 171,
+                    "startColumn": 4,
+                    "startOffset": 7865,
+                    "endColumn": 48,
+                    "endOffset": 7909
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 172,
+                    "startColumn": 4,
+                    "startOffset": 7914,
+                    "endColumn": 48,
+                    "endOffset": 7958
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 173,
+                    "startColumn": 4,
+                    "startOffset": 7963,
+                    "endColumn": 45,
+                    "endOffset": 8004
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 174,
+                    "startColumn": 4,
+                    "startOffset": 8009,
+                    "endColumn": 38,
+                    "endOffset": 8043
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 175,
+                    "startColumn": 4,
+                    "startOffset": 8048,
+                    "endColumn": 43,
+                    "endOffset": 8087
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 176,
+                    "startColumn": 4,
+                    "startOffset": 8092,
+                    "endColumn": 39,
+                    "endOffset": 8127
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 177,
+                    "startColumn": 4,
+                    "startOffset": 8132,
+                    "endColumn": 40,
+                    "endOffset": 8168
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 178,
+                    "startColumn": 4,
+                    "startOffset": 8173,
+                    "endColumn": 50,
+                    "endOffset": 8219
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 179,
+                    "startColumn": 4,
+                    "startOffset": 8224,
+                    "endColumn": 44,
+                    "endOffset": 8264
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 180,
+                    "startColumn": 4,
+                    "startOffset": 8269,
+                    "endColumn": 46,
+                    "endOffset": 8311
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 181,
+                    "startColumn": 4,
+                    "startOffset": 8316,
+                    "endColumn": 46,
+                    "endOffset": 8358
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 182,
+                    "startColumn": 4,
+                    "startOffset": 8363,
+                    "endColumn": 48,
+                    "endOffset": 8407
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 183,
+                    "startColumn": 4,
+                    "startOffset": 8412,
+                    "endColumn": 49,
+                    "endOffset": 8457
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 184,
+                    "startColumn": 4,
+                    "startOffset": 8462,
+                    "endColumn": 51,
+                    "endOffset": 8509
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 185,
+                    "startColumn": 4,
+                    "startOffset": 8514,
+                    "endColumn": 49,
+                    "endOffset": 8559
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 186,
+                    "startColumn": 4,
+                    "startOffset": 8564,
+                    "endColumn": 49,
+                    "endOffset": 8609
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 187,
+                    "startColumn": 4,
+                    "startOffset": 8614,
+                    "endColumn": 46,
+                    "endOffset": 8656
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 188,
+                    "startColumn": 4,
+                    "startOffset": 8661,
+                    "endColumn": 43,
+                    "endOffset": 8700
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 189,
+                    "startColumn": 4,
+                    "startOffset": 8705,
+                    "endColumn": 43,
+                    "endOffset": 8744
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 190,
+                    "startColumn": 4,
+                    "startOffset": 8749,
+                    "endColumn": 42,
+                    "endOffset": 8787
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 191,
+                    "startColumn": 4,
+                    "startOffset": 8792,
+                    "endColumn": 45,
+                    "endOffset": 8833
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 192,
+                    "startColumn": 4,
+                    "startOffset": 8838,
+                    "endColumn": 38,
+                    "endOffset": 8872
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 193,
+                    "startColumn": 4,
+                    "startOffset": 8877,
+                    "endColumn": 41,
+                    "endOffset": 8914
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 194,
+                    "startColumn": 4,
+                    "startOffset": 8919,
+                    "endColumn": 39,
+                    "endOffset": 8954
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 195,
+                    "startColumn": 4,
+                    "startOffset": 8959,
+                    "endColumn": 43,
+                    "endOffset": 8998
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 196,
+                    "startColumn": 4,
+                    "startOffset": 9003,
+                    "endColumn": 40,
+                    "endOffset": 9039
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 197,
+                    "startColumn": 4,
+                    "startOffset": 9044,
+                    "endColumn": 43,
+                    "endOffset": 9083
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 198,
+                    "startColumn": 4,
+                    "startOffset": 9088,
+                    "endColumn": 40,
+                    "endOffset": 9124
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 199,
+                    "startColumn": 4,
+                    "startOffset": 9129,
+                    "endColumn": 47,
+                    "endOffset": 9172
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 200,
+                    "startColumn": 4,
+                    "startOffset": 9177,
+                    "endColumn": 43,
+                    "endOffset": 9216
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 201,
+                    "startColumn": 4,
+                    "startOffset": 9221,
+                    "endColumn": 47,
+                    "endOffset": 9264
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 202,
+                    "startColumn": 4,
+                    "startOffset": 9269,
+                    "endColumn": 47,
+                    "endOffset": 9312
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 203,
+                    "startColumn": 4,
+                    "startOffset": 9317,
+                    "endColumn": 44,
+                    "endOffset": 9357
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 204,
+                    "startColumn": 4,
+                    "startOffset": 9362,
+                    "endColumn": 43,
+                    "endOffset": 9401
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 205,
+                    "startColumn": 4,
+                    "startOffset": 9406,
+                    "endColumn": 38,
+                    "endOffset": 9440
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 206,
+                    "startColumn": 4,
+                    "startOffset": 9445,
+                    "endColumn": 38,
+                    "endOffset": 9479
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 207,
+                    "startColumn": 4,
+                    "startOffset": 9484,
+                    "endColumn": 38,
+                    "endOffset": 9518
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 208,
+                    "startColumn": 4,
+                    "startOffset": 9523,
+                    "endColumn": 44,
+                    "endOffset": 9563
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 209,
+                    "startColumn": 4,
+                    "startOffset": 9568,
+                    "endColumn": 40,
+                    "endOffset": 9604
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 210,
+                    "startColumn": 4,
+                    "startOffset": 9609,
+                    "endColumn": 37,
+                    "endOffset": 9642
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 211,
+                    "startColumn": 4,
+                    "startOffset": 9647,
+                    "endColumn": 43,
+                    "endOffset": 9686
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 212,
+                    "startColumn": 4,
+                    "startOffset": 9691,
+                    "endColumn": 43,
+                    "endOffset": 9730
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 213,
+                    "startColumn": 4,
+                    "startOffset": 9735,
+                    "endColumn": 45,
+                    "endOffset": 9776
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 214,
+                    "startColumn": 4,
+                    "startOffset": 9781,
+                    "endColumn": 40,
+                    "endOffset": 9817
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 215,
+                    "startColumn": 4,
+                    "startOffset": 9822,
+                    "endColumn": 44,
+                    "endOffset": 9862
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 216,
+                    "startColumn": 4,
+                    "startOffset": 9867,
+                    "endColumn": 42,
+                    "endOffset": 9905
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 217,
+                    "startColumn": 4,
+                    "startOffset": 9910,
+                    "endColumn": 42,
+                    "endOffset": 9948
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 218,
+                    "startColumn": 4,
+                    "startOffset": 9953,
+                    "endColumn": 40,
+                    "endOffset": 9989
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 219,
+                    "startColumn": 4,
+                    "startOffset": 9994,
+                    "endColumn": 40,
+                    "endOffset": 10030
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 220,
+                    "startColumn": 4,
+                    "startOffset": 10035,
+                    "endColumn": 41,
+                    "endOffset": 10072
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 221,
+                    "startColumn": 4,
+                    "startOffset": 10077,
+                    "endColumn": 43,
+                    "endOffset": 10116
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 222,
+                    "startColumn": 4,
+                    "startOffset": 10121,
+                    "endColumn": 43,
+                    "endOffset": 10160
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 223,
+                    "startColumn": 4,
+                    "startOffset": 10165,
+                    "endColumn": 38,
+                    "endOffset": 10199
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 224,
+                    "startColumn": 4,
+                    "startOffset": 10204,
+                    "endColumn": 45,
+                    "endOffset": 10245
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 225,
+                    "startColumn": 4,
+                    "startOffset": 10250,
+                    "endColumn": 43,
+                    "endOffset": 10289
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 226,
+                    "startColumn": 4,
+                    "startOffset": 10294,
+                    "endColumn": 37,
+                    "endOffset": 10327
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 227,
+                    "startColumn": 4,
+                    "startOffset": 10332,
+                    "endColumn": 38,
+                    "endOffset": 10366
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 228,
+                    "startColumn": 4,
+                    "startOffset": 10371,
+                    "endColumn": 41,
+                    "endOffset": 10408
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 229,
+                    "startColumn": 4,
+                    "startOffset": 10413,
+                    "endColumn": 40,
+                    "endOffset": 10449
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 230,
+                    "startColumn": 4,
+                    "startOffset": 10454,
+                    "endColumn": 47,
+                    "endOffset": 10497
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 231,
+                    "startColumn": 4,
+                    "startOffset": 10502,
+                    "endColumn": 43,
+                    "endOffset": 10541
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 232,
+                    "startColumn": 4,
+                    "startOffset": 10546,
+                    "endColumn": 40,
+                    "endOffset": 10582
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 233,
+                    "startColumn": 4,
+                    "startOffset": 10587,
+                    "endColumn": 39,
+                    "endOffset": 10622
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 234,
+                    "startColumn": 4,
+                    "startOffset": 10627,
+                    "endColumn": 39,
+                    "endOffset": 10662
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 235,
+                    "startColumn": 4,
+                    "startOffset": 10667,
+                    "endColumn": 44,
+                    "endOffset": 10707
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 236,
+                    "startColumn": 4,
+                    "startOffset": 10712,
+                    "endColumn": 40,
+                    "endOffset": 10748
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 241,
+                    "startColumn": 4,
+                    "startOffset": 16371,
+                    "endColumn": 58,
+                    "endOffset": 16425
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 242,
+                    "startColumn": 4,
+                    "startOffset": 16430,
+                    "endColumn": 56,
+                    "endOffset": 16482
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 243,
+                    "startColumn": 4,
+                    "startOffset": 16487,
+                    "endColumn": 53,
+                    "endOffset": 16536
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 244,
+                    "startColumn": 4,
+                    "startOffset": 16541,
+                    "endColumn": 40,
+                    "endOffset": 16577
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 40,
+                        "endOffset": 55
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 245,
+                    "startColumn": 4,
+                    "startOffset": 16582,
+                    "endLine": 247,
+                    "endColumn": 12,
+                    "endOffset": 16660
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 248,
+                    "startColumn": 4,
+                    "startOffset": 16665,
+                    "endLine": 250,
+                    "endColumn": 12,
+                    "endOffset": 16732
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 251,
+                    "startColumn": 4,
+                    "startOffset": 16737,
+                    "endLine": 257,
+                    "endColumn": 12,
+                    "endOffset": 17146
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 258,
+                    "startColumn": 4,
+                    "startOffset": 17151,
+                    "endLine": 259,
+                    "endColumn": 12,
+                    "endOffset": 17210
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 260,
+                    "startColumn": 4,
+                    "startOffset": 17215,
+                    "endLine": 262,
+                    "endColumn": 12,
+                    "endOffset": 17336
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 263,
+                    "startColumn": 4,
+                    "startOffset": 17341,
+                    "endLine": 265,
+                    "endColumn": 12,
+                    "endOffset": 17464
+                },
+                "from": {
+                    "file": "D:\\AndroidApp\\TestECGMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\25.3.1\\res\\values\\values.xml"
+                }
+            }
+        ]
+    }
+]
