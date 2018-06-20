@@ -76,7 +76,7 @@ uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
   
   CS = CS_ENABLED;                                                             // /CS enable
  
-  inst = AFE4400_READ_BIT | addr;                                              // register address
+  inst = addr;                                              // register address
   
 //  WAIT_1_3US(2);                                                               // Wait 
   SpiWriteData(inst);                                                          // Send lower register address  
@@ -141,7 +141,7 @@ unsigned long TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t count)
   
   CS = CS_ENABLED;                                                             // /CS enable
  
-  inst = AFE4400_READ_BIT | addr;                                              // register address
+  inst = addr;                                              // register address
   
   SpiWriteData(inst);                                                          // Send register address  
   
