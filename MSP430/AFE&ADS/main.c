@@ -28,6 +28,9 @@
 #include "MSP430_AFE_SPI.h"
 #include "TI_AFE4400.h"
 #include "TI_AFE4400_setting.h"
+#include "MSP430_Spi.h"
+#include "TI_ADS1293.h"
+#include "TI_ADS1293_setting.h"
 
 char str[] = "UartWriteChar"; //ROM中一个字符串
 char str1[] = "start conversation!"; //ROM中一个字符串
@@ -95,7 +98,7 @@ int main( void )
   
   char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
-  SpiMasterInit(400000,8,3,0);
+  SpiMasterInit(4000000,8,3,0);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
   _EINT(); 
   
@@ -121,6 +124,12 @@ int main( void )
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
         {
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);           
+            UartWriteint(read_buf[0]);
+            UartWriteint(read_buf[1]);
+            UartWriteint(read_buf[2]);
+            UartWriteChar(0x0d);    //发送"换行"(\r)"
+            UartWriteChar(0x0a);    //发送"回车"(\n)" 
             val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
             read_buf[0] = val & 0xFF;
             read_buf[1] = (val>>8) & 0xFF;
