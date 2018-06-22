@@ -54,14 +54,14 @@ void TI_ADS1293_SPIWriteReg(uint8_t addr, uint8_t value)
   uint8_t inst;
  
 
-  CS1 = CS1_ENABLED;                                                             // /CS enable 
+  CS = CS_ENABLED;                                                             // /CS enable 
   
   inst = ADS1293_WRITE_BIT & addr;                                             // register address
   SpiWriteData(inst);                                                          // Send register address
   
   SpiWriteData(value);                                                         // Send data value  
 
-  CS1 = CS1_DISABLED;                                                            // /CS disable      
+  CS = CS_DISABLED;                                                            // /CS disable      
   
 }
 
@@ -76,7 +76,7 @@ uint8_t TI_ADS1293_SPIReadReg(uint8_t addr)
 {
   uint8_t pVal, inst;
   
-  CS1 = CS1_ENABLED;                                                             // /CS enable
+  CS = CS_ENABLED;                                                             // /CS enable
  
   inst = ADS1293_READ_BIT | addr;                                              // register address
   
@@ -85,7 +85,7 @@ uint8_t TI_ADS1293_SPIReadReg(uint8_t addr)
   
   pVal = SpiWriteData(0xFF);                                                     // Read data
   
-  CS1 = CS1_DISABLED;                                                            // /CS disable
+  CS = CS_DISABLED;                                                            // /CS disable
 
   return pVal;    
           
@@ -104,7 +104,7 @@ void TI_ADS1293_SPIAutoIncWriteReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 {
   uint8_t inst, i;
 
-  CS1 = CS1_ENABLED;                                                             // /CS enable
+  CS = CS_ENABLED;                                                             // /CS enable
   
   inst = ADS1293_WRITE_BIT & addr;                                             // register address
   SpiWriteData(inst);                                                          // Send register address
@@ -112,7 +112,7 @@ void TI_ADS1293_SPIAutoIncWriteReg(uint8_t addr, uint8_t *buffer, uint8_t count)
   for(i= 0; i < count; i++)
     SpiWriteData(*(buffer+i));                                                 // Send data value  
 
-  CS1 = CS1_DISABLED;                                                            // /CS disable
+  CS = CS_DISABLED;                                                            // /CS disable
   
 }
 
@@ -128,7 +128,7 @@ void TI_ADS1293_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 {
   uint8_t i, inst;
   
-  CS1 = CS1_ENABLED;                                                             // /CS enable
+  CS = CS_ENABLED;                                                             // /CS enable
  
   inst = ADS1293_READ_BIT | addr;                                              // register address
   
@@ -137,7 +137,7 @@ void TI_ADS1293_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
   for(i=0; i < count; i++)
     *(buffer+i) = SpiWriteData(0xFF);                                             // Read data 
   
-  CS1 = CS1_DISABLED;                                                            // /CS disable
+  CS = CS_DISABLED;                                                            // /CS disable
 
 }
 
@@ -157,7 +157,7 @@ void TI_ADS1293_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
 //  static uint32 tst_count = 0;
 //  static uint8_t toggle = 0;
   
-  CS1 = CS1_ENABLED;                                                             // /CS enable
+  CS = CS_ENABLED;                                                             // /CS enable
  
   inst = ADS1293_READ_BIT | TI_ADS1293_DATA_LOOP_REG;                          // read from data loop register
   
@@ -166,7 +166,7 @@ void TI_ADS1293_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
   for(i=0; i < count; i++)
     *(buffer+i) = SpiWriteData(0xFF);                                           // Read data
 
-  CS1 = CS1_DISABLED;                                                            // /CS disable
+  CS = CS_DISABLED;                                                            // /CS disable
       
 }
 

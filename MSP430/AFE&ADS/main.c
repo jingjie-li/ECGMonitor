@@ -90,6 +90,8 @@ int main( void )
   
   uint8_t count=3;
   uint8_t read_buf[3];
+  uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
+  
   unsigned long val;
  // int i = 0;
 
@@ -124,12 +126,28 @@ int main( void )
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
         {
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);                    
+            read_buff[0] = read_buf[1];
+            read_buff[1] = read_buf[2] | 0xc0;
             TI_ADS1293_SPIStreamReadReg(read_buf, count);           
-            UartWriteint(read_buf[0]);
-            UartWriteint(read_buf[1]);
+            read_buff[1] = read_buff[1] & ( read_buf[1]>>2 );
+            read_buff[2] = read_buf[1] << 6;
+            read_buff[2] = read_buff[2] & (( read_buf[2]>>2 ) | 0x30);
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);           
+            read_buff[2] = read_buff[2] & ( read_buf[1]>>4 );
+            read_buff[3] = read_buf[1] << 4;
+            read_buff[3] = read_buff[3] & (( read_buf[2]>>4 ) | 0x0c);
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);           
+            read_buff[3] = read_buff[3] & ( read_buf[1]>>6 );
+            read_buff[4] = read_buf[1] << 6;
+            read_buff[4] = read_buff[4] & (( read_buf[2]>>6 ) | 0x03);                   
+            val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
+            read_buf[0] = val & 0xFF;
+            read_buf[1] = (val>>8) & 0xFF;
+            read_buf[2] = (val>>16) & 0xFF;
             UartWriteint(read_buf[2]);
-            UartWriteChar(0x0d);    //发送"换行"(\r)"
-            UartWriteChar(0x0a);    //发送"回车"(\n)" 
+            UartWriteint(read_buf[1]);
+            UartWriteint(read_buf[0]);
             val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
             read_buf[0] = val & 0xFF;
             read_buf[1] = (val>>8) & 0xFF;
