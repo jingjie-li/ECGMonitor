@@ -80,6 +80,8 @@ int main( void )
 {
   P4DIR = 0x01;
   P4OUT = 0x01;
+  P2DIR = 0xfa;
+  P2OUT = 0xf0;
   // Stop watchdog timer to prevent time out reset
   WDTCTL = WDTPW + WDTHOLD;
   
@@ -103,6 +105,7 @@ int main( void )
   P1SEL = 0x00;  
   Delays(10000);
   TI_AFE4400_WriteRegSettings();  
+  P2OUT = 0xd0;
   while(1)                    //串口测试
   {
       chr = UartReadChar();
@@ -114,9 +117,7 @@ int main( void )
         UartWriteChar(q);
         break;
       case 'T':
-        UartWriteStr(str2);
         TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3);//enable read
-        UartWriteChar(q);
         break;
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
@@ -130,7 +131,7 @@ int main( void )
             UartWriteint(read_buf[0]);
             UartWriteChar(0x0d);    //发送"换行"(\r)"
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
-            Delays(10);
+            Delays(160);
         }
         break;
       case 'B':
@@ -145,7 +146,7 @@ int main( void )
             UartWriteint(read_buf[0]);
             UartWriteChar(0x0d);    //发送"换行"(\r)"
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
-            Delays(10);
+            Delays(50000);
         }
         break;
         case 'A':
