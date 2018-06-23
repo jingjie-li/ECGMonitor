@@ -71,22 +71,25 @@ int main( void )
   
   P1DIR = 0xff;
   P1SEL = 0x00;  
+  P2DIR = 0xfa;
+  P2OUT = 0xf0;
   Delays(10000);
   TI_ADS1293_WriteRegSettings();  
+  P2OUT = 0xb0;
   while(1)                    //串口测试
   {
       chr = UartReadChar();
       switch(chr)
       {
-      case 'S':
-        UartWriteStr(str1);
+      case 'S': // start conversation
+        //UartWriteStr(str1);
         TI_ADS1293_SPIWriteReg(0x00, 0x01);
-        UartWriteChar(q);
+        //UartWriteChar(q);
         break;
-      case 'T':
-        UartWriteStr(str2);
+      case 'T': // stop conversation
+        //UartWriteStr(str2);
         TI_ADS1293_SPIWriteReg(0x00, 0x00);
-        UartWriteChar(q);
+        //UartWriteChar(q);
         break;
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
@@ -97,7 +100,7 @@ int main( void )
             UartWriteint(read_buf[2]);
             UartWriteChar(0x0d);    //发送"换行"(\r)"
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
-            Delays(10);
+            Delays(160);
         }
             break;
       case 'N':

@@ -10,7 +10,7 @@
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>124</Column0>
+          <Column0>107</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
@@ -27,12 +27,13 @@
       <Wnd1>
         <Tabs>
           <Tab>
-            <Identity>TabID-25379-10463</Identity>
+            <Identity>TabID-20588-30968</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
               <NodeDict>
                 <ExpandedNode>SPI_test</ExpandedNode>
+                <ExpandedNode>SPI_test/main.c</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
@@ -42,7 +43,7 @@
       <Wnd0>
         <Tabs>
           <Tab>
-            <Identity>TabID-223-10525</Identity>
+            <Identity>TabID-4612-31062</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
@@ -59,29 +60,21 @@
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\main.c</Filename>
-          <XPos>0</XPos>
-          <YPos>93</YPos>
-          <SelStart>2636</SelStart>
-          <SelEnd>2636</SelEnd>
-        </Tab>
-        <ActiveTab>1</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
-          <SelStart>106</SelStart>
-          <SelEnd>106</SelEnd>
+          <SelStart>126</SelStart>
+          <SelEnd>126</SelEnd>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename>
+          <Filename>$WS_DIR$\main.c</Filename>
           <XPos>0</XPos>
-          <YPos>47</YPos>
-          <SelStart>2566</SelStart>
-          <SelEnd>2576</SelEnd>
+          <YPos>0</YPos>
+          <SelStart>119</SelStart>
+          <SelEnd>119</SelEnd>
         </Tab>
+        <ActiveTab>2</ActiveTab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -96,9 +89,9 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-001bf800>
+            <Toolbar-026cf800>
               <key>iaridepm.enu1</key>
-            </Toolbar-001bf800>
+            </Toolbar-026cf800>
           </Sizes>
         </Row0>
       </Top>
