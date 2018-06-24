@@ -4,7 +4,7 @@
 #include <msp430x14x.h>
 
 #define CS2              P1OUT
-#define CS2_ENABLED      0xfc
+#define CS2_ENABLED      0xfd
 #define CS2_DISABLED     0xff
          
 void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value);

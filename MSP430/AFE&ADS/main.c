@@ -83,6 +83,8 @@ int main( void )
 {
   P4DIR = 0x01;
   P4OUT = 0x01;
+  P2DIR = 0xfa;
+  P2OUT = 0xf0;
   // Stop watchdog timer to prevent time out reset
   WDTCTL = WDTPW + WDTHOLD;
   
@@ -100,12 +102,14 @@ int main( void )
   
   char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
-  SpiMasterInit(4000000,8,3,0);
+  SpiMasterInit(400000,8,3,0);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
   _EINT(); 
   
   P1DIR = 0xff;
   P1SEL = 0x00;  
+  Delays(10000);
+  TI_ADS1293_WriteRegSettings();
   Delays(10000);
   TI_AFE4400_WriteRegSettings();  
   while(1)                    //串口测试
@@ -114,50 +118,58 @@ int main( void )
       switch(chr)
       {
       case 'S':
-        UartWriteStr(str1);
+        //UartWriteStr(str1);
+        TI_ADS1293_SPIWriteReg(0x00, 0x01);
         TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read 0x000001ul
-        UartWriteChar(q);
+        P2OUT=0x90;
+        //UartWriteChar(q);
         break;
       case 'T':
-        UartWriteStr(str2);
+        //UartWriteStr(str2);
         TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3);//enable read
-        UartWriteChar(q);
+        TI_ADS1293_SPIWriteReg(0x00, 0x00);
+        P2OUT=0xf0;
+        //UartWriteChar(q);
         break;
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
         {
             TI_ADS1293_SPIStreamReadReg(read_buf, count);                    
-            read_buff[0] = read_buf[1];
-            read_buff[1] = read_buf[2] | 0xc0;
+            read_buff[0] = read_buf[0] << 4;
+            read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x3f);
+            read_buff[1] = read_buf[1] << 4;
+            read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
+            Delays(1);
             TI_ADS1293_SPIStreamReadReg(read_buf, count);           
-            read_buff[1] = read_buff[1] & ( read_buf[1]>>2 );
-            read_buff[2] = read_buf[1] << 6;
-            read_buff[2] = read_buff[2] & (( read_buf[2]>>2 ) | 0x30);
+            read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
+            read_buff[2] = read_buf[0] << 6;
+            read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
+            read_buff[3] = read_buf[1] << 6;
+            read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
+            Delays(1);
             TI_ADS1293_SPIStreamReadReg(read_buf, count);           
-            read_buff[2] = read_buff[2] & ( read_buf[1]>>4 );
-            read_buff[3] = read_buf[1] << 4;
-            read_buff[3] = read_buff[3] & (( read_buf[2]>>4 ) | 0x0c);
-            TI_ADS1293_SPIStreamReadReg(read_buf, count);           
-            read_buff[3] = read_buff[3] & ( read_buf[1]>>6 );
-            read_buff[4] = read_buf[1] << 6;
-            read_buff[4] = read_buff[4] & (( read_buf[2]>>6 ) | 0x03);                   
+            read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
+            read_buff[4] = read_buf[1];
+            read_buff[5] = read_buf[2] & 0xc0;
+            Delays(10);
             val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
-            read_buf[0] = val & 0xFF;
-            read_buf[1] = (val>>8) & 0xFF;
-            read_buf[2] = (val>>16) & 0xFF;
-            UartWriteint(read_buf[2]);
-            UartWriteint(read_buf[1]);
-            UartWriteint(read_buf[0]);
-            val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
-            read_buf[0] = val & 0xFF;
-            read_buf[1] = (val>>8) & 0xFF;
-            read_buf[2] = (val>>16) & 0xFF;
-            UartWriteint(read_buf[2]);
-            UartWriteint(read_buf[1]);
-            UartWriteint(read_buf[0]);
+            read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
+            read_buff[6] = (val>>7) & 0xF8;
+            val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
+            read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
+            read_buff[7] = (val>>11) & 0xFF;
+            Delays(10);
+            UartWriteint(read_buff[0]);
+            UartWriteint(read_buff[1]);
+            UartWriteint(read_buff[2]);
+            UartWriteint(read_buff[3]);
+            UartWriteint(read_buff[4]);
+            UartWriteint(read_buff[5]);
+            UartWriteint(read_buff[6]);
+            UartWriteint(read_buff[7]);
             UartWriteChar(0x0d);    //发送"换行"(\r)"
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
-            Delays(10);
+            Delays(160);
         }
         break;
       case 'B':
