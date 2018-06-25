@@ -52,7 +52,7 @@ class ComputeBaseline {
     return (abs(data-prevdata)>200&&prevdata!=0);
   }
   boolean isabnormal(int data){
-    return (abs(data-prevdata)>1000&&prevdata!=0);
+    return (abs(data-prevdata)>600&&prevdata!=0);
   }
   boolean isabnormalin(int data){
     return (abs(data-prevdata)>200&&prevdata!=0);
@@ -84,6 +84,7 @@ class ComputeBaseline {
 }
 
 void setup() {
+  frameRate(30);
   size(1000, 800);
   printArray(Serial.list());
   myPort = new Serial(this, Serial.list()[2], 115200); 
@@ -91,30 +92,35 @@ void setup() {
   myPort.write('S');
   myPort.write('M');
   inBufferWaste = myPort.readBytes(50);
+  thread("readDataThread");
 }
 
 void draw() {
-  //background(200);
-  while (myPort.available() > 0) {
-    myPort.readBytesUntil(lf, inBuffer); // until 0x0A
-    if(inBuffer[8]==0x0D && inBuffer[9]==0x0A){
-      ECGdatas[0]=(convertByte(inBuffer[0])<<6)+((convertByte(inBuffer[1])&0xfc)>>2); //14 bits 8<<6+6
-      ECGdatas[1]=((convertByte(inBuffer[1])&0x03)<<12)+(convertByte(inBuffer[2])<<4)+((convertByte(inBuffer[3])&0xf0)>>4); //14bits 2<<12+8<<4+4
-      ECGdatas[2]=((convertByte(inBuffer[3])&0x0f)<<10)+(convertByte(inBuffer[4])<<2)+((convertByte(inBuffer[5])&0xc0)>>6); //14bits 4<<10+8<<2+2
-      //ECGdatas[3]=(convertByte(inBuffer[3])&0x03)*256+convertByte(inBuffer[4]);//2<<8+8
-      PPGDatas[0]=((convertByte(inBuffer[5])&0x3f)<<5)+((convertByte(inBuffer[6])&0xf8)>>3);//11bits 6<<5+5
-      PPGDatas[1]=((convertByte(inBuffer[6])&0x03)<<8)+convertByte(inBuffer[7]); //11bits 3<<8+8
-      print(" ECGdata1: "+ECGdatas[0]+" ECGdata2: "+ECGdatas[1]+" ECGdata3: "+ECGdatas[2]);
-      //println(" ECGdata4: "+ECGdatas[3]);
-      print(" PPGdata1: "+PPGDatas[0]);
-      println(" PPGdata2: "+PPGDatas[1]);
-      //updateDataManECG(PPGDatas[1]);
-      //drawlines();
-      updateDataManPPG(PPGDatas[0],PPGDatas[1]);
-      updateDataManECG3Data(ECGdatas[0],ECGdatas[1],ECGdatas[2]);
-      drawPPGlines();
-      drawEEGlines();
+  background(200);
+  drawPPGlines();
+  //drawEEGlines();
+}
+
+void readDataThread(){
+  while(true){
+    while (myPort.available() > 0) {
+      myPort.readBytesUntil(lf, inBuffer); // until 0x0A
+      if(inBuffer[8]==0x0D && inBuffer[9]==0x0A){
+        ECGdatas[0]=(convertByte(inBuffer[0])<<6)+((convertByte(inBuffer[1])&0xfc)>>2); //14 bits 8<<6+6
+        ECGdatas[1]=((convertByte(inBuffer[1])&0x03)<<12)+(convertByte(inBuffer[2])<<4)+((convertByte(inBuffer[3])&0xf0)>>4); //14bits 2<<12+8<<4+4
+        ECGdatas[2]=((convertByte(inBuffer[3])&0x0f)<<10)+(convertByte(inBuffer[4])<<2)+((convertByte(inBuffer[5])&0xc0)>>6); //14bits 4<<10+8<<2+2
+        //ECGdatas[3]=(convertByte(inBuffer[3])&0x03)*256+convertByte(inBuffer[4]);//2<<8+8
+        PPGDatas[0]=((convertByte(inBuffer[5])&0x3f)<<5)+((convertByte(inBuffer[6])&0xf8)>>3);//11bits 6<<5+5
+        PPGDatas[1]=((convertByte(inBuffer[6])&0x03)<<8)+convertByte(inBuffer[7]); //11bits 3<<8+8
+        print(" ECGdata1: "+ECGdatas[0]+" ECGdata2: "+ECGdatas[1]+" ECGdata3: "+ECGdatas[2]);
+        //println(" ECGdata4: "+ECGdatas[3]);
+        print(" PPGdata1: "+PPGDatas[0]);
+        println(" PPGdata2: "+PPGDatas[1]);
+        updateDataManPPG(PPGDatas[0],PPGDatas[1]);
+        updateDataManECG3Data(ECGdatas[0],ECGdatas[1],ECGdatas[2]);
+      }
     }
+    delay(1);
   }
 }
 
@@ -135,23 +141,22 @@ void updateDataManPPG(int data1, int data2) {
     data2=PPG2_baseline.prevdata;
   }
   //comp & add PPG1
-  a=0.25;
+  a=0.5;
   //b=00;
   b=PPG1_baseline.compute(a,100);
   displayPPG1data[pointerPPG]=abs((-a*(float(data1))+b));//resize 0x1FFFFF
   //comp & add PPG2
-  a=0.5;
+  a=1.5;
   //b=300;
   b=PPG2_baseline.compute(a,200);
   displayPPG2data[pointerPPG]=abs((-a*(float(data2))+b));//resize 0x1FFFFF
-  //print("PPG1: "+displayPPG1data[pointerPPG]);//
-  //print("PPG2: "+displayPPG2data[pointerPPG]);//
-  //println(" Pointer:"+pointerPPG);
+  print("PPG1: "+displayPPG1data[pointerPPG]);//
+  print("PPG2: "+displayPPG2data[pointerPPG]);//
+  println(" Pointer:"+pointerPPG);
   pointerPPG++;
 }
 
 void updateDataManECG3Data(int data1,int data2, int data3) {
-  background(200);
   a=1; 
   //b=12500; 
   EEG_baseline.addECGData(data1);
@@ -181,7 +186,6 @@ void updateDataManECG3Data(int data1,int data2, int data3) {
 }
 
 void updateDataManECG(int data) {
-  background(200);
   //a=1; //PPG2
   //b=300; //PPG2
   a=1; //PPG1
@@ -200,17 +204,18 @@ void updateDataManECG(int data) {
 }
 
 void drawPPGlines() {
+  background(200);
   float y_old=displayPPG1data[332];
+  stroke(204, 102, 0);
   for(int i=0;i<333;i++){
     y=displayPPG1data[i];
-    stroke(204, 102, 0);
     line(3*i-2,y_old,(3*i+1),y);
     y_old=y;
   }
   y_old=displayPPG2data[249];
+  stroke(204, 150, 0);
   for(int i=0;i<333;i++){
     y=displayPPG2data[i];
-    stroke(204, 150, 0);
     line(3*i-2,y_old,(3*i+1),y);
     y_old=y;
   }
