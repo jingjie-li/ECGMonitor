@@ -14,10 +14,74 @@ float[] displaydata = new float[1000]; //200Hz sampleing rate, display 10s
 float[] displayPPG1data = new float[333]; //200Hz sampleing rate, display 10s
 float[] displayPPG2data = new float[333]; //200Hz sampleing rate, display 10s
 
+ComputeBaseline EEG_baseline = new ComputeBaseline();
+ComputeBaseline PPG1_baseline = new ComputeBaseline();
+ComputeBaseline PPG2_baseline = new ComputeBaseline();
+
 float x_old = 1;
 float y_old = 100;
 float x = 1;
 float y = 100;
+
+class ComputeBaseline {
+  int datapointer;
+  int datasum;
+  float[] baselinedatas = new float[20];
+  float meansumval=0;
+  int prevdata=0;
+  ComputeBaseline (){
+    datapointer=0;
+    datasum=0;
+  }
+  void addPPGData(int data){
+    if(datapointer>19){
+      datapointer=0;
+    }
+    if(isabnormalPPGin(data)){// delete abnomal val
+      data=prevdata;
+    }
+    baselinedatas[datapointer]=float(data);
+    datapointer++;
+    datasum++;
+    prevdata=data;
+  }
+  boolean isabnormalPPG(int data){
+    return (abs(data-prevdata)>200&&prevdata!=0);
+  }
+  boolean isabnormalPPGin(int data){
+    return (abs(data-prevdata)>200&&prevdata!=0);
+  }
+  boolean isabnormal(int data){
+    return (abs(data-prevdata)>1000&&prevdata!=0);
+  }
+  boolean isabnormalin(int data){
+    return (abs(data-prevdata)>200&&prevdata!=0);
+  }
+  void addECGData(int data){
+    if(datapointer>19){
+      datapointer=0;
+    }
+    if(isabnormalin(data)){// delete abnomal val
+      data=prevdata;
+    }
+    baselinedatas[datapointer]=float(data);
+    datapointer++;
+    datasum++;
+    prevdata=data;
+  }
+  float compute(float factor, float base){
+    if(datasum>20){
+      meansumval=0;
+      for(int i=0;i<20;i++){
+        meansumval+=baselinedatas[i];
+      }
+      return ((meansumval/20)*factor+base);
+    }
+    else{
+      return 200;
+    }
+  }
+}
 
 void setup() {
   size(1000, 800);
@@ -40,7 +104,7 @@ void draw() {
       //ECGdatas[3]=(convertByte(inBuffer[3])&0x03)*256+convertByte(inBuffer[4]);//2<<8+8
       PPGDatas[0]=((convertByte(inBuffer[5])&0x3f)<<5)+((convertByte(inBuffer[6])&0xf8)>>3);//11bits 6<<5+5
       PPGDatas[1]=((convertByte(inBuffer[6])&0x03)<<8)+convertByte(inBuffer[7]); //11bits 3<<8+8
-      println(" ECGdata1: "+ECGdatas[0]+" ECGdata2: "+ECGdatas[1]+" ECGdata3: "+ECGdatas[2]);
+      print(" ECGdata1: "+ECGdatas[0]+" ECGdata2: "+ECGdatas[1]+" ECGdata3: "+ECGdatas[2]);
       //println(" ECGdata4: "+ECGdatas[3]);
       print(" PPGdata1: "+PPGDatas[0]);
       println(" PPGdata2: "+PPGDatas[1]);
@@ -54,20 +118,34 @@ void draw() {
   }
 }
 
+void stop() {
+  myPort.write('T');
+} 
+
 void updateDataManPPG(int data1, int data2) {
   if (pointerPPG>=332){
     pointerPPG=0;
   }
+  PPG1_baseline.addPPGData(data1);
+  if(PPG1_baseline.isabnormalPPG(data1)){
+    data1=PPG1_baseline.prevdata;
+  }
+  PPG2_baseline.addPPGData(data2);
+  if(PPG2_baseline.isabnormalPPG(data2)){
+    data2=PPG2_baseline.prevdata;
+  }
   //comp & add PPG1
   a=0.25;
-  b=00;
+  //b=00;
+  b=PPG1_baseline.compute(a,100);
   displayPPG1data[pointerPPG]=abs((-a*(float(data1))+b));//resize 0x1FFFFF
   //comp & add PPG2
   a=0.5;
-  b=300;
+  //b=300;
+  b=PPG2_baseline.compute(a,200);
   displayPPG2data[pointerPPG]=abs((-a*(float(data2))+b));//resize 0x1FFFFF
-  print("PPG1: "+displayPPG1data[pointerPPG]);//
-  print("PPG2: "+displayPPG2data[pointerPPG]);//
+  //print("PPG1: "+displayPPG1data[pointerPPG]);//
+  //print("PPG2: "+displayPPG2data[pointerPPG]);//
   //println(" Pointer:"+pointerPPG);
   pointerPPG++;
 }
@@ -75,16 +153,30 @@ void updateDataManPPG(int data1, int data2) {
 void updateDataManECG3Data(int data1,int data2, int data3) {
   background(200);
   a=1; 
-  b=12500; 
+  //b=12500; 
+  EEG_baseline.addECGData(data1);
+  if(EEG_baseline.isabnormal(data1)){
+    data1=EEG_baseline.prevdata;
+  }
+  EEG_baseline.addECGData(data2);
+  if(EEG_baseline.isabnormal(data2)){
+    data2=EEG_baseline.prevdata;
+  }
+  EEG_baseline.addECGData(data3);
+  if(EEG_baseline.isabnormal(data3)){
+    data3=EEG_baseline.prevdata;
+  }
+  b=EEG_baseline.compute(a,400);
   if (pointer>=997){
     pointer=0;
   }
+  
   displaydata[pointer]=abs((-a*(float(data1))+b));
   displaydata[pointer+1]=abs((-a*(float(data2))+b));
   displaydata[pointer+2]=abs((-a*(float(data3))+b));
   //displaydata[pointer+3]=abs((-a*(float(data4))+b));
-  print("EEG Data: "+ displaydata[pointer]);//
-  println(" Pointer:"+pointer);
+  //print("EEG Data: "+ displaydata[pointer]);//
+  //println(" Pointer:"+pointer);
   pointer+=3;
 }
 
