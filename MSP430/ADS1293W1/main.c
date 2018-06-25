@@ -82,9 +82,9 @@ int main( void )
       switch(chr)
       {
       case 'S': // start conversation
-        //UartWriteStr(str1);
+        UartWriteStr(str1);
         TI_ADS1293_SPIWriteReg(0x00, 0x01);
-        //UartWriteChar(q);
+        UartWriteChar(q);
         break;
       case 'T': // stop conversation
         //UartWriteStr(str2);

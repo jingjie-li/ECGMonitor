@@ -6,190 +6,80 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Uart.c</file>
+      <file>$PROJ_DIR$\Spi.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\MSP430_AFE_SPI.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Spi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\AFE4400.c</file>
+      <file>$PROJ_DIR$\MSP430_Spi.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\MSP430_Spi.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\AFE4400.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\SPI_test.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Spi.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\MSP430_AFE_SPI.r43</file>
+      <file>$PROJ_DIR$\AFE4400.h</file>
+      <file>$PROJ_DIR$\Uart.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\AFE4400.pbi</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\Debug\Exe\SPI_test.txt</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$PROJ_DIR$\TI_AFE4400.h</file>
+      <file>$PROJ_DIR$\TI_ADS1293_setting.h</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\Uart.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\msp430x14x.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\SPI_test.d43</file>
       <file>$PROJ_DIR$\MSP430_Spi.c</file>
-      <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\Spi.c</file>
+      <file>$PROJ_DIR$\Uart.c</file>
       <file>$PROJ_DIR$\MSP430_AFE_SPI.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\Uart.r43</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\TI_AFE4400_setting.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
       <file>$PROJ_DIR$\MSP430_AFE_SPI.h</file>
-      <file>$PROJ_DIR$\TI_AFE4400_setting.h</file>
-      <file>$PROJ_DIR$\AFE4400.h</file>
-      <file>$PROJ_DIR$\TI_ADS1293.h</file>
       <file>$PROJ_DIR$\Debug\Obj\MSP430_Spi.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Uart.r43</file>
+      <file>$PROJ_DIR$\TI_ADS1293.h</file>
       <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\Uart.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$PROJ_DIR$\Uart.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\in430.h</file>
-      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
-      <file>$PROJ_DIR$\Debug\Obj\AFE4400.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\MSP430_AFE_SPI.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\MSP430_AFE_SPI.r43</file>
-      <file>$PROJ_DIR$\TI_AFE4400.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\AFE4400.pbi</file>
-      <file>$PROJ_DIR$\TI_ADS1293_setting.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
-      <file>$PROJ_DIR$\Debug\Exe\SPI_test.d43</file>
-      <file>$PROJ_DIR$\Debug\Obj\Spi.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$PROJ_DIR$\Debug\Exe\SPI_test.txt</file>
-      <file>$TOOLKIT_DIR$\inc\msp430x14x.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\SPI_test.pbd</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-      <file>$PROJ_DIR$\MSP430_Spi.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\Spi.pbi</file>
-      <file>$PROJ_DIR$\Spi.h</file>
-      <file>$PROJ_DIR$\AFE4400.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\MSP430_Spi.pbi</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 34</file>
+          <file> 22</file>
         </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Uart.c</name>
+      <name>$PROJ_DIR$\AFE4400.c</name>
       <outputs>
         <tool>
           <name>ICC430</name>
-          <file> 5</file>
+          <file> 10</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 13</file>
+          <file> 20</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC430</name>
-          <file> 38 18 14 27 30 16 6 24 35 20 17 15</file>
+          <file> 16 28 23 18</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 38 18 14 27 16 6 24 35 20 17 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\MSP430_Spi.c</name>
-      <outputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 11</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 18 14 27 30 16 6 24 41 39 35 20 17 10 29</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 18 14 27 16 6 24 41 39 35 20 17 10 29</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 33</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 18 14 27 30 16 6 24 35 20 17 15 41 7 26 8 39 10 29</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 18 14 27 16 6 24 35 20 17 15 41 7 26 8 39 10 29</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Spi.c</name>
-      <outputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 32</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 40</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 35 20 17 41</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 35 20 17 41</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\MSP430_AFE_SPI.c</name>
-      <outputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 25</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 18 14 27 30 16 6 24 41 7 35 20 17 26 8</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 18 14 27 16 6 24 41 7 35 20 17 26 8</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\SPI_test.d43</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 19 21 33 12</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\SPI_test.txt</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 19 21 25 11 32 5 33 12</file>
+          <file> 16 28 23 18</file>
         </tool>
       </inputs>
     </file>
@@ -198,30 +88,140 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 23 43 40 13 36</file>
+          <file> 1 8 2 27 7</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\AFE4400.c</name>
+      <name>$PROJ_DIR$\Debug\Exe\SPI_test.txt</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 26 21 15 40 14 41 3 43</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\SPI_test.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 26 21 3 43</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MSP430_Spi.c</name>
       <outputs>
         <tool>
           <name>ICC430</name>
-          <file> 22</file>
+          <file> 40</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 28</file>
+          <file> 8</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC430</name>
-          <file> 9 35 20 17</file>
+          <file> 9 30 13 11 19 29 38 4 0 6 28 23 18 42 25</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 9 35 20 17</file>
+          <file> 9 30 13 11 29 38 4 0 6 28 23 18 42 25</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 28 23 18 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 23 18 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9 30 13 11 19 29 38 4 28 23 18 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 30 13 11 29 38 4 28 23 18 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MSP430_AFE_SPI.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9 30 13 11 19 29 38 4 0 39 28 23 18 24 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 30 13 11 29 38 4 0 39 28 23 18 24 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9 30 13 11 19 29 38 4 28 23 18 17 0 39 24 37 6 42 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 30 13 11 29 38 4 28 23 18 17 0 39 24 37 6 42 25</file>
         </tool>
       </inputs>
     </file>

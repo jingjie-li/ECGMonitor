@@ -147,7 +147,7 @@ int main( void )
             read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x3f);
             read_buff[1] = read_buf[1] << 4;
             read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
-            _BIS_SR(CPUOFF);
+            _BIS_SR(CPUOFF);//break;
             _NOP();
           }
           else if(c==2)

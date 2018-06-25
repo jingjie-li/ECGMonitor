@@ -94,7 +94,7 @@
 #define TI_ADS1293_MASK_DRDYB_REG_VALUE                     (0x00)                  /* Optional Mask Control for DRDYB Output */
 #define TI_ADS1293_MASK_ERR_REG_VALUE                       (0xF0)                  /* Mask Error on ALARMB Pin */
 #define TI_ADS1293_ALARM_FILTER_REG_VALUE                   (0x33)                  /* Digital Filter for Analog Alarm Signals */
-#define TI_ADS1293_CH_CNFG_REG_VALUE                        (0x10)                  /* vishy: 3channels, no status */  //70
+#define TI_ADS1293_CH_CNFG_REG_VALUE                        (0x20)                  /* vishy: 3channels, no status */  //70
 
 
 #define TI_ADS1293_REVID_REG_VALUE                          (0x40)                  /* Revision ID */

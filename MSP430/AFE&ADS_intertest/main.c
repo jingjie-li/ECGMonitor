@@ -157,6 +157,7 @@ int main( void )
           }
           else
           {
+            c = 0;
             P2OUT = 0xff;
             //TI_ADS1293_SPIStreamReadReg(read_buf, count);           
             //read_buff[3] = read_buff[3] & ( read_buf[1]>>6 );
@@ -176,7 +177,7 @@ int main( void )
             //UartWriteint(read_buff[5]);
             //UartWriteint(read_buff[6]);
             //UartWriteint(read_buff[7]); 
-            c = 0;
+            
           }
           
         }
