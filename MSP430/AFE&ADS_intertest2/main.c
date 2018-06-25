@@ -24,6 +24,15 @@
 #include <stdint.h>
 #include "msp430x14x.h"   //430寄存器头文件
 #include<msp430.h>  
+#include "Uart.h"         //串口通讯程序库头文件
+//#include "Spi.h"
+
+
+char str[] = "UartWriteChar"; //ROM中一个字符串
+char str1[] = "start conversation!"; //ROM中一个字符串
+char str2[] = "stop conversation!"; //ROM中一个字符串
+char q = 'Q';
+
 
 int count = 0;
 void select_xt2(void){  
@@ -48,15 +57,36 @@ void main(){
     P2OUT = 0xff;    
     CCTL1 = CCIE;                            // CCR1 中断使能  
     CCR1 = 10000;  
-    TACTL = TASSEL_2 + MC_2 + ID_3;          // SMCLK = 1MHz, 连续计数模式  
-    _EINT();                                //打开全局中断  
+    TACTL = TASSEL_2 + MC_2 + ID_3;          // SMCLK = 1MHz, 连续计数模式 
+    char chr;               //串口测试中，收到的字节
+    UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
+    _EINT();  //打开全局中断  
       
-    while(1){  
-          
-        if(count == 50){  
+    //P2OUT ^= BIT7;
+    chr = UartReadChar(); 
+    P2OUT ^= BIT6; 
+    
+    while(1){      
+        switch(chr)
+        {
+        case 'S':
+          P2OUT ^= BIT6; 
+          UartWriteint(count);
+          if(count >= 50){  
             count = 0;  
-            P2OUT ^= BIT3;                   //led灯每0.5s变化一次  
-        }  
+            P2OUT ^= BIT5;                   //led灯每0.5s变化一次  
+            UartWriteStr(str1);
+            _BIS_SR(CPUOFF);
+            _NOP();
+          }
+          else{
+            P2OUT ^= BIT4;
+          }
+          break;
+        case 'M': 
+          UartWriteint(count);
+          break;
+        }
           
     }  
   

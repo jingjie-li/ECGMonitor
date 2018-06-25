@@ -182,8 +182,8 @@ char UartInit(long baud,char parity,char dataBits,char stopBits)
 ****************************************************************************/
 void UartLpm()
 {
-    if(UxTCTL&SSEL0) LPM3;  //若以ACLK 作时钟，进入LPM3休眠(仅打开ACLK)
-    else             LPM0;  //若以SMCLK作时钟，进入LPM0休眠(不关闭SMCLK)
+    //if(UxTCTL&SSEL0) LPM3;  //若以ACLK 作时钟，进入LPM3休眠(仅打开ACLK)
+    //else             LPM0;  //若以SMCLK作时钟，进入LPM0休眠(不关闭SMCLK)
 }
 
 /****************************************************************************

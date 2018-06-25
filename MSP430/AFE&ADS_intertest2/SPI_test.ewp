@@ -1871,6 +1871,9 @@
   <file>
     <name>$PROJ_DIR$\main.c</name>
   </file>
+  <file>
+    <name>$PROJ_DIR$\Uart.c</name>
+  </file>
 </project>
 
 
