@@ -182,8 +182,8 @@ char UartInit(long baud,char parity,char dataBits,char stopBits)
 ****************************************************************************/
 void UartLpm()
 {
-    if(UxTCTL&SSEL0) LPM3;  //若以ACLK 作时钟，进入LPM3休眠(仅打开ACLK)
-    else             LPM0;  //若以SMCLK作时钟，进入LPM0休眠(不关闭SMCLK)
+    //if(UxTCTL&SSEL0) LPM3;  //若以ACLK 作时钟，进入LPM3休眠(仅打开ACLK)
+    //else             LPM0;  //若以SMCLK作时钟，进入LPM0休眠(不关闭SMCLK)
 }
 
 /****************************************************************************
@@ -195,14 +195,14 @@ void UartLpm()
 ****************************************************************************/
 void UartWriteChar(char c)
 { 
-    while (TxFlagu==0) UartLpm();  // 等待上一字节发完，并休眠
+    while (TxFlagu==0) //UartLpm();  // 等待上一字节发完，并休眠
     TxFlagu=0;                     //
     UxTXBUF=c;
 }
 
 void UartWriteint(uint8_t c)
 { 
-  while (TxFlagu==0) UartLpm();  // 等待上一字节发完，并休眠
+  while (TxFlagu==0) //UartLpm();  // 等待上一字节发完，并休眠
     TxFlagu=0;                     //
     UxTXBUF=c;
 }
@@ -215,14 +215,14 @@ void UartWriteint(uint8_t c)
 ****************************************************************************/
 char UartReadChar()
 { 
-    while (RxFlagu==0) UartLpm(); // 收到一字节?
+    while (RxFlagu==0) //UartLpm(); // 收到一字节?
     RxFlagu=0;
     return(UxRXBUF);
 }
 
 uint8_t UartReadint()
 { 
-    while (RxFlagu==0) UartLpm(); // 收到一字节?
+    while (RxFlagu==0) //UartLpm(); // 收到一字节?
     RxFlagu=0;
     return(UxRXBUF);
 }
