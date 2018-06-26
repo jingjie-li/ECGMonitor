@@ -100,7 +100,7 @@ int main( void )
             UartWriteint(read_buf[2]);
             UartWriteChar(0x0d);    //发送"换行"(\r)"
             UartWriteChar(0x0a);    //发送"回车"(\n)"  
-            Delays(160);
+            Delays(10);
         }
             break;
       case 'N':
