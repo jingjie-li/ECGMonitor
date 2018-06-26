@@ -47,3 +47,6 @@ link:[http://www.ti.com.cn/product/cn/MSP430FG439/toolssoftware](http://www.ti.c
 ## MSP430F149
 
 link:[http://www.ti.com.cn/product/cn/MSP430F149/technicaldocuments](http://www.ti.com.cn/product/cn/MSP430F149/technicaldocuments)
+
+# About ADS1293 Ctrl Regs
+AFE_RES(0x13h<0x00h)-> 102.4-kHz clock freq for ADC
