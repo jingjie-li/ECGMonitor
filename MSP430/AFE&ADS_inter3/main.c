@@ -31,7 +31,7 @@ char str[] = "UartWriteChar"; //ROM中一个字符串
 char str1[] = "start conversation!"; //ROM中一个字符串
 char str2[] = "stop conversation!"; //ROM中一个字符串
 char q = 'Q';
-
+char chr;
 /****************************************************************************
 * 名    称：ClkInit
 * 功    能：时钟系统初始化  MCLK为8MHz，SMCLK为1MHz
@@ -139,6 +139,19 @@ int main( void )
           //UartWriteint(c);
           //UartWriteChar('K');
           //UartWriteint(k);
+          chr = UartReadChar();
+          switch(chr)
+          {
+          case 'O':
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x10);
+          break;
+          case 'T':
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x20);
+          break;
+          case 'H':
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x40);
+          break;
+          }
           if(c==1)
           {
             //P2OUT = 0xf0;
@@ -218,8 +231,8 @@ int main( void )
           }
         }
         
-        //break;
-      //}
+          
+        
 
     }
     
