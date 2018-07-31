@@ -10,42 +10,29 @@
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>124</Column0>
+          <Column0>107</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
         </ColumnWidths>
       </Workspace>
-      <Build>
-        <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>717</ColumnWidth1>
-        <ColumnWidth2>191</ColumnWidth2>
-        <ColumnWidth3>47</ColumnWidth3>
-      </Build>
     </Static>
     <Windows>
-      <Wnd1>
+      <Wnd0>
         <Tabs>
           <Tab>
-            <Identity>TabID-10723-2376</Identity>
+            <Identity>TabID-11729-7660</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
               <NodeDict>
                 <ExpandedNode>SPI_test</ExpandedNode>
+                <ExpandedNode>SPI_test/MSP430_AFE_SPI.c</ExpandedNode>
+                <ExpandedNode>SPI_test/MSP430_Spi.c</ExpandedNode>
+                <ExpandedNode>SPI_test/Spi.c</ExpandedNode>
+                <ExpandedNode>SPI_test/Uart.c</ExpandedNode>
               </NodeDict>
             </Session>
-          </Tab>
-        </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd1>
-      <Wnd0>
-        <Tabs>
-          <Tab>
-            <Identity>TabID-6081-2872</Identity>
-            <TabName>Build</TabName>
-            <Factory>Build</Factory>
-            <Session/>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
@@ -57,18 +44,106 @@
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\main.c</Filename>
           <XPos>0</XPos>
-          <YPos>191</YPos>
-          <SelStart>5846</SelStart>
-          <SelEnd>5846</SelEnd>
+          <YPos>219</YPos>
+          <SelStart>460</SelStart>
+          <SelEnd>460</SelEnd>
         </Tab>
-        <ActiveTab>0</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\Uart.c</Filename>
           <XPos>0</XPos>
-          <YPos>168</YPos>
-          <SelStart>5834</SelStart>
-          <SelEnd>5834</SelEnd>
+          <YPos>0</YPos>
+          <SelStart>604</SelStart>
+          <SelEnd>604</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\Spi.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>1065</SelStart>
+          <SelEnd>1065</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename>
+          <XPos>0</XPos>
+          <YPos>235</YPos>
+          <SelStart>532</SelStart>
+          <SelEnd>532</SelEnd>
+        </Tab>
+        <ActiveTab>3</ActiveTab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\Spi.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\Uart.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\MSP430_Spi.c</Filename>
+          <XPos>0</XPos>
+          <YPos>1</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\TI_ADS1293.h</Filename>
+          <XPos>0</XPos>
+          <YPos>10</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\TI_ADS1293_setting.h</Filename>
+          <XPos>0</XPos>
+          <YPos>1</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\MSP430_Spi.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\TI_AFE4400.h</Filename>
+          <XPos>0</XPos>
+          <YPos>316</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\TI_AFE4400_setting.h</Filename>
+          <XPos>0</XPos>
+          <YPos>37</YPos>
+          <SelStart>480</SelStart>
+          <SelEnd>480</SelEnd>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
@@ -84,31 +159,31 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-0026f800>
+            <Toolbar-0081f778>
               <key>iaridepm.enu1</key>
-            </Toolbar-0026f800>
+            </Toolbar-0081f778>
           </Sizes>
         </Row0>
       </Top>
       <Left>
         <Row0>
           <Sizes>
-            <Wnd1>
+            <Wnd0>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>279</Bottom>
+                <Bottom>592</Bottom>
                 <Right>198</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>200</xscreen>
                 <yscreen>200</yscreen>
-                <sizeHorzCX>197044</sizeHorzCX>
-                <sizeHorzCY>362976</sizeHorzCY>
-                <sizeVertCX>197044</sizeVertCX>
-                <sizeVertCY>509982</sizeVertCY>
+                <sizeHorzCX>156250</sizeHorzCX>
+                <sizeHorzCY>313972</sizeHorzCY>
+                <sizeVertCX>156250</sizeVertCX>
+                <sizeVertCY>932496</sizeVertCY>
               </Rect>
-            </Wnd1>
+            </Wnd0>
           </Sizes>
         </Row0>
       </Left>
@@ -119,43 +194,14 @@
       </Right>
       <Bottom>
         <Row0>
-          <Sizes>
-            <Wnd0>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>227</Bottom>
-                <Right>1017</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>1019</xscreen>
-                <yscreen>229</yscreen>
-                <sizeHorzCX>1003941</sizeHorzCX>
-                <sizeHorzCY>415608</sizeHorzCY>
-                <sizeVertCX>197044</sizeVertCX>
-                <sizeVertCY>362976</sizeVertCY>
-              </Rect>
-            </Wnd0>
-          </Sizes>
+          <Sizes/>
         </Row0>
       </Bottom>
       <Float>
         <Sizes/>
       </Float>
     </Positions>
-=======
-      
-      
-      
-      
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>122</YPos><SelStart>2306</SelStart><SelEnd>2306</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Spi.c</Filename><XPos>0</XPos><YPos>154</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
-    <Positions>
-      
-      
-      
-      
-      
-    <Top><Row0><Sizes><Toolbar-05b7f700><key>iaridepm.enu1</key></Toolbar-05b7f700></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>463</Bottom><Right>250</Right><x>-2</x><y>-2</y><xscreen>252</xscreen><yscreen>231</yscreen><sizeHorzCX>196875</sizeHorzCX><sizeHorzCY>362637</sizeHorzCY><sizeVertCX>196875</sizeVertCX><sizeVertCY>729984</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>129</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>131</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>205651</sizeHorzCY><sizeVertCX>196875</sizeVertCX><sizeVertCY>362637</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
-
+  </Desktop>
+</Workspace>
 
 

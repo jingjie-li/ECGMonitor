@@ -1,35 +1,20 @@
-//----------------------------------------------------------------------------
-//  Description:  This file contains the initialization values for the 
-//  ADS1293 registers.
-//
-//  MSP430/ADS1293 Interface Code Library v1.0
-//
-//   Vishy Natarajan
-//   Texas Instruments Inc.
-//   October 2011
-//   Built with CCE Version: 4.2 and IAR Embedded Workbench Version:  5.3x
-//------------------------------------------------------------------------------
-// Change Log:
-//------------------------------------------------------------------------------
-// Version:  1.00
-// Comments: Initial Release Version
-//------------------------------------------------------------------------------
+/*----------------------------------------------------------------
+ * Copyright (C) 2018 西安交通大学 生命学院 李金铭
+ * 版权所有。 
+ * 
+ * 文件名： TI_AFE4400_setting.h
+ * 
+ * 文件功能描述：   
+ *          完成AFE4400初始化
+ *   
+**----------------------------------------------------------------*/
 #ifndef HEADER_FILE_TI_AFE4400_REGISTER_SETTINGS_H
 
 #define HEADER_FILE_TI_AFE4400_REGISTER_SETTINGS_H
 
-/************************************************************
-* TI ADS1293 REGISTER SET INITIALIZATION VALUES
-************************************************************/
 
-/************************************************************
-* Stops data conversion
-************************************************************/
 #define TI_ADS1293_CONFIG_REG_VALUE                         (0x00)                  /* Main Configuration */
 
-/************************************************************
-* 5-Lead ECG Application ** Input Channel Selection Registers
-************************************************************/
 #define TI_AFE4400_LED2STC_REG_VALUE                    (6050ul)                /* Flex Routing Swich Control for Channel 1 */
 #define TI_AFE4400_LED2ENDC_REG_VALUE                   (7998ul)                /* Flex Routing Swich Control for Channel 2 */
 #define TI_AFE4400_LED2LEDSTC_REG_VALUE                 (6000ul)                /* Flex Routing Swich Control for Channel 3 */
