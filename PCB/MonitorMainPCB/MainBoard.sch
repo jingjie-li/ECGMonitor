@@ -17501,6 +17501,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="ADS1293TESTBOARD" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="ANALOG FRONT END ADS-1293 MODULE"/>
+<attribute name="CREVISION" value="JINMING LI"/>
 <attribute name="DESIGNER" value="JINGJIE LI"/>
 </part>
 <part name="C7" library="SparkFun-Capacitors" deviceset="1.0UF" device="-0805-25V-10%" value="1.0uF"/>
@@ -17691,14 +17692,17 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <part name="CH340-PWR" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="AFE4400 Oximeter Module"/>
+<attribute name="CREVISION" value="JINMING LI"/>
 <attribute name="DESIGNER" value="JINGJIE LI"/>
 </part>
 <part name="FRAME2" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="AFE4400 LDO Module"/>
+<attribute name="CREVISION" value="JINMING LI"/>
 <attribute name="DESIGNER" value="JINGJIE LI"/>
 </part>
 <part name="FRAME3" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="MSP430 MCU Module"/>
+<attribute name="CREVISION" value="JINMING LI"/>
 <attribute name="DESIGNER" value="JINGJIE LI"/>
 </part>
 </parts>
@@ -17751,6 +17755,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="SUPPLY4" gate="GND" x="89.916" y="16.256"/>
 <instance part="ADS1293TESTBOARD" gate="G$1" x="5.08" y="5.08">
 <attribute name="DESIGNER" x="5.08" y="5.08" size="3.81" layer="96" display="off"/>
+<attribute name="CREVISION" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C7" gate="G$1" x="100.076" y="82.296"/>
 <instance part="SUPPLY5" gate="GND" x="100.076" y="74.676"/>
@@ -18475,6 +18480,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="FRAME2" gate="G$1" x="5.08" y="5.08">
 <attribute name="CNAME" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 <attribute name="DESIGNER" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
+<attribute name="CREVISION" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -18955,6 +18961,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="FRAME1" gate="G$1" x="5.08" y="5.08">
 <attribute name="CNAME" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 <attribute name="DESIGNER" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
+<attribute name="CREVISION" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -19574,6 +19581,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="FRAME3" gate="G$1" x="5.08" y="5.08">
 <attribute name="CNAME" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 <attribute name="DESIGNER" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
+<attribute name="CREVISION" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>

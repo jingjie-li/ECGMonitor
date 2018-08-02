@@ -106,7 +106,7 @@ int main( void )
   
   char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
-  SpiMasterInit(4000000,8,3,0);
+  SpiMasterInit(4000000,8,3,1);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
   _EINT(); 
   
@@ -114,6 +114,7 @@ int main( void )
   P1SEL = 0x00;
   Delays(10000);
   TI_ADS1293_WriteRegSettings();
+  Delays(1);
   TI_AFE4400_WriteRegSettings();  
   while(1)                    //串口测试
   {
@@ -135,6 +136,77 @@ int main( void )
         TI_ADS1293_SPIWriteReg(0x00, 0x00);
         TI_AFE4400_SPIAutoIncWriteReg(0x00, 0, 3);//enable read
         //UartWriteChar(q);
+        break;
+      case 'P':
+        TI_ADS1293_SPIWriteReg(0x00, 0x01);
+        Delays(1);
+        TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read 0x000001ul
+        Delays(1);
+        for(uint32_t k = 0;k<1000000;k++)
+        //while(1)
+        {
+          P2OUT ^= BIT3;
+          //UartWriteChar('C');
+          //UartWriteint(c);
+          //UartWriteChar('K');
+          //UartWriteint(k);
+          if(c==1)
+          {
+            //P2OUT = 0xf0;
+            P2OUT ^= BIT6;
+            TI_ADS1293_SPIStreamReadReg(read_buf, count); 
+            read_buff[0] = read_buf[0] << 4;
+            read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x3f);
+            read_buff[1] = read_buf[1] << 4;
+            read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
+            _BIS_SR(CPUOFF);
+            _NOP();
+          }
+          else if(c==2)
+          {
+            //P2OUT = 0xff;
+            P2OUT ^= BIT6;
+            TI_ADS1293_SPIStreamReadReg(read_buf, count); 
+            read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
+            read_buff[2] = read_buf[0] << 6;
+            read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
+            read_buff[3] = read_buf[1] << 6;
+            read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
+            _BIS_SR(CPUOFF);
+            _NOP();
+          }
+          else
+          {
+            c = 0;
+            //P2OUT = 0xf0;
+            P2OUT ^= BIT6;
+            P2OUT ^= BIT5;
+            TI_ADS1293_SPIStreamReadReg(read_buf, count); 
+            read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
+            read_buff[4] = read_buf[1];
+            read_buff[5] = read_buf[2] & 0xc0;
+            val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
+            read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
+            read_buff[6] = (val>>7) & 0xF8;
+            val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
+            //P2OUT ^= BIT5;
+            read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
+            read_buff[7] = (val>>11) & 0xFF;
+            //Delays(10);
+            UartWriteint(read_buff[0]);
+            UartWriteint(read_buff[1]);
+            UartWriteint(read_buff[2]);
+            UartWriteint(read_buff[3]);
+            UartWriteint(read_buff[4]);
+            UartWriteint(read_buff[5]);
+            UartWriteint(read_buff[6]);
+            UartWriteint(read_buff[7]);
+            // FOR PROCESSING, WE NEED 0D,OA
+            Delays(1);
+            _BIS_SR(CPUOFF);
+            _NOP();
+          }
+        }
         break;
       case 'M':
         for(uint32_t k = 0;k<1000000;k++)
@@ -199,7 +271,7 @@ int main( void )
             // FOR PROCESSING, WE NEED 0D,OA
             UartWriteChar(0x0d);
             UartWriteChar(0x0a);
-            Delays(2);
+            Delays(1);
             _BIS_SR(CPUOFF);
             _NOP();
           }

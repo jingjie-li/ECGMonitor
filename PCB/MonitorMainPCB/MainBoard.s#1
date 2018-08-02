@@ -17792,7 +17792,7 @@ Source: http://www.cypress.com .. 38-12025_0P_V.pdf</description>
 <instance part="SUPPLY9" gate="GND" x="265.176" y="46.736"/>
 <instance part="+3V8" gate="G$1" x="265.176" y="61.976"/>
 <instance part="P+3" gate="1" x="256.54" y="60.96"/>
-<instance part="U$6" gate="G$1" x="15.24" y="-7.62" smashed="yes"/>
+<instance part="U$6" gate="G$1" x="7.62" y="7.62" smashed="yes"/>
 </instances>
 <busses>
 </busses>

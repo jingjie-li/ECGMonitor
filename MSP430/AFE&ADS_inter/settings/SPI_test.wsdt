@@ -18,16 +18,16 @@
       </Workspace>
       <Build>
         <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>717</ColumnWidth1>
-        <ColumnWidth2>191</ColumnWidth2>
-        <ColumnWidth3>47</ColumnWidth3>
+        <ColumnWidth1>912</ColumnWidth1>
+        <ColumnWidth2>243</ColumnWidth2>
+        <ColumnWidth3>60</ColumnWidth3>
       </Build>
     </Static>
     <Windows>
       <Wnd1>
         <Tabs>
           <Tab>
-            <Identity>TabID-10723-2376</Identity>
+            <Identity>TabID-20747-18388</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -42,7 +42,7 @@
       <Wnd0>
         <Tabs>
           <Tab>
-            <Identity>TabID-6081-2872</Identity>
+            <Identity>TabID-236-11169</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
@@ -57,18 +57,18 @@
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\main.c</Filename>
           <XPos>0</XPos>
-          <YPos>183</YPos>
-          <SelStart>5837</SelStart>
-          <SelEnd>5837</SelEnd>
+          <YPos>128</YPos>
+          <SelStart>3643</SelStart>
+          <SelEnd>3643</SelEnd>
         </Tab>
         <ActiveTab>0</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Uart.c</Filename>
+          <Filename>$WS_DIR$\Spi.c</Filename>
           <XPos>0</XPos>
-          <YPos>168</YPos>
-          <SelStart>5834</SelStart>
-          <SelEnd>5834</SelEnd>
+          <YPos>58</YPos>
+          <SelStart>2138</SelStart>
+          <SelEnd>2138</SelEnd>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
@@ -97,16 +97,16 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>395</Bottom>
+                <Bottom>356</Bottom>
                 <Right>198</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>200</xscreen>
                 <yscreen>200</yscreen>
-                <sizeHorzCX>197044</sizeHorzCX>
-                <sizeHorzCY>362976</sizeHorzCY>
-                <sizeVertCX>197044</sizeVertCX>
-                <sizeVertCY>720508</sizeVertCY>
+                <sizeHorzCX>156863</sizeHorzCX>
+                <sizeHorzCY>336700</sizeHorzCY>
+                <sizeVertCX>156863</sizeVertCX>
+                <sizeVertCY>602694</sizeVertCY>
               </Rect>
             </Wnd1>
           </Sizes>
@@ -124,16 +124,16 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>111</Bottom>
-                <Right>1017</Right>
+                <Bottom>193</Bottom>
+                <Right>1277</Right>
                 <x>-2</x>
                 <y>-2</y>
-                <xscreen>1019</xscreen>
-                <yscreen>113</yscreen>
-                <sizeHorzCX>1003941</sizeHorzCX>
-                <sizeHorzCY>205082</sizeHorzCY>
-                <sizeVertCX>197044</sizeVertCX>
-                <sizeVertCY>362976</sizeVertCY>
+                <xscreen>1279</xscreen>
+                <yscreen>195</yscreen>
+                <sizeHorzCX>1003137</sizeHorzCX>
+                <sizeHorzCY>328283</sizeHorzCY>
+                <sizeVertCX>156863</sizeVertCX>
+                <sizeVertCY>336700</sizeVertCY>
               </Rect>
             </Wnd0>
           </Sizes>
