@@ -2,205 +2,47 @@
 
 <Workspace>
   <ConfigDictionary>
-    <CurrentConfigs>
-      <Project>SPI_test/Debug</Project>
-    </CurrentConfigs>
-  </ConfigDictionary>
+    
+  <CurrentConfigs><Project>SPI_test/Debug</Project></CurrentConfigs></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>107</Column0>
-          <Column1>27</Column1>
-          <Column2>27</Column2>
-          <Column3>27</Column3>
-        </ColumnWidths>
+          
+          
+          
+          
+        <Column0>107</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
-    </Static>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build></Static>
     <Windows>
-      <Wnd0>
+      
+    <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-11729-7660</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
-              <NodeDict>
-                <ExpandedNode>SPI_test</ExpandedNode>
-                <ExpandedNode>SPI_test/MSP430_AFE_SPI.c</ExpandedNode>
-                <ExpandedNode>SPI_test/MSP430_Spi.c</ExpandedNode>
-                <ExpandedNode>SPI_test/Spi.c</ExpandedNode>
-                <ExpandedNode>SPI_test/Uart.c</ExpandedNode>
-              </NodeDict>
-            </Session>
+              
+            <NodeDict><ExpandedNode>SPI_test</ExpandedNode><ExpandedNode>SPI_test/MSP430_AFE_SPI.c</ExpandedNode><ExpandedNode>SPI_test/MSP430_Spi.c</ExpandedNode><ExpandedNode>SPI_test/Spi.c</ExpandedNode><ExpandedNode>SPI_test/Uart.c</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd0>
-    </Windows>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-3324-25662</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
-      <Pane>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\main.c</Filename>
-          <XPos>0</XPos>
-          <YPos>219</YPos>
-          <SelStart>460</SelStart>
-          <SelEnd>460</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Uart.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>604</SelStart>
-          <SelEnd>604</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Spi.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>1065</SelStart>
-          <SelEnd>1065</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename>
-          <XPos>0</XPos>
-          <YPos>235</YPos>
-          <SelStart>532</SelStart>
-          <SelEnd>532</SelEnd>
-        </Tab>
-        <ActiveTab>3</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Spi.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Uart.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\MSP430_Spi.c</Filename>
-          <XPos>0</XPos>
-          <YPos>1</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\TI_ADS1293.h</Filename>
-          <XPos>0</XPos>
-          <YPos>10</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\TI_ADS1293_setting.h</Filename>
-          <XPos>0</XPos>
-          <YPos>1</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\MSP430_Spi.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\TI_AFE4400.h</Filename>
-          <XPos>0</XPos>
-          <YPos>316</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\TI_AFE4400_setting.h</Filename>
-          <XPos>0</XPos>
-          <YPos>37</YPos>
-          <SelStart>480</SelStart>
-          <SelEnd>480</SelEnd>
-        </Tab>
-      </Pane>
-      <ActivePane>0</ActivePane>
-      <Sizes>
-        <Pane>
-          <X>1000000</X>
-          <Y>1000000</Y>
-        </Pane>
-      </Sizes>
-      <SplitMode>1</SplitMode>
-    </Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>89</YPos><SelStart>460</SelStart><SelEnd>460</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>604</SelStart><SelEnd>604</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Spi.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1065</SelStart><SelEnd>1065</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.c</Filename><XPos>0</XPos><YPos>221</YPos><SelStart>9671</SelStart><SelEnd>9671</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Spi.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_Spi.c</Filename><XPos>0</XPos><YPos>1</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_ADS1293.h</Filename><XPos>0</XPos><YPos>10</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_ADS1293_setting.h</Filename><XPos>0</XPos><YPos>1</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_Spi.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MSP430_AFE_SPI.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400.h</Filename><XPos>0</XPos><YPos>316</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\TI_AFE4400_setting.h</Filename><XPos>0</XPos><YPos>37</YPos><SelStart>480</SelStart><SelEnd>480</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
-      <Top>
-        <Row0>
-          <Sizes>
-            <Toolbar-0081f778>
-              <key>iaridepm.enu1</key>
-            </Toolbar-0081f778>
-          </Sizes>
-        </Row0>
-      </Top>
-      <Left>
-        <Row0>
-          <Sizes>
-            <Wnd0>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>592</Bottom>
-                <Right>198</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>200</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>156250</sizeHorzCX>
-                <sizeHorzCY>313972</sizeHorzCY>
-                <sizeVertCX>156250</sizeVertCX>
-                <sizeVertCY>932496</sizeVertCY>
-              </Rect>
-            </Wnd0>
-          </Sizes>
-        </Row0>
-      </Left>
-      <Right>
-        <Row0>
-          <Sizes/>
-        </Row0>
-      </Right>
-      <Bottom>
-        <Row0>
-          <Sizes/>
-        </Row0>
-      </Bottom>
-      <Float>
-        <Sizes/>
-      </Float>
-    </Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-060cf700><key>iaridepm.enu1</key></Toolbar-060cf700></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>394</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>313972</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>621664</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>200</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>313972</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>313972</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
