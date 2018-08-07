@@ -76,17 +76,16 @@ void Delays(uint32_t k)
 ****************************************************************************/
 int main( void )
 {
-  P4DIR = 0x01;
-  P4OUT = 0x01;
-  P2DIR = 0xfa;
-  P2OUT = 0xf0;
+  
+
   /*下面六行程序关闭所有的IO口*/
-  P1DIR |= 0XFC;P1OUT = 0X00;
-  P2DIR = 0XF8;P2OUT = 0XF0;
-  P3DIR = 0XFF;P3OUT = 0X00;
-  P4DIR = 0X80;P4OUT = 0X00;
-  P5DIR = 0XFF;P5OUT = 0X00;
-  P6DIR = 0XFF;P6OUT = 0X00;
+  P1DIR = 0XFF;    P1OUT = 0X00;
+  P2DIR = 0XFA;    P2OUT = 0XF0;
+  P3DIR = 0XFF;    P3OUT = 0X00;
+  P4DIR = 0x01;    P4OUT = 0x01;
+  P4DIR |= 0x80;   P4OUT |= 0x80;
+  P5DIR = 0XFF;    P5OUT = 0X00;
+  P6DIR = 0XFF;    P6OUT = 0X00;
   
   // Stop watchdog timer to prevent time out reset
   WDTCTL = WDTPW + WDTHOLD;
@@ -153,9 +152,11 @@ int main( void )
             TI_ADS1293_SPIStreamReadReg(read_buf, count);
             P2OUT ^= BIT6; 
             read_buff[0] = read_buf[0] << 4;
-            read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x3f);
+            read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x0f);
             read_buff[1] = read_buf[1] << 4;
             read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
+            //read_buff[0] = read_buf[0];
+            //read_buff[1] = read_buf[1];
             _BIS_SR(CPUOFF);
             _NOP();
           }
@@ -169,6 +170,8 @@ int main( void )
             read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
             read_buff[3] = read_buf[1] << 6;
             read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
+            //read_buff[2] = read_buf[0];
+            //read_buff[3] = read_buf[1];
             _BIS_SR(CPUOFF);
             _NOP();
           }
@@ -198,7 +201,7 @@ int main( void )
             UartWriteint(read_buff[5]);
             UartWriteint(read_buff[6]);
             UartWriteint(read_buff[7]);
-            Delays(100);
+            Delays(1);
             // FOR PROCESSING, WE NEED 0D,OA
             //UartWriteChar(0x0d);
             //UartWriteChar(0x0a);
