@@ -216,6 +216,17 @@ char UartReadChar()
     return(UxRXBUF);
 }
 
+char UartReadState()
+{
+  return(RxFlagu);
+}
+
+char UartForceReadChar()
+{ 
+    RxFlagu=0;
+    return(UxRXBUF);
+}
+
 uint8_t UartReadint()
 { 
     while (RxFlagu==0) UartLpm(); // 收到一字节?
