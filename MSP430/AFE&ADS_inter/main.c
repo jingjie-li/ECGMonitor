@@ -118,14 +118,13 @@ int main( void )
   //P1SEL = 0x00;
   Delays(10000);
   TI_ADS1293_WriteRegSettings();
-  TI_AFE4400_WriteRegSettings();  
+  TI_AFE4400_WriteRegSettings(); 
+  
+  chr = UartReadChar();
+  
   while(1)                    //´®¿Ú²âÊÔ
   {
-    
-
-    chr = UartReadChar();
-    
-    
+      
     TI_ADS1293_SPIWriteReg(0x00, 0x01);
     TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read AFE (0x000001ul)
         
