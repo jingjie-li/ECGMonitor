@@ -25,6 +25,7 @@ char str1[] = "start conversation!"; //ROM中一个字符串
 char str2[] = "stop conversation!"; //ROM中一个字符串
 char q = 'Q';
 
+
 /****************************************************************************
 * 名    称：ClkInit
 * 功    能：时钟系统初始化  MCLK为8MHz，SMCLK为1MHz
