@@ -68,6 +68,67 @@ void Delays(uint32_t k)
     }
 }
 
+/*******************************************
+函数名称：readecg1
+功    能：延时一会
+参    数：无
+返回值  ：无
+********************************************/
+void readecg1(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
+{
+    TI_ADS1293_SPIStreamReadReg(buffer, count);
+    *(buffer1) = *(buffer) << 4;
+    *(buffer1) = *(buffer1) | ((*( buffer+1 )>>4 ) & 0x0f);
+    *(buffer1+1) = *( buffer+1 ) << 4;
+    *(buffer1+1) = *(buffer1+1) | ((*( buffer+2 ) >> 4 )&0x0c );
+}
+
+/*******************************************
+函数名称：readecg2
+功    能：延时一会
+参    数：无
+返回值  ：无
+********************************************/
+void readecg2(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
+{
+    TI_ADS1293_SPIStreamReadReg(buffer, count);
+    *(buffer1+1) = *(buffer1+1) | (( *(buffer) >> 2 )&0x03 );
+    *(buffer1+2) = *(buffer) << 6;
+    *(buffer1+2) = *(buffer1+2) | (( *( buffer+1 )>>2 ) & 0x3f);
+    *(buffer1+3) = *( buffer+1 ) << 6;
+    *(buffer1+3) = *(buffer1+3) | (( *( buffer+2 ) >> 2 )&0x30 );
+}
+
+/*******************************************
+函数名称：readecg3
+功    能：延时一会
+参    数：无
+返回值  ：无
+********************************************/
+void readecg3(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
+{
+    TI_ADS1293_SPIStreamReadReg(buffer, count);
+    *(buffer1+3) = *(buffer1+3) | ( *(buffer)&0x0f );
+    *(buffer1+4) = *( buffer+1 );
+    *(buffer1+5) = *( buffer+2 ) & 0xc0;
+}
+
+/*******************************************
+函数名称：readspo2
+功    能：延时一会
+参    数：无
+返回值  ：无
+********************************************/
+void readspo2(uint8_t *buffer1, uint8_t count)
+{
+    unsigned long value = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
+    *(buffer1+5) = *(buffer1+5) | ((value>>15) & 0x3F);
+    *(buffer1+6) = (value>>7) & 0xF8;
+    value = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
+    *(buffer1+6) = *(buffer1+6) | (( value>>19 ) & 0x07);
+    *(buffer1+7) = (value>>11) & 0xFF;
+}
+
 /****************************************************************************
 * 名    称：main主程序
 * 功    能：设置串口，输出信息，从串口读计算机键盘输入数据，测试串口收发
