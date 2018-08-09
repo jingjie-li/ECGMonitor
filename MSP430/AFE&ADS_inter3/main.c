@@ -172,8 +172,8 @@ int main( void )
             //P2OUT = 0xff;
             //TI_ADS1293_SPIStreamReadReg(read_buf, count);
             read_buf[0] = 0x5C;
-            read_buf[1] = 0xB1;
-            read_buf[2] = 0x24;
+            read_buf[1] = 0xB2;
+            read_buf[2] = 0x9E;
             P2OUT ^= BIT6; 
             read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
             read_buff[2] = read_buf[0] << 6;
