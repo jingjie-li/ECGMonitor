@@ -4,3 +4,8 @@
 *.dep
 *.tmp
 *.wsdt
+*.pbi
+*.pbd
+*.bat
+*.dni
+*.dbgdt
