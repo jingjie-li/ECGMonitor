@@ -1,37 +1,13 @@
-//******************************************************************************
-//  Description:  This file contains functions that allow the CC254x device to
-//  access the SPI interface of the ADS1293.  There are multiple
-//  instances of each function; the one to be compiled is selected by the
-//  system variable TI_ADS1293_SER_INTF, defined in "TI_ADS1293_hardware_board.h".
-//
-//  CC254x/ADS1293 Interface Code Library v1.0
-// 
-//
-//   Vishy Natarajan
-//   Texas Instruments Inc.
-//   February 2012
-//   Built with CCE Version: 4.2 and IAR Embedded Workbench Version:  5.3x
-//******************************************************************************
-// Change Log:
-//******************************************************************************
-// Version:  1.00
-// Comments: Initial Release Version
-//******************************************************************************
-/*  Copyright 2011-2012 Texas Instruments Incorporated. All rights reserved.
-
-  IMPORTANT: Your use of this Software is limited to those specific rights
-  granted under the terms of a software license agreement between the user who
-  downloaded the software, his/her employer (which must be your employer) and
-  Texas Instruments Incorporated (the "License"). You may not use this Software
-  unless you agree to abide by the terms of the License. The License limits your
-  use, and you acknowledge, that the Software may not be modified, copied or
-  distributed unless embedded on a Texas Instruments microcontroller which is 
-  integrated into your product. Other than for the foregoing purpose, you may 
-  not use, reproduce, copy, prepare derivative works of, modify, distribute, 
-  perform, display or sell this Software and/or its documentation for any 
-  purpose.
-
-*******************************************************************************/
+/*----------------------------------------------------------------
+ * Copyright (C) 2018 西安交通大学 生命学院 李金铭
+ * 版权所有。 
+ * 
+ * 文件名： MSP430_AFE_SPI.c
+ * 
+ * 文件功能描述：   
+ *          完成AFE4400初始化
+ *   
+**----------------------------------------------------------------*/
 #include <stdint.h>
 #include "Spi.h"
 #include "MSP430_AFE_SPI.h"
@@ -40,7 +16,7 @@
 //***********************************************************************************
 
 #define TI_ADS1293_CONFIG_REG                         (0x00) 
-                 /* Main Configuration */
+
 //------------------------------------------------------------------------------
 //  void TI_ADS1293_SPIWriteReg(uint8_t_t addr, uint8_t_t value)
 //
@@ -209,63 +185,63 @@ void TI_AFE4400_WriteRegSettings(void)
 {
 
   TI_AFE4400_SPIAutoIncWriteReg(LED2STC, 
-                          TI_AFE4400_LED2STC_REG_VALUE, 3);           
+                          LED2STC_VAL, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(LED2ENDC, 
-                          TI_AFE4400_LED2ENDC_REG_VALUE, 3);    
+                          LED2ENDC_VAL, 3);    
   TI_AFE4400_SPIAutoIncWriteReg(LED2LEDSTC, 
-                          TI_AFE4400_LED2LEDSTC_REG_VALUE, 3);  
+                          LED2LEDSTC_VAL, 3);  
   TI_AFE4400_SPIAutoIncWriteReg(LED2LEDENDC, 
-                          TI_AFE4400_LED2LEDENDC_REG_VALUE, 3);   
+                          LED2LEDENDC_VAL, 3);   
   TI_AFE4400_SPIAutoIncWriteReg(ALED2STC, 
-                          TI_AFE4400_ALED2STC_REG_VALUE, 3);           
+                          ALED2STC_VAL, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(ALED2ENDC, 
-                          TI_AFE4400_ALED2ENDC_REG_VALUE, 3);             
+                          ALED2ENDC_VAL, 3);             
   TI_AFE4400_SPIAutoIncWriteReg(LED1STC, 
-                          TI_AFE4400_LED1STC_REG_VALUE, 3);              
+                          LED1STC_VAL, 3);              
   TI_AFE4400_SPIAutoIncWriteReg(LED1ENDC, 
-                          TI_AFE4400_LED1ENDC_REG_VALUE, 3);                
+                          LED1ENDC_VAL, 3);                
   TI_AFE4400_SPIAutoIncWriteReg(LED1LEDSTC, 
-                          TI_AFE4400_LED1LEDSTC_REG_VALUE, 3);            
+                          LED1LEDSTC_VAL, 3);            
   TI_AFE4400_SPIAutoIncWriteReg(LED1LEDENDC, 
-                          TI_AFE4400_LED1LEDENDC_REG_VALUE, 3);              
+                          LED1LEDENDC_VAL, 3);              
   TI_AFE4400_SPIAutoIncWriteReg(ALED1STC, 
-                          TI_AFE4400_ALED1STC_REG_VALUE, 3);             
+                          ALED1STC_VAL, 3);             
   TI_AFE4400_SPIAutoIncWriteReg(ALED1ENDC, 
-                          TI_AFE4400_ALED1ENDC_REG_VALUE, 3);       
+                          ALED1ENDC_VAL, 3);       
   TI_AFE4400_SPIAutoIncWriteReg(LED2CONVST, 
-                          TI_AFE4400_LED2CONVST_REG_VALUE, 3);          
+                          LED2CONVST_VAL, 3);          
   TI_AFE4400_SPIAutoIncWriteReg(LED2CONVEND, 
-                          TI_AFE4400_LED2CONVEND_REG_VALUE, 3);              
+                          LED2CONVEND_VAL, 3);              
   TI_AFE4400_SPIAutoIncWriteReg(ALED2CONVST, 
-                          TI_AFE4400_ALED2CONVST_REG_VALUE, 3);               
+                          ALED2CONVST_VAL, 3);               
   TI_AFE4400_SPIAutoIncWriteReg(ALED2CONVEND, 
-                          TI_AFE4400_ALED2CONVEND_REG_VALUE, 3);                
+                          ALED2CONVEND_VAL, 3);                
   TI_AFE4400_SPIAutoIncWriteReg(LED1CONVST, 
-                          TI_AFE4400_LED1CONVST_REG_VALUE, 3);            
+                          LED1CONVST_VAL, 3);            
   TI_AFE4400_SPIAutoIncWriteReg(LED1CONVEND, 
-                          TI_AFE4400_LED1CONVEND_REG_VALUE, 3);             
+                          LED1CONVEND_VAL, 3);             
   TI_AFE4400_SPIAutoIncWriteReg(ALED1CONVST, 
-                          TI_AFE4400_ALED1CONVST_REG_VALUE, 3);            
+                          ALED1CONVST_VAL, 3);            
   TI_AFE4400_SPIAutoIncWriteReg(ALED1CONVEND, 
-                          TI_AFE4400_ALED1CONVEND_REG_VALUE, 3);   
+                          ALED1CONVEND_VAL, 3);   
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT0, 
-                          TI_AFE4400_ADCRSTSTCT0_REG_VALUE, 3);            
+                          ADCRSTSTCT0_VAL, 3);            
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT0, 
-                          TI_AFE4400_ADCRSTENDCT0_REG_VALUE, 3);           
+                          ADCRSTENDCT0_VAL, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT1, 
-                          TI_AFE4400_ADCRSTSTCT1_REG_VALUE, 3);          
+                          ADCRSTSTCT1_VAL, 3);          
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT1, 
-                          TI_AFE4400_ADCRSTENDCT1_REG_VALUE, 3);     
+                          ADCRSTENDCT1_VAL, 3);     
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT2, 
-                          TI_AFE4400_ADCRSTSTCT2_REG_VALUE, 3);         
+                          ADCRSTSTCT2_VAL, 3);         
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT2, 
-                          TI_AFE4400_ADCRSTENDCT2_REG_VALUE, 3);         
+                          ADCRSTENDCT2_VAL, 3);         
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTSTCT3, 
-                          TI_AFE4400_ADCRSTSTCT3_REG_VALUE, 3);           
+                          ADCRSTSTCT3_VAL, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(ADCRSTENDCT3, 
-                          TI_AFE4400_ADCRSTENDCT3_REG_VALUE, 3);     
+                          ADCRSTENDCT3_VAL, 3);     
   TI_AFE4400_SPIAutoIncWriteReg(PRPCOUNT, 
-                          TI_AFE4400_PRPCOUNT_REG_VALUE, 3);            
+                          PRP, 3);            
   TI_AFE4400_SPIAutoIncWriteReg(CONTROL1, 
                           TI_AFE4400_CONTROL1_REG_VALUE, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(TIA_AMB_GAIN, 
@@ -273,7 +249,7 @@ void TI_AFE4400_WriteRegSettings(void)
   TI_AFE4400_SPIAutoIncWriteReg(LEDCNTRL, 
                           TI_AFE4400_LEDCNTRL_REG_VALUE, 3);           
   TI_AFE4400_SPIAutoIncWriteReg(CONTROL2, 
-                          TI_AFE4400_CONTROL2_REG_VALUE, 3);             
+                          TI_AFE4400_CONTROL2_REG_VALUE, 3);
          
   
 }

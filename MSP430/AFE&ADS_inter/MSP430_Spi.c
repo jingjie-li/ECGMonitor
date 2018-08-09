@@ -12,7 +12,7 @@
 //   February 2012
 //   Built with CCE Version: 4.2 and IAR Embedded Workbench Version:  5.3x
 //******************************************************************************
-// Change Log:
+// Change Log:  
 //******************************************************************************
 // Version:  1.00
 // Comments: Initial Release Version
@@ -38,11 +38,9 @@
 #include "TI_ADS1293.h" 
 #include "TI_ADS1293_setting.h"
 //***********************************************************************************
-//#define ADS1293_READ_BIT                              (0x80)
-//#define ADS1293_WRITE_BIT                             (0x7F)
+
 #define TI_ADS1293_CONFIG_REG                         (0x00) 
-//#define TI_ADS1293_DATA_LOOP_REG                      (0x50)
-                 /* Main Configuration */
+
 //------------------------------------------------------------------------------
 //  void TI_ADS1293_SPIWriteReg(uint8_t_t addr, uint8_t_t value)
 //
@@ -80,7 +78,6 @@ uint8_t TI_ADS1293_SPIReadReg(uint8_t addr)
  
   inst = ADS1293_READ_BIT | addr;                                              // register address
   
-//  WAIT_1_3US(2);                                                               // Wait 
   SpiWriteData(inst);                                                          // Send lower register address  
   
   pVal = SpiWriteData(0xFF);                                                     // Read data
@@ -141,7 +138,7 @@ void TI_ADS1293_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 
 }
 
-
+//------------------------------------------------------------------------------
 //  void TI_ADS1293_SPIStreamReadReg(uint8_t_t *buffer, uint8_t_t count)
 //
 //  DESCRIPTION:
@@ -154,8 +151,6 @@ void TI_ADS1293_SPIAutoIncReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 void TI_ADS1293_SPIStreamReadReg(uint8_t *buffer, uint8_t count)
 {
   uint8_t i, inst;
-//  static uint32 tst_count = 0;
-//  static uint8_t toggle = 0;
   
   CS = CS_ENABLED;                                                             // /CS enable
  
@@ -228,8 +223,8 @@ void TI_ADS1293_WriteRegSettings(void)
   
   TI_ADS1293_SPIWriteReg(TI_ADS1293_OSC_CN_REG, 
                           TI_ADS1293_OSC_CN_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_RES_REG, 
-  //                        TI_ADS1293_AFE_RES_REG_VALUE);            
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_RES_REG, 
+                          TI_ADS1293_AFE_RES_REG_VALUE);            
   //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_SHDN_CN_REG, 
    //                       TI_ADS1293_AFE_SHDN_CN_REG_VALUE);            
   //TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_FAULT_CN_REG, 

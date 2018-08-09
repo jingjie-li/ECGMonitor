@@ -83,9 +83,9 @@
 * Digital Registers
 ************************************************************/
 #define TI_ADS1293_R2_RATE_REG_VALUE                        (0x02)                  /* R2 Decimation Rate */
-#define TI_ADS1293_R3_RATE1_REG_VALUE                       (0x02)                  /* vishy:R3 Decimation Rate for Channel 1 */
-#define TI_ADS1293_R3_RATE2_REG_VALUE                       (0x02)                  /* R3 Decimation Rate for Channel 2 */
-#define TI_ADS1293_R3_RATE3_REG_VALUE                       (0x02)                  /* R3 Decimation Rate for Channel 3 */
+#define TI_ADS1293_R3_RATE1_REG_VALUE                       (0x20)                  /* vishy:R3 Decimation Rate for Channel 1 */
+#define TI_ADS1293_R3_RATE2_REG_VALUE                       (0x20)                  /* R3 Decimation Rate for Channel 2 */
+#define TI_ADS1293_R3_RATE3_REG_VALUE                       (0x20)                  /* R3 Decimation Rate for Channel 3 */
 #define TI_ADS1293_R1_DRATE_REG_VALUE                       (0x00)                  /* 2x Pace Data Rate for all channels */
 #define TI_ADS1293_P_DRATE_REG_VALUE                        (0x00)                  /*  */
 #define TI_ADS1293_DIS_EFILTER_REG_VALUE                    (0x00)                  /* ECG Filters Disabled */
