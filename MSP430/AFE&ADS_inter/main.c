@@ -134,6 +134,7 @@ int main( void )
       case 'T':
         P2OUT &= (~BIT5);
         P2OUT &= (~BIT6);
+        exit_state_flag=0;
         while(exit_state_flag==0)
         {
           if(UartReadState()==1)
@@ -156,6 +157,7 @@ int main( void )
         }
         break;
       case 'M': //moblie recieving mode
+        exit_state_flag=0;
         while(exit_state_flag==0)
         {
           if(UartReadState()==1)
