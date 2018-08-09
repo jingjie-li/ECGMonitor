@@ -7,6 +7,8 @@ void UartWriteChar(char c);
 void UartWriteint(uint8_t c);
 void UartWriteStr(char *s);
 char UartReadChar();
+char UartReadState();
+char UartForceReadChar();
 void UartWritearray(uint8_t *s);
 
 #endif /* __UART_H */

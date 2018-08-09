@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------
+/*--------------------------------------------------------------
  * Copyright (C) 2018 西安交通大学 生命学院 李金铭
  * 版权所有。 
  * 
@@ -92,8 +92,8 @@ int main( void )
   
   ClkInit();
   CCTL1 = CCIE;                            // CCR1 中断使能  
-  //CCR1 = 6667;
-  CCR1 = 50000;  
+  CCR1 = 6667;
+  //CCR1 = 50000;  
   TACTL = TASSEL_2 + MC_2 + ID_3;          // SMCLK = 1MHz, 连续计数模式 
   uint8_t count=3;
 
@@ -101,12 +101,14 @@ int main( void )
   uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
   
   unsigned long val;
+  
+  char exit_state_flag = 0;
  // int i = 0;
 
 //  count = CH_DATA_SIZE;                                                        // bytes to read: ADC_DOUT2 - ADCDOUT0
 
   
- // char chr;               //串口测试中，收到的字节
+  char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
   SpiMasterInit(4000000,8,3,0);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
@@ -121,34 +123,48 @@ int main( void )
   {
     
 
-    //chr = UartReadChar();
+    chr = UartReadChar();
     
-    //switch(chr)
-     // {
-     // case 'S':
-        //UartWriteStr(str1);
-        TI_ADS1293_SPIWriteReg(0x00, 0x01);
-        TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read 0x000001ul
-        //P2OUT = 0x90;
-        //UartWriteChar(q);
-      //  break;
-      //case 'T':
-        //UartWriteStr(str2);
-      //  TI_ADS1293_SPIWriteReg(0x00, 0x00);
-      //  TI_AFE4400_SPIAutoIncWriteReg(0x00, 0, 3);//enable read
-        //UartWriteChar(q);
-      //  break;
-      //case 'M':
-        for(uint32_t k = 0;k<1000000;k++)
-        //while(1)
+    
+    TI_ADS1293_SPIWriteReg(0x00, 0x01);
+    TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read AFE (0x000001ul)
+        
+    switch(chr)
+      {
+      case 'T':
+        P2OUT &= (~BIT5);
+        P2OUT &= (~BIT6);
+        while(exit_state_flag==0)
         {
-          //UartWriteChar('C');
-          //UartWriteint(c);
-          //UartWriteChar('K');
-          //UartWriteint(k);
+          if(UartReadState()==1)
+          {
+            exit_state_flag=1;
+            chr = UartForceReadChar();
+          }
+          P2OUT ^= BIT7;
+          UartWriteint(0x00);
+          UartWriteint(0x01);
+          UartWriteint(0x02);
+          UartWriteint(0x03);
+          UartWriteint(0x04);
+          UartWriteint(0x05);
+          UartWriteint(0x06);
+          UartWriteint(0x07);
+          Delays(1);
+          _BIS_SR(CPUOFF);
+          _NOP();
+        }
+        break;
+      case 'M': //moblie recieving mode
+        while(exit_state_flag==0)
+        {
+          if(UartReadState()==1)
+          {
+            exit_state_flag=1;
+            chr = UartForceReadChar();
+          }
           if(c==1)
           {
-            //P2OUT = 0xf0;
             TI_ADS1293_SPIStreamReadReg(read_buf, count);
             P2OUT ^= BIT6; 
             read_buff[0] = read_buf[0] << 4;
@@ -162,7 +178,6 @@ int main( void )
           }
           else if(c==2)
           {
-            //P2OUT = 0xff;
             TI_ADS1293_SPIStreamReadReg(read_buf, count);
             P2OUT ^= BIT6; 
             read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
@@ -178,7 +193,6 @@ int main( void )
           else
           {
             c = 0;
-            //P2OUT = 0xf0;
             TI_ADS1293_SPIStreamReadReg(read_buf, count); 
             P2OUT ^= BIT6;
             read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
@@ -189,10 +203,8 @@ int main( void )
             read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
             read_buff[6] = (val>>7) & 0xF8;
             val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
-            //P2OUT ^= BIT5;
             read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
             read_buff[7] = (val>>11) & 0xFF;
-            //Delays(10);
             UartWriteint(read_buff[0]);
             UartWriteint(read_buff[1]);
             UartWriteint(read_buff[2]);
@@ -210,8 +222,8 @@ int main( void )
           }
         }
         
-       // break;
-     // }
+        break;
+      }
 
     }
     
