@@ -182,6 +182,10 @@ int main( void )
   TI_AFE4400_WriteRegSettings(); 
   
   chr = UartReadChar();
+  int P4state = P4IN;
+  int PDALM = P4state & 0x02;
+  int ADSALM = P4state & 0x10;
+  int LEDALM = P4state & 0x20;
   
   while(1)                    //´®¿Ú²âÊÔ
   {
