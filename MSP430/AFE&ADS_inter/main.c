@@ -161,7 +161,7 @@ int main( void )
   uint8_t read_buf[3];
   uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
   
-  //unsigned long val;
+  unsigned long val;
   
   char exit_state_flag = 0;
  // int i = 0;
@@ -227,12 +227,12 @@ int main( void )
           }
           if(c==1)
           {
-            readecg1(read_buf, read_buff, count);
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);
             P2OUT ^= BIT6; 
-            //read_buff[0] = read_buf[0] << 4;
-            //read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x0f);
-            //read_buff[1] = read_buf[1] << 4;
-            //read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
+            read_buff[0] = read_buf[0] << 4;
+            read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x0f);
+            read_buff[1] = read_buf[1] << 4;
+            read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
             //read_buff[0] = read_buf[0];
             //read_buff[1] = read_buf[1];
             _BIS_SR(CPUOFF);
@@ -240,8 +240,7 @@ int main( void )
           }
           else if(c==2)
           {
-            //TI_ADS1293_SPIStreamReadReg(read_buf, count);
-            readecg2(read_buf, read_buff, count);
+            TI_ADS1293_SPIStreamReadReg(read_buf, count);
             P2OUT ^= BIT6; 
             read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
             read_buff[2] = read_buf[0] << 6;
@@ -256,20 +255,18 @@ int main( void )
           else
           {
             c = 0;
-            //TI_ADS1293_SPIStreamReadReg(read_buf, count); 
-            readecg3(read_buf, read_buff, count);
+            TI_ADS1293_SPIStreamReadReg(read_buf, count); 
             P2OUT ^= BIT6;
-            //read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
-            //read_buff[4] = read_buf[1];
-            //read_buff[5] = read_buf[2] & 0xc0;
-            //val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
-            readspo2(read_buff, count);
+            read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
+            read_buff[4] = read_buf[1];
+            read_buff[5] = read_buf[2] & 0xc0;
+            val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
             P2OUT ^= BIT5;
-            //read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
-            //read_buff[6] = (val>>7) & 0xF8;
-            //val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
-            //read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
-            //read_buff[7] = (val>>11) & 0xFF;
+            read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
+            read_buff[6] = (val>>7) & 0xF8;
+            val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
+            read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
+            read_buff[7] = (val>>11) & 0xFF;
             UartWriteint(read_buff[0]);
             UartWriteint(read_buff[1]);
             UartWriteint(read_buff[2]);
