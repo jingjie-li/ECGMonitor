@@ -243,11 +243,11 @@ int main( void )
             //TI_ADS1293_SPIStreamReadReg(read_buf, count);
             readecg2(read_buf, read_buff, count);
             P2OUT ^= BIT6; 
-            read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
-            read_buff[2] = read_buf[0] << 6;
-            read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
-            read_buff[3] = read_buf[1] << 6;
-            read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
+            //read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
+            //read_buff[2] = read_buf[0] << 6;
+            //read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
+            //read_buff[3] = read_buf[1] << 6;
+            //read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
             //read_buff[2] = read_buf[0];
             //read_buff[3] = read_buf[1];
             _BIS_SR(CPUOFF);
