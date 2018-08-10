@@ -70,8 +70,8 @@ void Delays(uint32_t k)
 
 /*******************************************
 函数名称：readecg1
-功    能：延时一会
-参    数：无
+功    能：读取第一次ecg信号并压缩
+参    数：
 返回值  ：无
 ********************************************/
 void readecg1(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
@@ -85,8 +85,8 @@ void readecg1(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
 
 /*******************************************
 函数名称：readecg2
-功    能：延时一会
-参    数：无
+功    能：读取第二次ecg信号并压缩
+参    数：
 返回值  ：无
 ********************************************/
 void readecg2(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
@@ -101,8 +101,8 @@ void readecg2(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
 
 /*******************************************
 函数名称：readecg3
-功    能：延时一会
-参    数：无
+功    能：读取第三次ecg信号并压缩
+参    数：
 返回值  ：无
 ********************************************/
 void readecg3(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
@@ -115,8 +115,8 @@ void readecg3(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
 
 /*******************************************
 函数名称：readspo2
-功    能：延时一会
-参    数：无
+功    能：读取第一次spo2信号并压缩
+参    数：
 返回值  ：无
 ********************************************/
 void readspo2(uint8_t *buffer1, uint8_t count)
@@ -143,7 +143,7 @@ int main( void )
   P1DIR = 0XFF;    P1OUT = 0X00;
   P2DIR = 0XFA;    P2OUT = 0XF0;
   P3DIR = 0XFF;    P3OUT = 0X00;
-  P4DIR = 0x01;    P4OUT = 0x01;
+  P4DIR = 0x00;    P4OUT = 0x00;
   P4DIR |= 0x80;   P4OUT |= 0x80;
   P5DIR = 0XFF;    P5OUT = 0X00;
   P6DIR = 0XFF;    P6OUT = 0X00;
@@ -229,47 +229,23 @@ int main( void )
           {
             readecg1(read_buf, read_buff, count);
             P2OUT ^= BIT6; 
-            //read_buff[0] = read_buf[0] << 4;
-            //read_buff[0] = read_buff[0] | (( read_buf[1]>>4 ) & 0x0f);
-            //read_buff[1] = read_buf[1] << 4;
-            //read_buff[1] = read_buff[1] | (( read_buf[2] >> 4 )&0x0c );
-            //read_buff[0] = read_buf[0];
-            //read_buff[1] = read_buf[1];
             _BIS_SR(CPUOFF);
             _NOP();
           }
           else if(c==2)
           {
-            //TI_ADS1293_SPIStreamReadReg(read_buf, count);
             readecg2(read_buf, read_buff, count);
-            P2OUT ^= BIT6; 
-            //read_buff[1] = read_buff[1] | (( read_buf[0] >> 2 )&0x03 );
-            //read_buff[2] = read_buf[0] << 6;
-            //read_buff[2] = read_buff[2] | (( read_buf[1]>>2 ) & 0x3f);
-            //read_buff[3] = read_buf[1] << 6;
-            //read_buff[3] = read_buff[3] | (( read_buf[2] >> 2 )&0x30 );
-            //read_buff[2] = read_buf[0];
-            //read_buff[3] = read_buf[1];
+            P2OUT ^= BIT6;
             _BIS_SR(CPUOFF);
             _NOP();
           }
           else
           {
             c = 0;
-            //TI_ADS1293_SPIStreamReadReg(read_buf, count); 
             readecg3(read_buf, read_buff, count);
             P2OUT ^= BIT6;
-            //read_buff[3] = read_buff[3] | ( read_buf[0]&0x0f );
-            //read_buff[4] = read_buf[1];
-            //read_buff[5] = read_buf[2] & 0xc0;
-            //val = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
             readspo2(read_buff, count);
             P2OUT ^= BIT5;
-            //read_buff[5] = read_buff[5] | ((val>>15) & 0x3F);
-            //read_buff[6] = (val>>7) & 0xF8;
-            //val = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
-            //read_buff[6] = read_buff[6] | (( val>>19 ) & 0x07);
-            //read_buff[7] = (val>>11) & 0xFF;
             UartWriteint(read_buff[0]);
             UartWriteint(read_buff[1]);
             UartWriteint(read_buff[2]);
