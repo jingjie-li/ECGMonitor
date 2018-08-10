@@ -262,5 +262,47 @@ void TI_ADS1293_WriteRegSettings(void)
 }
 //******************************************************************************
 
+void SET3(void)
+{ 
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_CH3_CN_REG, 
+                          TI_ADS1293_FLEX_CH3_CN_3_REG_VALUE);
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN1_REG, 
+                          TI_ADS1293_WILSON1_REG_VALUE);              
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN2_REG, 
+                          TI_ADS1293_WILSON2_REG_VALUE);               
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN3_REG, 
+                          TI_ADS1293_WILSON3_REG_VALUE);                
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_CN_REG, 
+                          TI_ADS1293_WILSON_REG_VALUE);           
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_SHDN_CN_REG, 
+                          TI_ADS1293_AFE_SHDN_CN_3_REG_VALUE);          
+  //TI_ADS1293_SPIWriteReg(TI_ADS1293_R3_RATE3_REG, 
+  //                        TI_ADS1293_R3_RATE3_REG_VALUE);           
+  //TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 
+  //                        TI_ADS1293_CH_CNFG_REG_VALUE);          
+}
+//******************************************************************************
+
+void SET5(void)
+{ 
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_CH3_CN_REG, 
+                          TI_ADS1293_FLEX_CH3_CN_REG_VALUE);
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN1_REG, 
+                          TI_ADS1293_WILSON_EN1_REG_VALUE);              
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN2_REG, 
+                          TI_ADS1293_WILSON_EN2_REG_VALUE);               
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_EN3_REG, 
+                          TI_ADS1293_WILSON_EN3_REG_VALUE);                
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_WILSON_CN_REG, 
+                          TI_ADS1293_WILSON_CN_REG_VALUE);                       
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_AFE_SHDN_CN_REG, 
+                          TI_ADS1293_AFE_SHDN_CN_REG_VALUE);                    
+  //TI_ADS1293_SPIWriteReg(TI_ADS1293_R3_RATE3_REG, 
+  //                        TI_ADS1293_R3_RATE3_REG_VALUE);
+  //TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 
+  //                        TI_ADS1293_CH_CNFG_REG_VALUE);          
+}
+//******************************************************************************
+
 
 

@@ -33,6 +33,7 @@
 #define TI_ADS1293_FLEX_CH1_CN_REG_VALUE                    (0x11)                  /* Flex Routing Swich Control for Channel 1 */
 #define TI_ADS1293_FLEX_CH2_CN_REG_VALUE                    (0x19)                  /* Flex Routing Swich Control for Channel 2 */
 #define TI_ADS1293_FLEX_CH3_CN_REG_VALUE                    (0x2E)                  /* Flex Routing Swich Control for Channel 3 */
+#define TI_ADS1293_FLEX_CH3_CN_3_REG_VALUE                  (0x00)
 #define TI_ADS1293_FLEX_PACE_CN_REG_VALUE                   (0x00)                  /* Flex Routing Swich Control for Pace Channel */
 #define TI_ADS1293_FLEX_VBAT_CN_REG_VALUE                   (0x00)                  /* Flex Routing Swich Control for Battery Monitoriing */
 
@@ -56,9 +57,13 @@
 * Wilson Control Registers
 ************************************************************/
 #define TI_ADS1293_WILSON_EN1_REG_VALUE                     (0x01)                  /* Wilson Reference Input one Selection */
+#define TI_ADS1293_WILSON1_REG_VALUE                        (0x00)
 #define TI_ADS1293_WILSON_EN2_REG_VALUE                     (0x02)                  /* Wilson Reference Input two Selection */
+#define TI_ADS1293_WILSON2_REG_VALUE                        (0x00)
 #define TI_ADS1293_WILSON_EN3_REG_VALUE                     (0x03)                  /* Wilson Reference Input three Selection */
+#define TI_ADS1293_WILSON3_REG_VALUE                        (0x00)
 #define TI_ADS1293_WILSON_CN_REG_VALUE                      (0x01)                  /* Wilson Reference Input Control */
+#define TI_ADS1293_WILSON_REG_VALUE                         (0x00)
 
 /************************************************************
 * Reference Registers
@@ -75,6 +80,7 @@
 ************************************************************/
 #define TI_ADS1293_AFE_RES_REG_VALUE                        (0x00)                  /* Analog Front-End Frequency and Resolution */
 #define TI_ADS1293_AFE_SHDN_CN_REG_VALUE                    (0x00)                  /* Analog Front-End Shutdown Control */
+#define TI_ADS1293_AFE_SHDN_CN_3_REG_VALUE                  (0x24)
 #define TI_ADS1293_AFE_FAULT_CN_REG_VALUE                   (0x00)                  /* Analog Front-End Fault Detection Control */
 #define TI_ADS1293_AFE_DITHER_EN_REG_VALUE                  (0x00)                  /* Enable Dithering in Signma-Delta */
 #define TI_ADS1293_AFE_PACE_CN_REG_VALUE                    (0x05)                  /* Analog Pace Channel Output Routing Control */
