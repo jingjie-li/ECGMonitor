@@ -9,7 +9,7 @@ int[] PPGDatas = new int[2];
 float a=100,b=240;
 int pointer=0;
 int pointerPPG=0;
-float[] displaydata = new float[1000]; //200Hz sampleing rate, display 10s
+float[] displaydata = new float[1000]; //150Hz, 6.67s  150Hz, 200Hz sampleing rate, display 10s
 
 float[] displayPPG1data = new float[333]; //200Hz sampleing rate, display 10s
 float[] displayPPG2data = new float[333]; //200Hz sampleing rate, display 10s
@@ -89,8 +89,8 @@ void setup() {
   printArray(Serial.list());
   myPort = new Serial(this, Serial.list()[2], 115200); 
   //myPort.bufferUntil(lf); // wait for '0x0A'
-  myPort.write('S');
-  myPort.write('M');
+  //myPort.write('S');
+  myPort.write('P');
   inBufferWaste = myPort.readBytes(50);
   thread("readDataThread");
 }
@@ -98,7 +98,7 @@ void setup() {
 void draw() {
   background(200);
   drawPPGlines();
-  //drawEEGlines();
+  drawEEGlines();
 }
 
 void readDataThread(){
@@ -119,8 +119,9 @@ void readDataThread(){
         updateDataManPPG(PPGDatas[0],PPGDatas[1]);
         updateDataManECG3Data(ECGdatas[0],ECGdatas[1],ECGdatas[2]);
       }
+      delay(15);
     }
-    delay(1);
+    delay(5);
   }
 }
 
@@ -172,7 +173,7 @@ void updateDataManECG3Data(int data1,int data2, int data3) {
     data3=EEG_baseline.prevdata;
   }
   b=EEG_baseline.compute(a,400);
-  if (pointer>=997){
+  if (pointer>=998){
     pointer=0;
   }
   
@@ -205,7 +206,7 @@ void updateDataManECG(int data) {
 
 void drawPPGlines() {
   background(200);
-  float y_old=displayPPG1data[332];
+  float y_old=displayPPG1data[249];
   stroke(204, 102, 0);
   for(int i=0;i<333;i++){
     y=displayPPG1data[i];
@@ -219,6 +220,8 @@ void drawPPGlines() {
     line(3*i-2,y_old,(3*i+1),y);
     y_old=y;
   }
+  stroke(0);
+  line(pointerPPG*3,0,pointerPPG*3,800);
   //point(pointer,displaydata[pointer]); 
 }
 
