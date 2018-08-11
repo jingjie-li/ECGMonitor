@@ -31,7 +31,7 @@
 #define TI_ADS1293_FLEX_PACE_CN_REG                   (0x04)                   /* Flex Routing Swich Control for Pace Channel */
 #define TI_ADS1293_FLEX_VBAT_CN_REG                   (0x05)                   /* Flex Routing Swich Control for Battery Monitoriing */
 
-#define TI_ADS1293_LOD_CN_REG                         (0x06)                   /* Lead Off Detect Control */
+#define TI_ADS1293_LOD_CN_REG                         (0x06)                   /* Lead Off Detect Control Dig-AC Mode*/
 #define TI_ADS1293_LOD_EN_REG                         (0x07)                   /* Lead Off Detect Enable */
 #define TI_ADS1293_LOD_CURRENT_REG                    (0x08)                   /* Lead Off Detect Current */
 #define TI_ADS1293_LOD_AC_CN_REG                      (0x09)                   /* AC Lead Off Detect Current */

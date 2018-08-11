@@ -195,14 +195,14 @@ void TI_ADS1293_WriteRegSettings(void)
   //                        TI_ADS1293_FLEX_PACE_CN_REG_VALUE);           
   //TI_ADS1293_SPIWriteReg(TI_ADS1293_FLEX_VBAT_CN_REG, 
   //                        TI_ADS1293_FLEX_VBAT_CN_REG_VALUE);             
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CN_REG, 
-   //                       TI_ADS1293_LOD_CN_REG_VALUE);              
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_EN_REG, 
-  //                        TI_ADS1293_LOD_EN_REG_VALUE);                
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CURRENT_REG, 
-  //                        TI_ADS1293_LOD_CURRENT_REG_VALUE);            
-  //TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_AC_CN_REG, 
-   //                       TI_ADS1293_LOD_AC_CN_REG_VALUE);              
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CN_REG, 
+                          TI_ADS1293_LOD_CN_REG_VALUE);              
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_EN_REG, 
+                          TI_ADS1293_LOD_EN_REG_VALUE);                
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_CURRENT_REG, 
+                          TI_ADS1293_LOD_CURRENT_REG_VALUE);            
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_LOD_AC_CN_REG, 
+                          TI_ADS1293_LOD_AC_CN_REG_VALUE);              
   TI_ADS1293_SPIWriteReg(TI_ADS1293_CMDET_EN_REG, 
                           TI_ADS1293_CMDET_EN_REG_VALUE);             
   //TI_ADS1293_SPIWriteReg(TI_ADS1293_CMDET_CN_REG, 

@@ -141,6 +141,19 @@ void UartOutputLong(uint8_t *data)
   UartWriteint(data[7]);
 }
 
+uint8_t ADSLeadOFF()
+{
+  uint8_t retval = 0x00;
+  uint8_t leadoffreg = TI_ADS1293_SPIReadReg(0x18);
+  P2OUT |= BIT4;
+  if(leadoffreg>0)
+  {
+    retval = 0x01;
+    P2OUT &= ~BIT4; //lead off
+  }
+  return retval;
+}
+
 /****************************************************************************
 * 名    称：main主程序
 * 功    能：设置串口，输出信息，从串口读计算机键盘输入数据，测试串口收发
@@ -199,6 +212,8 @@ int main( void )
   int ADSALM = P4state & 0x10;
   int LEDALM = P4state & 0x20;
   
+  uint8_t ECGLeadOff = 0;
+  
   while(1)                    //串口测试
   {
       
@@ -211,6 +226,7 @@ int main( void )
         P2OUT |= BIT5; // TURN OFF PPG LED
         P2OUT |= BIT6; // TURN OFF ECG LED
         exit_state_flag=0;
+        //TI_AFE4400_SPIAutoIncWriteReg(0x00, 5, 3); //enable read AFE (0x000001ul)
         while(exit_state_flag==0)
         {
           if(UartReadState()==1)
@@ -219,8 +235,11 @@ int main( void )
             chr = UartForceReadChar();
           }
           P2OUT ^= BIT7; //FLASHING HPR LED
-          uint8_t dump[8] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};
-          UartOutputLong(dump);
+          //uint8_t dump[8] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};
+          ECGLeadOff = ADSLeadOFF();
+          uint8_t leadoffreg = TI_ADS1293_SPIReadReg(0x18);
+          //UartOutputLong(dump);
+          UartWriteint(leadoffreg);
           //UartWriteChar(0x0d);
           //UartWriteChar(0x0a);
           Delays(1);
@@ -228,8 +247,9 @@ int main( void )
           _NOP();
         }
         break;
-      case 'M': //moblie recieving mode
+      case 'M': case 'P': //moblie recieving mode
         exit_state_flag=0;
+        P2OUT |= BIT7;
         while(exit_state_flag==0)
         {
           if(UartReadState()==1)
@@ -256,19 +276,30 @@ int main( void )
             c = 0;
             readecg3(read_buf, read_buff, count);
             P2OUT ^= BIT6;
-            readspo2(read_buff, count);
-            P2OUT ^= BIT5;
+            if(PDALM == 0 || LEDALM == 0)
+            {
+              readspo2(read_buff, count);
+              P2OUT ^= BIT5;
+            }
+            else
+            {
+              P2OUT |= BIT5; // TURN OFF PPG LED
+              P2OUT &= ~BIT4; //TURN ON ALM LED
+            }
             UartOutputLong(read_buff);
             // FOR PROCESSING, WE NEED 0D,OA'
-            //UartWriteChar(0x0d);
-            //UartWriteChar(0x0a);
+            if(chr == 'P')
+            {
+              UartWriteChar(0x0d);
+              UartWriteChar(0x0a);
+            }
             Delays(1);
             _BIS_SR(CPUOFF);
             _NOP();
           }
-        }
-        
+        }       
         break;
+    
       }
 
     }
