@@ -129,6 +129,18 @@ void readspo2(uint8_t *buffer1, uint8_t count)
     *(buffer1+7) = (value>>11) & 0xFF;
 }
 
+void UartOutputLong(uint8_t *data)
+{
+  UartWriteint(data[0]);
+  UartWriteint(data[1]);
+  UartWriteint(data[2]);
+  UartWriteint(data[3]);
+  UartWriteint(data[4]);
+  UartWriteint(data[5]);
+  UartWriteint(data[6]);
+  UartWriteint(data[7]);
+}
+
 /****************************************************************************
 * 名    称：main主程序
 * 功    能：设置串口，输出信息，从串口读计算机键盘输入数据，测试串口收发
@@ -143,7 +155,7 @@ int main( void )
   P1DIR = 0XFF;    P1OUT = 0X00;
   P2DIR = 0XFA;    P2OUT = 0XF0;
   P3DIR = 0XFF;    P3OUT = 0X00;
-  P4DIR = 0x00;    P4OUT = 0x00;
+  P4DIR = 0x01;    P4OUT = 0x01;
   P4DIR |= 0x80;   P4OUT |= 0x80;
   P5DIR = 0XFF;    P5OUT = 0X00;
   P6DIR = 0XFF;    P6OUT = 0X00;
@@ -153,8 +165,8 @@ int main( void )
   
   ClkInit();
   CCTL1 = CCIE;                            // CCR1 中断使能  
-  CCR1 = 6667;
-  //CCR1 = 50000;  
+  //CCR1 = 6667;
+  CCR1 = 50000;  
   TACTL = TASSEL_2 + MC_2 + ID_3;          // SMCLK = 1MHz, 连续计数模式 
   uint8_t count=3;
 
@@ -196,8 +208,8 @@ int main( void )
     switch(chr)
       {
       case 'T':
-        P2OUT &= (~BIT5);
-        P2OUT &= (~BIT6);
+        P2OUT |= BIT5; // TURN OFF PPG LED
+        P2OUT |= BIT6; // TURN OFF ECG LED
         exit_state_flag=0;
         while(exit_state_flag==0)
         {
@@ -206,15 +218,11 @@ int main( void )
             exit_state_flag=1;
             chr = UartForceReadChar();
           }
-          P2OUT ^= BIT7;
-          UartWriteint(0x00);
-          UartWriteint(0x01);
-          UartWriteint(0x02);
-          UartWriteint(0x03);
-          UartWriteint(0x04);
-          UartWriteint(0x05);
-          UartWriteint(0x06);
-          UartWriteint(0x07);
+          P2OUT ^= BIT7; //FLASHING HPR LED
+          uint8_t dump[8] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};
+          UartOutputLong(dump);
+          //UartWriteChar(0x0d);
+          //UartWriteChar(0x0a);
           Delays(1);
           _BIS_SR(CPUOFF);
           _NOP();
@@ -250,18 +258,11 @@ int main( void )
             P2OUT ^= BIT6;
             readspo2(read_buff, count);
             P2OUT ^= BIT5;
-            UartWriteint(read_buff[0]);
-            UartWriteint(read_buff[1]);
-            UartWriteint(read_buff[2]);
-            UartWriteint(read_buff[3]);
-            UartWriteint(read_buff[4]);
-            UartWriteint(read_buff[5]);
-            UartWriteint(read_buff[6]);
-            UartWriteint(read_buff[7]);
-            Delays(1);
-            // FOR PROCESSING, WE NEED 0D,OA
+            UartOutputLong(read_buff);
+            // FOR PROCESSING, WE NEED 0D,OA'
             //UartWriteChar(0x0d);
             //UartWriteChar(0x0a);
+            Delays(1);
             _BIS_SR(CPUOFF);
             _NOP();
           }
