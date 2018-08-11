@@ -257,6 +257,7 @@ int main( void )
             exit_state_flag=1;
             chr = UartForceReadChar();
           }
+          ECGLeadOff = ADSLeadOFF();
           if(c==1)
           {
             readecg1(read_buf, read_buff, count);
