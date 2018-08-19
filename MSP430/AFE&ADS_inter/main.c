@@ -168,7 +168,7 @@ int main( void )
   P1DIR = 0XFF;    P1OUT = 0X00;
   P2DIR = 0XFA;    P2OUT = 0XF0;
   P3DIR = 0XFF;    P3OUT = 0X00;
-  P4DIR = 0x01;    P4OUT = 0x01;
+  P4DIR = 0x01;    P4OUT = 0x00;
   P4DIR |= 0x80;   P4OUT |= 0x80;
   P5DIR = 0XFF;    P5OUT = 0X00;
   P6DIR = 0XFF;    P6OUT = 0X00;
@@ -189,6 +189,7 @@ int main( void )
   //unsigned long val;
   
   char exit_state_flag = 0;
+  char AcqState = 0; // 0-ECG&PPG State, 1-ECG only State, 2-PPF only State
  // int i = 0;
 
 //  count = CH_DATA_SIZE;                                                        // bytes to read: ADC_DOUT2 - ADCDOUT0
@@ -202,9 +203,6 @@ int main( void )
   
   //P1DIR = 0xff;
   //P1SEL = 0x00;
-  Delays(10000);
-  TI_ADS1293_WriteRegSettings();
-  TI_AFE4400_WriteRegSettings(); 
   
   chr = UartReadChar();
   int P4state = P4IN;
@@ -217,8 +215,6 @@ int main( void )
   while(1)                    //´®¿Ú²âÊÔ
   {
       
-    TI_ADS1293_SPIWriteReg(0x00, 0x01);
-    TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read AFE (0x000001ul)
         
     switch(chr)
       {
@@ -247,9 +243,79 @@ int main( void )
           _NOP();
         }
         break;
-      case 'M': case 'P': //moblie recieving mode
+      case 'M': case 'F': case 'A': case 'X': case 'Y': case 'Z': case '3': case '5': //moblie recieving mode
         exit_state_flag=0;
         P2OUT |= BIT7;
+        if(chr=='M') //ADS & AFE Mode
+        {
+           AcqState = 0; 
+           P4OUT |= BIT7; //Turn On AFE;
+           Delays(1000);
+           TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
+           TI_ADS1293_WriteRegSettings();
+           TI_AFE4400_WriteRegSettings();
+           TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+           TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read AFE (0x000001ul)
+           P2OUT &= ~BIT6; //ADS&AFE indcatation LED on
+           P2OUT &= ~BIT5;
+        }
+        else if(chr=='A')//ADS Only Mode
+        {
+          AcqState = 1;
+          P4OUT &= ~BIT7; //Turn off AFE;
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          TI_ADS1293_WriteRegSettings();
+          read_buff[5]=0;read_buff[6]=0;read_buff[7]=0;
+          Delays(100);
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+          P2OUT &= ~BIT6; //ADS indcatation LED on
+          P2OUT |= BIT5; //AFE indcatation LED off
+        }
+        else if(chr=='F')//AFE Only Mode
+        {
+          AcqState = 2;
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          TI_ADS1293_SPIWriteReg(0x00, 0x02); //ADS Standby powerdown mode
+          P4OUT |= BIT7; //Turn On AFE;
+          Delays(100);
+          read_buff[1]=0;read_buff[2]=0;read_buff[3]=0;read_buff[4]=0;read_buff[5]=0;
+          TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
+          Delays(10);
+          TI_AFE4400_WriteRegSettings();
+          TI_AFE4400_SPIAutoIncWriteReg(0x00, 1, 3); //enable read AFE (0x000001ul)
+          P2OUT &= ~BIT5; //AFE indcatation LED on
+          P2OUT |= BIT6; //ADS indcatation LED off
+        }
+        else if(chr=='X')
+        {
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x40); //Configure Channel for Loop Read Back Mode, Reading CH1
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+        }
+        else if(chr=='Y')
+        {
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x20); //Configure Channel for Loop Read Back Mode, Reading CH2
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+        }
+        else if(chr=='Z')
+        {
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x10); //Configure Channel for Loop Read Back Mode, Reading CH3
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+        }
+        else if(chr=='3')
+        {
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          SET3();
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+        }
+        else if(chr=='5')
+        {
+          TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+          SET5();
+          TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
+        }
         while(exit_state_flag==0)
         {
           if(UartReadState()==1)
@@ -260,32 +326,36 @@ int main( void )
           ECGLeadOff = ADSLeadOFF();
           if(c==1)
           {
-            readecg1(read_buf, read_buff, count);
-            P2OUT ^= BIT6; 
-            _BIS_SR(CPUOFF);
-            _NOP();
+            if(AcqState==0&&AcqState==1)
+            {
+              readecg1(read_buf, read_buff, count);
+              P2OUT ^= BIT6; 
+            }
+              _BIS_SR(CPUOFF);
+              _NOP();
           }
           else if(c==2)
           {
+            if(AcqState==0&&AcqState==1)
+            {
             readecg2(read_buf, read_buff, count);
             P2OUT ^= BIT6;
+            }
             _BIS_SR(CPUOFF);
             _NOP();
           }
           else
           {
             c = 0;
+            if(AcqState==0&&AcqState==1)
+            {
             readecg3(read_buf, read_buff, count);
             P2OUT ^= BIT6;
-            if(PDALM == 0 || LEDALM == 0)
+            }
+            if(AcqState==0&&AcqState==2)
             {
               readspo2(read_buff, count);
               P2OUT ^= BIT5;
-            }
-            else
-            {
-              P2OUT |= BIT5; // TURN OFF PPG LED
-              P2OUT &= ~BIT4; //TURN ON ALM LED
             }
             UartOutputLong(read_buff);
             // FOR PROCESSING, WE NEED 0D,OA'
