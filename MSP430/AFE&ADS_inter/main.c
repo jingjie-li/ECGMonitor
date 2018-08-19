@@ -219,6 +219,9 @@ int main( void )
     switch(chr)
       {
       case 'T':
+        P4OUT &= ~BIT0; //Turn off AFE;
+        TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
+        TI_ADS1293_SPIWriteReg(0x00, 0x02); //ADS Standby powerdown mode
         P2OUT |= BIT5; // TURN OFF PPG LED
         P2OUT |= BIT6; // TURN OFF ECG LED
         exit_state_flag=0;
@@ -243,15 +246,16 @@ int main( void )
           _NOP();
         }
         break;
-      case 'M': case 'F': case 'A': case 'X': case 'Y': case 'Z': case '3': case '5': //moblie recieving mode
+      case 'M': case 'P': case 'F': case 'A': case 'X': case 'Y': case 'Z': case '3': case '5': //moblie recieving mode
         exit_state_flag=0;
         P2OUT |= BIT7;
-        if(chr=='M') //ADS & AFE Mode
+        if(chr=='M'||chr=='P') //ADS & AFE Mode Mobile or Processing Mode
         {
            AcqState = 0; 
            P4OUT |= BIT0; //Turn On AFE;
            Delays(1000);
            TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
+           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
            TI_ADS1293_WriteRegSettings();
            TI_AFE4400_WriteRegSettings();
            TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
@@ -338,8 +342,8 @@ int main( void )
           {
             if(AcqState==0||AcqState==1)
             {
-            readecg2(read_buf, read_buff, count);
-            P2OUT ^= BIT6;
+              readecg2(read_buf, read_buff, count);
+              P2OUT ^= BIT6;
             }
             _BIS_SR(CPUOFF);
             _NOP();
