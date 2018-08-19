@@ -249,7 +249,7 @@ int main( void )
         if(chr=='M') //ADS & AFE Mode
         {
            AcqState = 0; 
-           P4OUT |= BIT7; //Turn On AFE;
+           P4OUT |= BIT0; //Turn On AFE;
            Delays(1000);
            TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
            TI_ADS1293_WriteRegSettings();
@@ -262,7 +262,7 @@ int main( void )
         else if(chr=='A')//ADS Only Mode
         {
           AcqState = 1;
-          P4OUT &= ~BIT7; //Turn off AFE;
+          P4OUT &= ~BIT0; //Turn off AFE;
           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
           TI_ADS1293_WriteRegSettings();
           read_buff[5]=0;read_buff[6]=0;read_buff[7]=0;
@@ -276,7 +276,7 @@ int main( void )
           AcqState = 2;
           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
           TI_ADS1293_SPIWriteReg(0x00, 0x02); //ADS Standby powerdown mode
-          P4OUT |= BIT7; //Turn On AFE;
+          P4OUT |= BIT0; //Turn On AFE;
           Delays(100);
           read_buff[1]=0;read_buff[2]=0;read_buff[3]=0;read_buff[4]=0;read_buff[5]=0;
           TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
