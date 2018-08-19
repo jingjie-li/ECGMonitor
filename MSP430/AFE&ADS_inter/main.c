@@ -326,7 +326,7 @@ int main( void )
           ECGLeadOff = ADSLeadOFF();
           if(c==1)
           {
-            if(AcqState==0&&AcqState==1)
+            if(AcqState==0||AcqState==1)
             {
               readecg1(read_buf, read_buff, count);
               P2OUT ^= BIT6; 
@@ -336,7 +336,7 @@ int main( void )
           }
           else if(c==2)
           {
-            if(AcqState==0&&AcqState==1)
+            if(AcqState==0||AcqState==1)
             {
             readecg2(read_buf, read_buff, count);
             P2OUT ^= BIT6;
@@ -347,12 +347,12 @@ int main( void )
           else
           {
             c = 0;
-            if(AcqState==0&&AcqState==1)
+            if(AcqState==0||AcqState==1)
             {
             readecg3(read_buf, read_buff, count);
             P2OUT ^= BIT6;
             }
-            if(AcqState==0&&AcqState==2)
+            if(AcqState==0||AcqState==2)
             {
               readspo2(read_buff, count);
               P2OUT ^= BIT5;
