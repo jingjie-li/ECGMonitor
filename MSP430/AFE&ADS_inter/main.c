@@ -1,18 +1,18 @@
 /*--------------------------------------------------------------
- * Copyright (C) 2018 西安交通大学 生命学院 李金铭
- * 版权所有。 
+ * Copyright (C) 2018 Xi'an Jiaotong University, Jinming Li, Jingjie Li
+ *  
  * 
- * 文件名： main.c
+ * main.c
  * 
- * 文件功能描述：   
- *          MSP430F149控制ADS1293和AFE4400采集信号并通过蓝牙发送给
- *          手机端
- *      说明：  
- *          运行后先关闭看门狗和初始化时钟系统，然后初始化ADS1293
- *          和AFE4400，然后通过串口读取指令，并收发数据。本程序通过
- *          定时器中断进行定时采样，每次将采集到的三次心电和一次血氧
- *          信号压缩打包发送给手机
- *   
+ * Descriptions  
+ *          Using MSP430F149 to control ADS1293 and AFE4400 to acquirsion signals and sent to the smartphone APP via bluetooth
+ *      Basic idea：  
+ *          Close down watchdog and init clock system, lisening on the UART port, wait for
+ *          start signal, once started, it will initilize ADS and AFE chips, pack-up data then
+ *          send it through UART-BT interfance.
+ *          We used timer interupt to drive each sampling, the sample rate of ECG is 150Hz, PPG is 50Hz
+ *          While running, we will continulously listening on the serial port, which can switch between different sampling state
+*           For example, ADS only state, Waiting State, AFE only State.
 **----------------------------------------------------------------*/
 #include <stdint.h>
 #include "msp430x14x.h"   //430寄存器头文件
@@ -207,10 +207,10 @@ int main( void )
   //P1SEL = 0x00;
   
   chr = UartReadChar();
-  int P4state = P4IN;
-  int PDALM = P4state & 0x02;
-  int ADSALM = P4state & 0x10;
-  int LEDALM = P4state & 0x20;
+  //int P4state = P4IN;
+  //int PDALM = P4state & 0x02;
+  //int ADSALM = P4state & 0x10;
+  //int LEDALM = P4state & 0x20;
   
   uint8_t ECGLeadOff = 0;
   TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x20);
@@ -238,9 +238,9 @@ int main( void )
           P2OUT ^= BIT7; //FLASHING HPR LED
           //uint8_t dump[8] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};
           ECGLeadOff = ADSLeadOFF();
-          uint8_t leadoffreg = TI_ADS1293_SPIReadReg(0x18);
+          //uint8_t leadoffreg = TI_ADS1293_SPIReadReg(0x18);
           //UartOutputLong(dump);
-          UartWriteint(leadoffreg);
+          //UartWriteint(leadoffreg);
           //UartWriteChar(0x0d);
           //UartWriteChar(0x0a);
           Delays(1);
