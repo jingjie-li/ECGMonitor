@@ -122,6 +122,7 @@ void readecg3(uint8_t *buffer, uint8_t *buffer1, uint8_t count)
 void readspo2(uint8_t *buffer1, uint8_t count)
 {
     unsigned long value = TI_AFE4400_SPIAutoIncReadReg(LED1VAL, count);
+    *(buffer1+5) = *(buffer1+5) & 0xC0;
     *(buffer1+5) = *(buffer1+5) | ((value>>15) & 0x3F);
     *(buffer1+6) = (value>>7) & 0xF8;
     value = TI_AFE4400_SPIAutoIncReadReg(LED2VAL, count);
@@ -211,7 +212,7 @@ int main( void )
   int LEDALM = P4state & 0x20;
   
   uint8_t ECGLeadOff = 0;
-  
+  TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x20);
   while(1)                    //´®¿Ú²âÊÔ
   {
       
@@ -249,6 +250,7 @@ int main( void )
       case 'M': case 'P': case 'F': case 'A': case 'X': case 'Y': case 'Z': case '3': case '5': //moblie recieving mode
         exit_state_flag=0;
         P2OUT |= BIT7;
+  
         if(chr=='M'||chr=='P') //ADS & AFE Mode Mobile or Processing Mode
         {
            AcqState = 0; 
@@ -293,7 +295,7 @@ int main( void )
         else if(chr=='X')
         {
           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
-          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x40); //Configure Channel for Loop Read Back Mode, Reading CH1
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x10); //Configure Channel for Loop Read Back Mode, Reading CH1
           TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
         }
         else if(chr=='Y')
@@ -305,7 +307,7 @@ int main( void )
         else if(chr=='Z')
         {
           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
-          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x10); //Configure Channel for Loop Read Back Mode, Reading CH3
+          TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x40); //Configure Channel for Loop Read Back Mode, Reading CH3
           TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
         }
         else if(chr=='3')

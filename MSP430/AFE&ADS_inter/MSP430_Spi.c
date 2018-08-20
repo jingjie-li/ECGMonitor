@@ -256,8 +256,8 @@ void TI_ADS1293_WriteRegSettings(void)
   //                        TI_ADS1293_MASK_ERR_REG_VALUE);              
   //TI_ADS1293_SPIWriteReg(TI_ADS1293_ALARM_FILTER_REG, 
   //                        TI_ADS1293_ALARM_FILTER_REG_VALUE);            
-  TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 
-                          TI_ADS1293_CH_CNFG_REG_VALUE);          
+  //TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 
+                          //TI_ADS1293_CH_CNFG_REG_VALUE);          
   
 }
 //******************************************************************************
