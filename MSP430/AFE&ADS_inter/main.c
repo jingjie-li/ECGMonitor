@@ -191,6 +191,7 @@ int main( void )
   
   char exit_state_flag = 0;
   char AcqState = 0; // 0-ECG&PPG State, 1-ECG only State, 2-PPF only State
+  char ComputerDebugFlag = 0;
  // int i = 0;
 
 //  count = CH_DATA_SIZE;                                                        // bytes to read: ADC_DOUT2 - ADCDOUT0
@@ -253,6 +254,8 @@ int main( void )
   
         if(chr=='M'||chr=='P') //ADS & AFE Mode Mobile or Processing Mode
         {
+           ComputerDebugFlag=0;
+           if(chr=='P') ComputerDebugFlag=1;
            AcqState = 0; 
            P4OUT |= BIT0; //Turn On AFE;
            Delays(1000);
@@ -271,7 +274,9 @@ int main( void )
           P4OUT &= ~BIT0; //Turn off AFE;
           TI_ADS1293_SPIWriteReg(0x00, 0x00); //ADS Stop_Conversation
           TI_ADS1293_WriteRegSettings();
-          read_buff[5]=0;read_buff[6]=0;read_buff[7]=0;
+          read_buff[5]=0x00;
+          read_buff[6]=0x00;
+          read_buff[7]=0x00;
           Delays(100);
           TI_ADS1293_SPIWriteReg(0x00, 0x01); //ADS Start_Conversation
           P2OUT &= ~BIT6; //ADS indcatation LED on
@@ -284,7 +289,12 @@ int main( void )
           TI_ADS1293_SPIWriteReg(0x00, 0x02); //ADS Standby powerdown mode
           P4OUT |= BIT0; //Turn On AFE;
           Delays(100);
-          read_buff[1]=0;read_buff[2]=0;read_buff[3]=0;read_buff[4]=0;read_buff[5]=0;
+          read_buff[0]=0x00;
+          read_buff[1]=0x00;
+          read_buff[2]=0x00;
+          read_buff[3]=0x00;
+          read_buff[4]=0x00;
+          read_buff[5]=0x00;
           TI_AFE4400_SPIAutoIncWriteReg(0x00, 8, 3); //AFE4400 Soft Reset
           Delays(10);
           TI_AFE4400_WriteRegSettings();
@@ -365,7 +375,7 @@ int main( void )
             }
             UartOutputLong(read_buff);
             // FOR PROCESSING, WE NEED 0D,OA'
-            if(chr == 'P')
+            if(ComputerDebugFlag == 1)
             {
               UartWriteChar(0x0d);
               UartWriteChar(0x0a);
