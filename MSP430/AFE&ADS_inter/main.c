@@ -27,10 +27,11 @@
 
 uint8_t c=1;
 //uint32_t val=1;
-char str[] = "UartWriteChar"; //ROM中一个字符串
-char str1[] = "start conversation!"; //ROM中一个字符串
-char str2[] = "stop conversation!"; //ROM中一个字符串
-char q = 'Q';
+//char str[] = "UartWriteChar"; //ROM中一个字符串
+//char str1[] = "start conversation!"; //ROM中一个字符串
+//char str2[] = "stop conversation!"; //ROM中一个字符串
+//char q = 'Q';
+uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
 
 /****************************************************************************
 * 名    称：ClkInit
@@ -151,6 +152,12 @@ uint8_t ADSLeadOFF()
   {
     retval = 0x01;
     P2OUT &= ~BIT4; //lead off
+    read_buff[0]=0xff;
+    read_buff[1]=0xff;
+    read_buff[2]=0xff;
+    read_buff[3]=0xff;
+    read_buff[4]=0xff;
+    read_buff[5]=0xff;
   }
   return retval;
 }
@@ -185,7 +192,6 @@ int main( void )
   uint8_t count=3;
 
   uint8_t read_buf[3];
-  uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
   
   //unsigned long val;
   
@@ -342,7 +348,7 @@ int main( void )
           ECGLeadOff = ADSLeadOFF();
           if(c==1)
           {
-            if(AcqState==0||AcqState==1)
+            if((AcqState==0||AcqState==1)&&ECGLeadOff==0)
             {
               readecg1(read_buf, read_buff, count);
               P2OUT ^= BIT6; 
@@ -352,7 +358,7 @@ int main( void )
           }
           else if(c==2)
           {
-            if(AcqState==0||AcqState==1)
+            if((AcqState==0||AcqState==1)&&ECGLeadOff==0)
             {
               readecg2(read_buf, read_buff, count);
               P2OUT ^= BIT6;
@@ -363,7 +369,7 @@ int main( void )
           else
           {
             c = 0;
-            if(AcqState==0||AcqState==1)
+            if((AcqState==0||AcqState==1)&&ECGLeadOff==0)
             {
             readecg3(read_buf, read_buff, count);
             P2OUT ^= BIT6;
