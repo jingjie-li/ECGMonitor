@@ -9,12 +9,35 @@ We Shared the majority of our code and design files. Including MSP430 program, P
 
 We do these stuff is for a [National BME(Biomedical Engineering) Competition for College Students](http://bmedesign.medmeeting.org/cn) in ShenZhen, China.
 
+# Quick access of our sub-modules
++ [Main MCU Controling Code](https://github.com/celelion/ECGMonitor/blob/master/MSP430/AFE%26ADS_inter/main.c)
++ [PCB Layout](https://github.com/celelion/ECGMonitor/tree/master/PCB)
++ [APP](https://github.com/celelion/ECGMonitor/tree/master/APP_Design)
++ [3D Printed PCB Case](https://github.com/celelion/ECGMonitor/tree/master/Case)
++ [Processing Tools for Computer Debugging](https://github.com/celelion/ECGMonitor/tree/master/Analog_Front/EEGPPGdataRecTest)
++ [Arduino DUE based IC chip(ADS1293/AFE4400) SPI interface verification code](https://github.com/celelion/ECGMonitor/tree/master/Analog_Front/Arduino-TestFirmware)
+
+# Features
+## Characteristics and Technical Indexes
+### ECG
+
++ Differential Input Voltage Range: -400 mV ~ +400 mV
++ Common-Mode Rejection Ratio(CMRR): >100 dB
++ Differential Input Resistance: 500 MΩ
++ Sampling Rate: 150 Hz
+
+### Oximeter
++ Sampling Rate: 50 Hz
+
+### Power Consumption
+| Overall Power | Bluetooth | ADS-ECG Module | AFE-Oximeter Module | MSP430-MCU Module |
+| ------ | ------ | ------ | ------ | ------ |
+| 291.1103 mW | 177.7327 mW | 3.1984 mW | 93.0931 mW | 17.0861 mW |
+
 # Development Team
-Jingjie Li (jingjie.li@nyu.edu) - Hardware, PCB Layout, Part of MSP430 Programming, Debugging tools using Processing IDE, 3D modeling for the case
-
-Jinming Li (lijinmingli@foxmail.com) - MSP430 Programming, Testing
-
-Haoyi Tao (thyzyfx@qq.com) - Android APP Programming
++ Jingjie Li (jingjie.li@nyu.edu) - Hardware, PCB Layout, Part of MSP430 Programming, Debugging tools using Processing IDE, 3D modeling for the case
++ Jinming Li (lijinmingli@foxmail.com) - MSP430 Programming, Testing
++ Haoyi Tao (thyzyfx@qq.com) - Android APP Programming
 
 We are all class of 2019 BME undergraduate student from Xi'an Jiaotong University
 
