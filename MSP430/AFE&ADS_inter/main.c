@@ -345,7 +345,7 @@ int main( void )
             exit_state_flag=1;
             chr = UartForceReadChar();
           }
-          ECGLeadOff = ADSLeadOFF();
+          if(AcqState!=2) ECGLeadOff = ADSLeadOFF();
           if(c==1)
           {
             if((AcqState==0||AcqState==1)&&ECGLeadOff==0)
