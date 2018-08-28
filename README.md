@@ -9,6 +9,8 @@ We Shared the majority of our code and design files. Including MSP430 program, P
 
 We do these stuff is for a [National BME(Biomedical Engineering) Competition for College Students](http://bmedesign.medmeeting.org/cn) in ShenZhen, China.
 
+__On Aug 28, 2018: We just won the FIRST PRIZE in [National BME(Biomedical Engineering) Competition for College Students](http://bmedesign.medmeeting.org/cn) in ShenZhen, China. Which is the HIGHEST AWARD.__
+
 # Quick access of our sub-modules
 + [Main MCU Controling Code](https://github.com/celelion/ECGMonitor/blob/master/MSP430/AFE%26ADS_inter/main.c)
 + [PCB Layout](https://github.com/celelion/ECGMonitor/tree/master/PCB)
