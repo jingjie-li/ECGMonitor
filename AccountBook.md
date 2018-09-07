@@ -33,4 +33,5 @@ Li,Jinming | DS-100A SPO2 |76|1|1|0
 Li,Jinming | ECG PIN |38|1|1|0
 Li,Jinming | ADS1293 QFN28 |174|4|4|0
 Li,Jinming | Express fee of phone |19|1|1|19
-
+Li,Jinming | battery |60|4|4|0
+Li,Jinming | electrode slice |114|4|4|0
