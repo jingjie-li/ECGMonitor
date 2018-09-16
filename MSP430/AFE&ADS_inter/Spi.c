@@ -193,7 +193,7 @@ void SpiWriteDat(char c)
 ****************************************************************************/
 char SpiReadDat()
 { 
-    while (RxFlag==0) SpiLpm(); // 收到一位?
+    while (RxFlag==0) SpiLpm(); // 收到一字节
     RxFlag=0;
     return(UxRXBUF);
 }

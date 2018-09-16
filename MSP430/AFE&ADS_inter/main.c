@@ -26,11 +26,6 @@
 #include "TI_ADS1293_setting.h"
 
 uint8_t c=1;
-//uint32_t val=1;
-//char str[] = "UartWriteChar"; //ROM中一个字符串
-//char str1[] = "start conversation!"; //ROM中一个字符串
-//char str2[] = "stop conversation!"; //ROM中一个字符串
-//char q = 'Q';
 uint8_t read_buff[8] = {0,0,0,0,0,0,0,0};
 
 /****************************************************************************
@@ -193,31 +188,16 @@ int main( void )
 
   uint8_t read_buf[3];
   
-  //unsigned long val;
-  
   char exit_state_flag = 0;
   char AcqState = 0; // 0-ECG&PPG State, 1-ECG only State, 2-PPF only State
-  char ComputerDebugFlag = 0;
- // int i = 0;
-
-//  count = CH_DATA_SIZE;                                                        // bytes to read: ADC_DOUT2 - ADCDOUT0
-
-  
+  char ComputerDebugFlag = 0; 
   char chr;               //串口测试中，收到的字节
   // 主机模式，波特率4000000,8位数据位，三线模式，时钟模式1（具体见spi.c）
   SpiMasterInit(4000000,8,3,0);
   UartInit(115200,'n',8,1);//串口初始化,设置成38400bps,无校验,8位数据,1位停止
   _EINT(); 
-  
-  //P1DIR = 0xff;
-  //P1SEL = 0x00;
-  
+   
   chr = UartReadChar();
-  //int P4state = P4IN;
-  //int PDALM = P4state & 0x02;
-  //int ADSALM = P4state & 0x10;
-  //int LEDALM = P4state & 0x20;
-  
   uint8_t ECGLeadOff = 0;
   TI_ADS1293_SPIWriteReg(TI_ADS1293_CH_CNFG_REG, 0x20);
   while(1)                    //串口测试

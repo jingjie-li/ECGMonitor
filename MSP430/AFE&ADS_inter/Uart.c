@@ -211,7 +211,7 @@ void UartWriteint(uint8_t c)
 ****************************************************************************/
 char UartReadChar()
 { 
-    while (RxFlagu==0) UartLpm(); // 收到一字节?
+    while (RxFlagu==0) UartLpm(); // 收到一字节
     RxFlagu=0;
     return(UxRXBUF);
 }
@@ -229,7 +229,7 @@ char UartForceReadChar()
 
 uint8_t UartReadint()
 { 
-    while (RxFlagu==0) UartLpm(); // 收到一字节?
+    while (RxFlagu==0) UartLpm(); // 收到一字节
     RxFlagu=0;
     return(UxRXBUF);
 }
