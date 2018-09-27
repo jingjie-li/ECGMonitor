@@ -12,26 +12,14 @@
 //   February 2012
 //   Built with CCE Version: 4.2 and IAR Embedded Workbench Version:  5.3x
 //******************************************************************************
-// Change Log:  
+// Change Log:  Jinming Li
 //******************************************************************************
-// Version:  1.00
-// Comments: Initial Release Version
+// Version:  2.00
+// Comments: 
+//          This file adds these functions: SET3 and SET5.
+//          This file changes the control words in "TI_ADS1293_WriteRegSettings".			
 //******************************************************************************
-/*  Copyright 2011-2012 Texas Instruments Incorporated. All rights reserved.
 
-  IMPORTANT: Your use of this Software is limited to those specific rights
-  granted under the terms of a software license agreement between the user who
-  downloaded the software, his/her employer (which must be your employer) and
-  Texas Instruments Incorporated (the "License"). You may not use this Software
-  unless you agree to abide by the terms of the License. The License limits your
-  use, and you acknowledge, that the Software may not be modified, copied or
-  distributed unless embedded on a Texas Instruments microcontroller which is 
-  integrated into your product. Other than for the foregoing purpose, you may 
-  not use, reproduce, copy, prepare derivative works of, modify, distribute, 
-  perform, display or sell this Software and/or its documentation for any 
-  purpose.
-
-*******************************************************************************/
 #include <stdint.h>
 #include "Spi.h"
 #include "MSP430_Spi.h"

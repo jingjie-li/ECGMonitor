@@ -224,11 +224,6 @@ int main( void )
           P2OUT ^= BIT7; //FLASHING HPR LED
           //uint8_t dump[8] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};
           ECGLeadOff = ADSLeadOFF();
-          //uint8_t leadoffreg = TI_ADS1293_SPIReadReg(0x18);
-          //UartOutputLong(dump);
-          //UartWriteint(leadoffreg);
-          //UartWriteChar(0x0d);
-          //UartWriteChar(0x0a);
           Delays(1);
           _BIS_SR(CPUOFF);
           _NOP();

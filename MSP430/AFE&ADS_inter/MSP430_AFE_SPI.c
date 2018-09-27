@@ -26,17 +26,11 @@
 void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value)
 {
   uint8_t inst;
- 
-
-  CS2 = CS2_ENABLED;                                                             // /CS enable 
-  
+  CS2 = CS2_ENABLED;                                                             // /CS enable
   inst = AFE4400_WRITE_BIT & addr;                                             // register address
   SpiWriteData(inst);                                                          // Send register address
-  
-  SpiWriteData(value);                                                         // Send data value  
-
+  SpiWriteData(value);                                                         // Send data value 
   CS2 = CS2_DISABLED;                                                            // /CS disable      
-  
 }
 
 //------------------------------------------------------------------------------
@@ -48,21 +42,13 @@ void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value)
 //------------------------------------------------------------------------------
 uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
 {
-  uint8_t pVal, inst;
-  
+  uint8_t pVal, inst; 
   CS2 = CS2_ENABLED;                                                             // /CS enable
- 
   inst = addr;                                              // register address
-  
-//  WAIT_1_3US(2);                                                               // Wait 
-  SpiWriteData(inst);                                                          // Send lower register address  
-  
+  SpiWriteData(inst);                                                          // Send lower register address
   pVal = SpiWriteData(0xFF);                                                     // Read data
-  
   CS2 = CS2_DISABLED;                                                            // /CS disable
-
-  return pVal;    
-          
+  return pVal;
 }
 
 //------------------------------------------------------------------------------
@@ -150,8 +136,6 @@ unsigned long TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t count)
 void TI_AFE4400_SPIStreamReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 {
   uint8_t i, inst;
-//  static uint32 tst_count = 0;
-//  static uint8_t toggle = 0;
   
   CS2 = CS2_ENABLED;                                                             // /CS enable
  
