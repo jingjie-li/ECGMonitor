@@ -14,15 +14,10 @@ Li,Jinming | ADS1293 Test PCB | 74 | 5| 1| 74
 Tao, Haoyi | ADS-TEST-Compount-Stuffs | 282 |~ | ~ | 985
 Tao, Haoyi | Taxi 1 | 13.1|~|~|13.1
 Li, Jingjie | Taxi 2 | 9.3 |~|~|9.3
-Li,Jinming | USB-TTL-Convertor| 50|2|1|50
 Li,Jinming | Express fee of blueteeth | 5|1|1|0
 Li,Jingjie | ADS-AFE Joint Test PCB | 123|5|1|123
 Tao, Haoyi | PCB | 55 |~ | ~ | 100
 Li,Jinming | Blueteeth | 15|4|1|60
-Li,Jinming | Raspberry | 430.75|4|4|1723
-Li,Jinming | DUE |126|3|1|378
-Li,Jinming | battery |28|2|1|79.24
-Li,Jinming | MSP430F149 |65.5|1|1|65.5
 Li,Jinming | DS-100A SPO2 |76|1|1|0
 Li,Jinming | poster |40|1|1|0
 Li,Jinming | PCB welding fee |250|1|1|0
