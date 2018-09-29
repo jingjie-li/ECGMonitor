@@ -640,7 +640,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>SPI_test.txt</state>
+          <state>ECG_SPO2_Monitor.txt</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -1872,10 +1872,10 @@
     <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\MSP430_AFE_SPI.c</name>
+    <name>$PROJ_DIR$\MSP430_ADS_SPI.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\MSP430_Spi.c</name>
+    <name>$PROJ_DIR$\MSP430_AFE_SPI.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\Spi.c</name>

@@ -21,7 +21,7 @@
 #include "MSP430_AFE_SPI.h"
 #include "TI_AFE4400.h"
 #include "TI_AFE4400_setting.h"
-#include "MSP430_Spi.h"
+#include "MSP430_ADS_SPI.h"
 #include "TI_ADS1293.h"
 #include "TI_ADS1293_setting.h"
 

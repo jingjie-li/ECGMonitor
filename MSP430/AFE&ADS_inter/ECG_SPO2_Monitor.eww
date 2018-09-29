@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\SPI_test.ewp</path>
+    <path>$WS_DIR$\ECG_SPO2_Monitor.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

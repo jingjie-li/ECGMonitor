@@ -18,7 +18,7 @@
 #define TI_ADS1293_CONFIG_REG                         (0x00) 
 
 //------------------------------------------------------------------------------
-//  void TI_ADS1293_SPIWriteReg(uint8_t_t addr, uint8_t_t value)
+//  void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value)
 //
 //  DESCRIPTION:
 //  Writes "value" to a single configuration register at address "addr". 
@@ -34,7 +34,7 @@ void TI_AFE4400_SPIWriteReg(uint8_t addr, uint8_t value)
 }
 
 //------------------------------------------------------------------------------
-//  uint8_t_t TI_ADS1293_SPIReadReg(uint8_t_t addr)
+//  uint8_t_t TI_AFE4400_SPIReadReg(uint8_t addr)
 //
 //  DESCRIPTION:
 //  Reads a single configuration register at address "addr" and returns the
@@ -52,13 +52,12 @@ uint8_t TI_AFE4400_SPIReadReg(uint8_t addr)
 }
 
 //------------------------------------------------------------------------------
-//  void TI_ADS1293_SPIAutoIncWriteReg(uint8_t_t addr, uint8_t_t *buffer, uint8_t_t count)
+//  void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, uint8_t *buffer, uint8_t count)
 //
 //  DESCRIPTION:
 //  Writes values to multiple configuration registers, the first register being
 //  at address "addr".  First data byte is at "buffer", and both addr and
-//  buffer are incremented sequentially (within the ADS1293 and CC254x
-//  respectively) until "count" writes have been performed. 
+//  buffer are incremented sequentially until "count" writes have been performed. 
 //------------------------------------------------------------------------------
 void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, unsigned long value, uint8_t count)
 {
@@ -88,7 +87,7 @@ void TI_AFE4400_SPIAutoIncWriteReg(uint8_t addr, unsigned long value, uint8_t co
 }
 
 //------------------------------------------------------------------------------
-//  void TI_ADS1293_SPIAutoIncReadReg(uint8_t_t addr, unit8_t *buffer, uint8_t_t count)
+//  void TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, unit8_t *buffer, uint8_t count)
 //
 //  DESCRIPTION:
 //  Reads multiple configuration registers, the first register being at address
@@ -124,40 +123,13 @@ unsigned long TI_AFE4400_SPIAutoIncReadReg(uint8_t addr, uint8_t count)
 }
 
 
-//  void TI_ADS1293_SPIStreamReadReg(uint8_t_t *buffer, uint8_t_t count)
-//
-//  DESCRIPTION:
-//  Special read function for reading status, pace and ecg data registers of selected
-//  channels. Channels to be read must be selected in CH_CNFG before calling this function. 
-//  Data Loop Register read is extended "count+1" times where "count" is number of source bytes 
-//  enabled in CH_CNFG. Data read are deposited sequentially starting at address "buffer" 
-//  until "count" bytes have been read.
-//------------------------------------------------------------------------------
-void TI_AFE4400_SPIStreamReadReg(uint8_t addr, uint8_t *buffer, uint8_t count)
-{
-  uint8_t i, inst;
-  
-  CS2 = CS2_ENABLED;                                                             // /CS enable
- 
-  inst = AFE4400_READ_BIT | addr;                          // read from data loop register
-  
-  SpiWriteData(inst);                                                          // Send register address
-  
-  for(i=0; i < count; i++)
-    *(buffer+i) = SpiWriteData(0xFF);                                           // Read data
-
-  CS2 = CS2_DISABLED;                                                            // /CS disable
-      
-}
-
-
 //******************************************************************************
 //------------------------------------------------------------------------------
 //******************************************************************************
-//  void TI_ADS1293_WriteRegSettings(void)
+//  void TI_AFE4400_WriteRegSettings(void)
 //
 //  DESCRIPTION:
-//  ADS1293 registers are configured to the values defined ADS1293_register_settings.h
+//  ADS1293 registers are configured to the values defined TI_AFE4400_setting.h
 //  These register settings can easily be obtained from the "Register configuration file"  
 //  saved from Sensor AFE Software
 //
