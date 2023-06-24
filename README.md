@@ -41,9 +41,9 @@ __Fig 1 Our First Prize Trophy and Certification__
 | 291.1103 mW | 177.7327 mW | 3.1984 mW | 93.0931 mW | 17.0861 mW |
 
 # Development Team
-+ Jingjie Li (jingjie.li@nyu.edu) - Hardware, PCB Layout, Part of MSP430 Programming, Debugging tools using Processing IDE, 3D modeling for the case
++ Jingjie Li (jingjie.li.21@ucl.ac.uk) - Hardware, PCB Layout, Part of MSP430 Programming, Debugging tools using Processing IDE, 3D modeling for the case
 + Jinming Li (lijinmingli@foxmail.com) - MSP430 Programming, Testing
-+ Haoyi Tao (thyzyfx@qq.com) - Android APP Programming
++ Haoyi Tao - Android APP Programming
 
 We are all class of 2019 BME undergraduate student from Xi'an Jiaotong University
 
